@@ -10,7 +10,7 @@
 class stage:public QObject//worker
 {
     Q_OBJECT
-    QThread stage_thread;
+//    QThread stage_thread;
 public:
 
 //    stage(Configuration* config);

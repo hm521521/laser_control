@@ -39,10 +39,10 @@ void stage::set_device(laser_device *dev)
         m_laser_device=nullptr;
     }
     m_laser_device=dev;
-    if(m_laser_device==nullptr)
-    {
-        stage_thread.quit();
-    }
+//    if(m_laser_device==nullptr)
+//    {
+//        stage_thread.quit();
+//    }
 }
 
 void stage::add_send_data(std::vector<ishow_data> &list)
@@ -50,10 +50,11 @@ void stage::add_send_data(std::vector<ishow_data> &list)
     if(m_laser_device==nullptr||OutputDebug)
         return;
     this->m_output_data_list.push_back(list);
-    this->moveToThread(&stage_thread);
-    connect(&stage_thread,&QThread::started,this,&stage::do_send_data);
-    connect(this,&stage::stage_finish,&stage_thread,&QThread::quit);
-    stage_thread.start();
+//    this->moveToThread(&stage_thread);
+//    connect(&stage_thread,&QThread::started,this,&stage::do_send_data);
+//    connect(this,&stage::stage_finish,&stage_thread,&QThread::quit);
+//    stage_thread.start();
+    do_send_data();
 }
 
 stage::~stage()
@@ -67,7 +68,7 @@ void stage::do_send_data()//发送数据给下位机
     unsigned char settings_data[8]={0};
     QVector<unsigned char> send_data;
     send_data.clear();
-    {
+
         if(this->OutputDebug)
         {
             for(int i=0;i<m_debug_data_list.size();++i)
@@ -89,24 +90,26 @@ void stage::do_send_data()//发送数据给下位机
                 {
                     this->m_output_data_list.erase(this->m_output_data_list.begin());
                 }
-            }
-            if(this->m_output_data_list.size()>0)
-            {
-                auto& d=this->m_output_data_list.front();
-                for(int i=0;i<d.size();++i)
+                else
                 {
-                    auto _d=d.at(i);
-                    send_data.push_back(_d.x);
-                    send_data.push_back(_d.y);
-                    send_data.push_back(_d.red);
-                    send_data.push_back(_d.gray);
-                    send_data.push_back(_d.blue);
-                    send_data.push_back(_d.green);
+//            if(this->m_output_data_list.size()>0)
+
+                    auto& d=this->m_output_data_list.front();
+                    for(int i=0;i<d.size();++i)
+                    {
+                        auto _d=d.at(i);
+                        send_data.push_back(_d.x);
+                        send_data.push_back(_d.y);
+                        send_data.push_back(_d.red);
+                        send_data.push_back(_d.gray);
+                        send_data.push_back(_d.blue);
+                        send_data.push_back(_d.green);
+                    }
+                    this->m_output_data_list.erase(this->m_output_data_list.begin());
                 }
-                this->m_output_data_list.erase(this->m_output_data_list.begin());
             }
         }
-    }
+
     if(send_data.size()!=0)
     {
         settings_data[0] = static_cast<unsigned char>(m_config->Speed * 2);
@@ -117,14 +120,15 @@ void stage::do_send_data()//发送数据给下位机
             m_laser_device->send_data(settings_data, send_data);
         else
         {
-            for(int i=0;i<send_data.size()/1024;++i)
+            int times=send_data.size()/1024;
+            for(int i=0;i<times+1;i++)
             {
                 QVector<unsigned char> send_data_i=send_data.mid(i*1024,1024);
                 m_laser_device->send_data(settings_data,send_data_i);
             }
         }
     }
-    stage_thread.quit();
+//    stage_thread.quit();
 }
 
 bool stage::test_output()

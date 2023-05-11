@@ -257,7 +257,8 @@ void ed_v2_device::send_command()
 //    while (num<m_send_data.size())
 //    {
 //        data=m_send_data.mid(num,1024);
-        this->m_socket->write(m_send_data);
+//        this->m_socket->write(m_send_data);
+    QMetaObject::invokeMethod(m_socket, std::bind( static_cast<qint64(QTcpSocket::*)(const QByteArray &)>( &QTcpSocket::write ), m_socket, m_send_data ) );
         this->m_socket->flush();
 //        msleep(40);
 //        if(!m_socket->waitForBytesWritten(10000))

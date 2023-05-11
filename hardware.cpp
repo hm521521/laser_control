@@ -166,10 +166,7 @@ void hardware::refresh_laser_device(QVector<laser_device*> device_list){
         theSelection->clearSelection(); //清除现有选择
         theSelection->setCurrentIndex(index,QItemSelectionModel::Select); //定位到单元格
         theModel->setData(index,dev->get_name(),Qt::DisplayRole);//设置单元格字符串
-
     }
-
-
 }
 
 
