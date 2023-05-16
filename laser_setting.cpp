@@ -29,6 +29,7 @@ laser_setting::laser_setting(QWidget *parent) :
 //    connect(m_parent,SIGNAL(manager_changed()),this,SLOT(refresh()));
     connect(ui->view_size,SIGNAL(flagchanged()),this,SLOT(onflagchanged()));
     ui->colorGradeStackedWidget->setCurrentIndex(2);
+    m_config=new Configuration(this);
 }
 
 
@@ -668,3 +669,32 @@ void laser_setting::on_blueMaxU_spinBox_valueChanged(int arg1)
     ui->blueMaxU_horizontalSlider->setValue(arg1);
 }
 
+
+void laser_setting::on_OpenConfigButton_clicked()
+{
+    m_config->Load();
+}
+
+void laser_setting::on_actionopensettins_triggered()
+{
+    m_config->Load();
+}
+
+void laser_setting::on_saveConfigButton_clicked()
+{
+    if(m_config)
+        m_config->Save();
+}
+
+void laser_setting::on_actionsavesettings_triggered()
+{
+    if(m_config)
+        m_config->Save();
+}
+
+
+void laser_setting::on_saveAsConfigButton_clicked()
+{
+    if(m_config)
+        m_config->SaveAs();
+}

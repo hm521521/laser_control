@@ -2,14 +2,16 @@
 #define CONFIGURATION_H
 #include<QString>
 #include<QUrl>
+#include<QWidget>
 
-class Configuration
+class Configuration:public QWidget
 {
 public:
-    Configuration();
+    Configuration(QWidget *parent=nullptr);
     void Reset();
     void Save();
     void Load();
+    void SaveAs();
     bool getLoop() const;
     void setLoop(bool value);
     bool x_invert; //x反向

@@ -68,7 +68,7 @@ void stage::do_send_data()//发送数据给下位机
     unsigned char settings_data[8]={0};
     QVector<unsigned char> send_data;
     send_data.clear();
-
+    {
         if(this->OutputDebug)
         {
             for(int i=0;i<m_debug_data_list.size();++i)
@@ -109,7 +109,7 @@ void stage::do_send_data()//发送数据给下位机
                 }
             }
         }
-
+    }
     if(send_data.size()!=0)
     {
         settings_data[0] = static_cast<unsigned char>(m_config->Speed * 2);

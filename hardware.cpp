@@ -137,10 +137,9 @@ void hardware::set_output(stage *output_stage)
 
 void hardware::on_Refresh_Button_clicked()
 {
-//    emit refresh_laser_device();
-//    m_laser_device_manager->refresh_laser_device();
+    emit refresh_controller();
+//    refresh_laser_device();
 //    broadcast();
-    myTimer->start(20);
 }
 
 void hardware::on_table_selected(QVariant s)

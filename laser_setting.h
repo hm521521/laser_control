@@ -81,15 +81,11 @@ class laser_setting : public SubWindow
 
 public:
     explicit laser_setting(QWidget *parent = nullptr);
-
     ~laser_setting();
-
      QString getMyType();
-
 private:
     Ui::laser_setting *ui;
 //    MainWindow1 *m_parent;
-
     QStandardItemModel *theModel;
     QItemSelectionModel *theSelection;
     void xsizechange(int position);
@@ -99,8 +95,8 @@ private:
     QPointF m_lastpos;
     void checkComboBox(QString str);
     QString m_type;
-
 protected:
+    Configuration* m_config;
 //    bool eventFilter(QObject *watched,QEvent *event);
 //    void mouseMove();
 //    void showResize();
@@ -142,7 +138,11 @@ private slots:
     void on_blueMaxU_horizontalSlider_sliderMoved(int position);
     void on_blueMaxU_spinBox_valueChanged(int arg1);
     void refresh_laser_device(QVector<laser_device*> laser_device);
-
+    void on_OpenConfigButton_clicked();
+    void on_actionopensettins_triggered();
+    void on_saveConfigButton_clicked();
+    void on_actionsavesettings_triggered();
+    void on_saveAsConfigButton_clicked();
 };
 
 

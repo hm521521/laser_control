@@ -59,6 +59,7 @@ MainWindow1::MainWindow1(QWidget *parent) :
     m_laser_setting=new laser_setting(this);
     connect(m_laser_device_manager,SIGNAL(manager_changed(QVector<laser_device*>)),m_laser_setting,SLOT(refresh_laser_device(QVector<laser_device*>)));
     connect(m_laser_device_manager,SIGNAL(new_device(laser_device*)),this,SLOT(refresh_stages(laser_device*)));
+    connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
 //    stage_thread_pool.setExpiryTimeout(-1);

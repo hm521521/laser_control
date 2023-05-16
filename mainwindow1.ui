@@ -94,8 +94,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>69</width>
-                   <height>513</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <attribute name="label">
@@ -107,8 +107,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <attribute name="label">
@@ -604,7 +604,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tab">
           <attribute name="title">
@@ -652,6 +652,9 @@
            </item>
            <item>
             <widget class="Scene_Stack" name="quick_scenes_stack">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
              <widget class="QWidget" name="page"/>
              <widget class="QWidget" name="page_2"/>
             </widget>

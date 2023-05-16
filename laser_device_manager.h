@@ -51,6 +51,7 @@ public:
     laser_device* get_default_device();
     void add_device(laser_type t,QString addr);
     QVector<laser_device*> get_device_list();
+public slots:
     void refresh_laser_device();
 private:
     ed_v2_device_finder* m_device_finder;

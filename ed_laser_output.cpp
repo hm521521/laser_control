@@ -37,9 +37,6 @@ bool ed_v2_device::is_connected()
 
 void ed_v2_device::try_connect()
 {
-//    if(this->m_socket!=nullptr)
-//        return;
-//    this->m_socket=new QTcpSocket();
     do
     {
         QHostAddress remote_addr(m_tcp_addr);

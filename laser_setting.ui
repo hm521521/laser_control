@@ -19,21 +19,21 @@
      <widget class="QWidget" name="widget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="OpenConfigButton">
          <property name="text">
           <string>打开</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="saveConfigButton">
          <property name="text">
           <string>保存</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="saveAsConfigButton">
          <property name="text">
           <string>另存</string>
          </property>
@@ -112,7 +112,7 @@
        <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tab">
           <attribute name="title">
@@ -529,6 +529,203 @@
           <attribute name="title">
            <string> 扫描率</string>
           </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_28">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>采样率和颜色变换</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>   默认采样率（PPS）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_30" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QSlider" name="horizontalSlider">
+                <property name="minimum">
+                 <number>6000</number>
+                </property>
+                <property name="maximum">
+                 <number>120000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBox_3">
+                <property name="minimum">
+                 <number>6000</number>
+                </property>
+                <property name="maximum">
+                 <number>120000</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>使用效果可用的采样率范围</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_33" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_17">
+              <item>
+               <widget class="QLabel" name="label_15">
+                <property name="text">
+                 <string>  最小值</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>最大值</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_29" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <widget class="QSlider" name="horizontalSlider_3">
+                <property name="minimum">
+                 <number>6000</number>
+                </property>
+                <property name="maximum">
+                 <number>20000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBox">
+                <property name="minimum">
+                 <number>6000</number>
+                </property>
+                <property name="maximum">
+                 <number>20000</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="horizontalSlider_2">
+                <property name="minimum">
+                 <number>15000</number>
+                </property>
+                <property name="maximum">
+                 <number>120000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBox_2">
+                <property name="minimum">
+                 <number>15000</number>
+                </property>
+                <property name="maximum">
+                 <number>120000</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>颜色/  闭光转换（点）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_31" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_15">
+              <item>
+               <widget class="QSlider" name="horizontalSlider_4">
+                <property name="maximum">
+                 <number>16</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBox_4">
+                <property name="maximum">
+                 <number>16</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string> 最少 点数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_32" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_16">
+              <item>
+               <widget class="QSlider" name="horizontalSlider_5">
+                <property name="minimum">
+                 <number>100</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBox_5">
+                <property name="minimum">
+                 <number>100</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBox">
+             <property name="text">
+              <string>  广角补偿</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
@@ -1050,13 +1247,15 @@
      <x>0</x>
      <y>0</y>
      <width>951</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>文件</string>
     </property>
+    <addaction name="actionopensettins"/>
+    <addaction name="actionsavesettings"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -1079,6 +1278,16 @@
    <addaction name="menu_4"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionopensettins">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="actionsavesettings">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

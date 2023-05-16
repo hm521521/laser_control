@@ -4,9 +4,38 @@
 //#include<iostream>
 //#include<fstream>
 #include<QDataStream>
+#include<QFileDialog>
+#include<QObject>
 constexpr auto CONFIG_HEADER = "hwstaticconfig";
 
-Configuration::Configuration()
+//Configuration::Configuration()
+//{
+//    Loop = true;
+//    x_invert = false;
+//    y_invert = false;
+//    xy_swap = false;
+//    x_size = 1.0f;
+//    y_size = 1.0f;
+//    xy_locked = true;
+//    x_offset = 0;
+//    y_offset = 0;
+//    adjust_r = true;
+//    red = 1.0f;
+//    adjust_g = true;
+//    green = 1.0f;
+//    adjust_b = true;
+//    blue = 1.0f;
+//    moORsu = true;
+//    Ybi = 1.0f;
+//    Speed = 20;
+//    PointGap = 10;
+//    Delay = 1;
+//    lang = "zh-CN";
+//    m_path=QCoreApplication::applicationDirPath();
+//    m_path.append("/system/de.config");
+//}
+
+Configuration::Configuration(QWidget* parent)
 {
     Loop = true;
     x_invert = false;
@@ -51,8 +80,9 @@ void Configuration::Save()
 
 //    m_path="C:\\Users\\hm521\\Documents\\build-TCPServer-Desktop_Qt_5_12_12_MinGW_64_bit-Debug\\debug";
 //    m_path.append("/system/de.config");
-    QFile file(m_path);
-    if(file.open(QIODevice::WriteOnly))
+    QFile file(this);
+    file.setFileName(m_path);
+    if(file.open(QIODevice::WriteOnly|QIODevice::Truncate))
     {
         QDataStream binaryWriter(&file);
         int len = strlen(CONFIG_HEADER);
@@ -126,6 +156,44 @@ void Configuration::Load()
         }
 
     }
+}
+
+void Configuration::SaveAs()
+{
+    QString filename=QFileDialog::getSaveFileName(this,tr("保存配置"),"/system/de.config",tr("配置文件(*.config)"));
+    QFile file(filename);
+    if(file.open(QIODevice::WriteOnly))
+    {
+        QDataStream binaryWriter(&file);
+        int len = strlen(CONFIG_HEADER);
+        binaryWriter.writeRawData((char*)&len, 1);
+        binaryWriter.writeRawData(CONFIG_HEADER, len);
+        binaryWriter.writeRawData((char*)&Loop, 1);
+        binaryWriter.writeRawData((char*)&x_invert, 1);
+        binaryWriter.writeRawData((char*)&y_invert, 1);
+        binaryWriter.writeRawData((char*)&xy_swap, 1);
+        binaryWriter.writeRawData((char*)&x_size, 4);
+        binaryWriter.writeRawData((char*)&y_size, 4);
+        binaryWriter.writeRawData((char*)&xy_locked, 1);
+        binaryWriter.writeRawData((char*)&x_offset, 4);
+        binaryWriter.writeRawData((char*)&y_offset, 4);
+        binaryWriter.writeRawData((char*)&adjust_r, 1);
+        binaryWriter.writeRawData((char*)&red, 4);
+        binaryWriter.writeRawData((char*)&adjust_g, 1);
+        binaryWriter.writeRawData((char*)&green, 4);
+        binaryWriter.writeRawData((char*)&adjust_b, 1);
+        binaryWriter.writeRawData((char*)&blue, 4);
+        binaryWriter.writeRawData((char*)&moORsu, 1);
+        binaryWriter.writeRawData((char*)&Ybi, 4);
+        binaryWriter.writeRawData((char*)&Speed, 4);
+        binaryWriter.writeRawData((char*)&PointGap, 4);
+        binaryWriter.writeRawData((char*)&Delay, 1);
+        int lang_len=lang.length();
+        binaryWriter.writeRawData((char*)&lang_len, 1);
+        binaryWriter.writeRawData(lang.c_str(), lang_len);
+        file.close();
+    }
+
 }
 
 bool Configuration::getLoop() const
