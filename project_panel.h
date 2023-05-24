@@ -45,6 +45,7 @@ class scene_info
 {
 public:
     scene_info(single_scene* scene,int start_x, int end_x, int track_index);
+    scene_info();
     ~scene_info();
     bool operator==(scene_info& other);
     single_scene *m_scene;

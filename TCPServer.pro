@@ -35,6 +35,7 @@ SOURCES += main.cpp\
     add_zones_dialog.cpp \
     cjimage.cpp \
     cjsection.cpp \
+    clockedit.cpp \
     color.cpp \
     configuration.cpp \
     dnd_scene_data_object.cpp \
@@ -51,7 +52,9 @@ SOURCES += main.cpp\
     mainwindow.cpp \
     mainwindow1.cpp \
     mp3_player.cpp \
+    mygraphicsview.cpp \
     output_panel.cpp \
+    picture_trace.cpp \
     point.cpp \
     pointattribute.cpp \
     project_panel.cpp \
@@ -68,6 +71,7 @@ HEADERS  += mainwindow.h \
     add_zones_dialog.h \
     cjimage.h \
     cjsection.h \
+    clockedit.h \
     color.h \
     common.h \
     configuration.h \
@@ -77,6 +81,7 @@ HEADERS  += mainwindow.h \
     gdiplus_helper.h \
     graphicsrectitem.h \
     hardware.h \
+    ildafile.h \
     laser_device.h \
     laser_device_manager.h \
     laser_output.h \
@@ -84,7 +89,9 @@ HEADERS  += mainwindow.h \
     main_panel.h \
     mainwindow1.h \
     mp3_player.h \
+    mygraphicsview.h \
     output_panel.h \
+    picture_trace.h \
     point.h \
     pointattribute.h \
     project_panel.h \
@@ -101,9 +108,11 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     add_zones_dialog.ui \
+    clockedit.ui \
     hardware.ui \
     laser_setting.ui \
     mainwindow1.ui \
+    picture_trace.ui \
     projection_zones.ui
 
 
@@ -115,3 +124,9 @@ msvc {
     QMAKE_CFLAGS += /utf-8
     QMAKE_CXXFLAGS += /utf-8
 }
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Program_Files/opencv3.4.1/opencv/build/x64/vc15/lib/ -lopencv_world341
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Program_Files/opencv3.4.1/opencv/build/x64/vc15/lib/ -lopencv_world341d
+
+INCLUDEPATH += D:/Program_Files/opencv3.4.1/opencv/build/include
+DEPENDPATH += D:/Program_Files/opencv3.4.1/opencv/build/include

@@ -1,7 +1,7 @@
 #include "cjsection.h"
 #include "point.h"
 #include <QPainter>
-
+#include"cmath"
 
 int get_intersection(Point a, Point b, Point c, Point d, Point& intersection)//获取交叉点
 {

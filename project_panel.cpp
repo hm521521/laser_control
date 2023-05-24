@@ -815,6 +815,11 @@ scene_info::scene_info(single_scene *scene, int start_x, int end_x, int track_in
 
 }
 
+scene_info::scene_info()
+{
+
+}
+
 scene_info::~scene_info()
 {
 
