@@ -10,8 +10,9 @@
 using namespace cv;
 using namespace std;
 Picture_trace::Picture_trace(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::Picture_trace)
+    SubWindow(),
+    ui(new Ui::Picture_trace),
+    m_type("pic_trace")
 {
     ui->setupUi(this);
     setWindowTitle("图片示踪剂");
@@ -79,30 +80,6 @@ Picture_trace::Picture_trace(QWidget *parent) :
      connect(ui->check_space,SIGNAL(stateChanged(int)), this, SLOT(filter_slot(int))) ;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 void Picture_trace::datainit()
@@ -418,7 +395,7 @@ void Picture_trace::handleButtonClicked1(QAbstractButton *button)
     //    GaussianBlur(gray, gray_blur, Size(3, 3), 3, 3);
     //    threshold(gray, traced_img, 50, 255, THRESH_BINARY);
     //    now_dir=img_traced;
-        vector<vector<Point>> contours;
+        vector<vector<cv::Point>> contours;
         vector<Vec4i> hierarchy;
     //    vector<vector<float>>pos;
         findContours(traced_img, contours, hierarchy, RETR_CCOMP, CHAIN_APPROX_SIMPLE);
@@ -429,12 +406,11 @@ void Picture_trace::handleButtonClicked1(QAbstractButton *button)
         postion.open("C:/Users/10797/Desktop/picture/ild/position.txt",ios::out);
     //    postion<<"X  Y   status"<<endl;
         for(uint i=0;i<contours.size();i++){
-            Point pre=contours[i][0];
+            cv::Point pre=contours[i][0];
             cv::circle(kongbai,pre,1,cv::Scalar(0, 255, 0), 2);
     //        postion<<"第"<<i<<"个轮廓"<<endl;
             for(uint j=1;j<contours[i].size();j++){
-
-                Point now=contours[i][j];
+                cv::Point now=contours[i][j];
                 if(point_distance(pre,now)>distance||j+1==contours[i].size()){
                     if(j+1==contours[i].size()){
                         postion<<pre.x<<" "<<pre.y<<" "<<0<<endl;
@@ -559,7 +535,12 @@ short Picture_trace::zuobiaochuliy(short zuobiao, short pianyi) {
        int temp_point = zuobiao - pianyi;
        temp_point = int(temp_point * (32768 / pianyi));
        return temp_point;
-   }
+}
+
+QString Picture_trace::getMyType()
+{
+    return m_type;
+}
 
 void Picture_trace::resizeEvent(QResizeEvent *event)
 {

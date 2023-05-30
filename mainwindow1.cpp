@@ -47,6 +47,7 @@ MainWindow1::MainWindow1(QWidget *parent) :
     do_select_page(ui->pushButton_timeline);
     //设备发现
     m_laser_device_manager=new laser_device_manager(this);
+    m_pic_trace=new Picture_trace(this);
     stage*s=new stage(this);
     s->set_config(m_config);
     s->set_device(m_laser_device_manager->get_default_device());
@@ -401,7 +402,8 @@ void MainWindow1::add_stages(stage *s)
     }
 }
 
-
-
-
+void MainWindow1::on_picture_tracer_triggered()
+{
+    m_pic_trace->show();
+}
 

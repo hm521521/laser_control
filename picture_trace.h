@@ -11,12 +11,13 @@
 #include<QDoubleSpinBox>
 #include<QPushButton>
 #include<QButtonGroup>
+#include"hardware.h"
 
 namespace Ui {
 class Picture_trace;
 }
 
-class Picture_trace : public QMainWindow
+class Picture_trace : public SubWindow
 {
     Q_OBJECT
 
@@ -32,6 +33,7 @@ public:
     short ReverseUshort(short value);
     short zuobiaochulix(short zuobiao,short pianyi);
     short zuobiaochuliy(short zuobiao, short pianyi);
+    QString getMyType();
     ~Picture_trace();
    private slots:
 //    void btn_traced_slot();
@@ -62,7 +64,7 @@ signals:
 private:
     Ui::Picture_trace *ui;
     cv::Mat cur_img;
-    QString save_dir="C:/Users/y/Desktop/picture/image/";
+    QString save_dir="./trace/";
     QString now_dir;//展示的图片 定时事件
     int reduced=0;
     //点击三个按钮分别呈现 三种情况，
@@ -88,6 +90,7 @@ private:
     double distance = 0;
     QButtonGroup *buttonGroup1 = new QButtonGroup(this);
     QButtonGroup *buttonGroup2 = new QButtonGroup(this);
+    QString m_type;
 };
 
 #endif // PICTURE_TRACE_H

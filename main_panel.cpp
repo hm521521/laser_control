@@ -7,6 +7,7 @@
 #include<QDir>
 #include<QDrag>
 #include<QTimer>
+#include<QGridLayout>
 //#include<QDropEvent>
 
 main_panel::main_panel(QWidget *parent)//:QWidget(parent)

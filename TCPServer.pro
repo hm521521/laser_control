@@ -125,8 +125,15 @@ msvc {
     QMAKE_CXXFLAGS += /utf-8
 }
 
-win32:CONFIG(release, debug|release): LIBS += -LD:/Program_Files/opencv3.4.1/opencv/build/x64/vc15/lib/ -lopencv_world341
-else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Program_Files/opencv3.4.1/opencv/build/x64/vc15/lib/ -lopencv_world341d
+#win32:CONFIG(release, debug|release): LIBS += -LD:/Program_Files/opencv3.4.1/opencv/build/x64/vc15/lib/ -lopencv_world341
+#else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Program_Files/opencv3.4.1/opencv/build/x64/vc15/lib/ -lopencv_world341d
 
-INCLUDEPATH += D:/Program_Files/opencv3.4.1/opencv/build/include
-DEPENDPATH += D:/Program_Files/opencv3.4.1/opencv/build/include
+#INCLUDEPATH += D:/Program_Files/opencv3.4.1/opencv/build/include
+#DEPENDPATH += D:/Program_Files/opencv3.4.1/opencv/build/include
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../opencv/build/x64/vc15/lib/ -lopencv_world341
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../opencv/build/x64/vc15/lib/ -lopencv_world341d
+
+INCLUDEPATH += $$PWD/../../opencv/build/include
+DEPENDPATH += $$PWD/../../opencv/build/include

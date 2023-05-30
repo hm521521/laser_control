@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow1 w;
     w.show();
-    Picture_trace p;
-    p.show();
+//    Picture_trace p;
+//    p.show();
 
 
     return a.exec();

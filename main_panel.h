@@ -4,7 +4,8 @@
 #include<QToolBox>
 #include<QGraphicsView>
 #include<QGraphicsItem>
-#include "ui_mainwindow1.h"
+//#include "ui_mainwindow1.h"
+#include<scene_tool_box.h>
 #include "dnd_scene_data_object.h"
 
 class scene_panel;
