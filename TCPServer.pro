@@ -59,6 +59,7 @@ SOURCES += main.cpp\
     pointattribute.cpp \
     project_panel.cpp \
     projection_zones.cpp \
+    publicize.cpp \
     qcustomplot.cpp \
     scene_pool.cpp \
     scene_tool_box.cpp \
@@ -96,6 +97,7 @@ HEADERS  += mainwindow.h \
     pointattribute.h \
     project_panel.h \
     projection_zones.h \
+    publicize.h \
     qcustomplot.h \
     scene_pool.h \
     scene_tool_box.h \
@@ -113,7 +115,8 @@ FORMS    += mainwindow.ui \
     laser_setting.ui \
     mainwindow1.ui \
     picture_trace.ui \
-    projection_zones.ui
+    projection_zones.ui \
+    publicize.ui
 
 
 RESOURCES += \

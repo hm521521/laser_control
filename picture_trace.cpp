@@ -16,7 +16,7 @@ Picture_trace::Picture_trace(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("图片示踪剂");
-     QGraphicsScene *scene = new QGraphicsScene;
+     QGraphicsScene *scene = new QGraphicsScene(this);
      ui->graphicsView->setScene(scene);
 
      buttonGroup1->addButton(ui->btn_reduced);
@@ -30,7 +30,7 @@ Picture_trace::Picture_trace(QWidget *parent) :
      buttonGroup1->setExclusive(true);
      buttonGroup2->setExclusive(true);
      QTimer* timer = new QTimer(this);
-     timer->start(1000);//开启定时器，执行周期为1秒针
+     timer->start(10);//开启定时器，执行周期为1秒针
      datainit();//232312312312
 
      //选择图片
@@ -50,7 +50,6 @@ Picture_trace::Picture_trace(QWidget *parent) :
             now_dir=img_reduced;
         else
             now_dir=img_traced;
-
         scene->addPixmap(QPixmap(now_dir));
         ui->graphicsView->show();
     });
@@ -58,8 +57,6 @@ Picture_trace::Picture_trace(QWidget *parent) :
         QString k="分离等级："+QString::number(ui->slider_rank->value());
         ui->label_rank->clear();
         ui->label_rank->setText(k);
-
-
     });
     connect(buttonGroup1, SIGNAL(buttonClicked(QAbstractButton *)), this, SLOT(handleButtonClicked1(QAbstractButton *)));
     connect(buttonGroup2, SIGNAL(buttonClicked(QAbstractButton *)), this, SLOT(handleButtonClicked2(QAbstractButton *)));
@@ -67,10 +64,6 @@ Picture_trace::Picture_trace(QWidget *parent) :
     connectSliderAndSpin(ui->distance_slider,ui->distance_SpinBox);
     connectSliderAndSpin(ui->offset_slider,ui->offset_SpinBox);
     connect(ui->slider_rank,SIGNAL(sliderReleased()),this,SLOT(slider_rank_slot()));
-//    connect(ui->btn_color_separa,SIGNAL(clicked()),this,SLOT(btn_color_separa_slot()));
-//    connect(ui->btn_highlight_separa,SIGNAL(clicked()),this,SLOT(btn_highlight_separa_slot()));
-//    connect(ui->btn_centerline,SIGNAL(clicked()),this,SLOT(btn_centerline_slot()));
-//    connect(ui->btn_raster,SIGNAL(clicked()),this,SLOT(btn_raster_slot()));
     //调整图片大小
     connect(ui->btn_out,SIGNAL(clicked()),this,SLOT(btn_out_slot()));
     connect(ui->btn_bigger,SIGNAL(clicked()),this,SLOT(btn_bigger_slot()));
@@ -78,7 +71,6 @@ Picture_trace::Picture_trace(QWidget *parent) :
     connect(ui->slider_size,SIGNAL(valueChanged(int)),this,SLOT(img_resize_slot()));
     //connect()
      connect(ui->check_space,SIGNAL(stateChanged(int)), this, SLOT(filter_slot(int))) ;
-
 }
 
 
@@ -97,13 +89,7 @@ void Picture_trace::datainit()
     init_sliderAndspin(ui->distance_slider, ui->distance_SpinBox, 0, 50, 1, 0.1, 0);
     init_sliderAndspin(ui->offset_slider, ui->offset_SpinBox, 0, 50, 1, 0.1, 0);
     ui->check_space->setChecked(true);
-
-
-
-     setAllbtn_style();
-//     ui->btn_src->setChecked(true);
-//     ui->btn_color_separa->setChecked(true);
-
+    setAllbtn_style();
 
 }
 

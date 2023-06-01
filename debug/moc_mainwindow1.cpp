@@ -147,8 +147,8 @@ void main_frame_thread::completed()
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 struct qt_meta_stringdata_MainWindow1_t {
-    QByteArrayData data[26];
-    char stringdata0[420];
+    QByteArrayData data[27];
+    char stringdata0[443];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -182,7 +182,8 @@ QT_MOC_LITERAL(21, 343, 13), // "laser_device*"
 QT_MOC_LITERAL(22, 357, 6), // "device"
 QT_MOC_LITERAL(23, 364, 20), // "handle_stage_results"
 QT_MOC_LITERAL(24, 385, 6), // "result"
-QT_MOC_LITERAL(25, 392, 27) // "on_picture_tracer_triggered"
+QT_MOC_LITERAL(25, 392, 27), // "on_picture_tracer_triggered"
+QT_MOC_LITERAL(26, 420, 22) // "on_publicize_triggered"
 
     },
     "MainWindow1\0stage_operate\0\0"
@@ -196,7 +197,8 @@ QT_MOC_LITERAL(25, 392, 27) // "on_picture_tracer_triggered"
     "eventFilter\0obj\0QEvent*\0event\0add_stages\0"
     "stage*\0s\0refresh_stages\0laser_device*\0"
     "device\0handle_stage_results\0result\0"
-    "on_picture_tracer_triggered"
+    "on_picture_tracer_triggered\0"
+    "on_publicize_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -206,7 +208,7 @@ static const uint qt_meta_data_MainWindow1[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -214,24 +216,25 @@ static const uint qt_meta_data_MainWindow1[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   94,    2, 0x06 /* Public */,
+       1,    1,   99,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   97,    2, 0x08 /* Private */,
-       4,    0,   98,    2, 0x08 /* Private */,
-       5,    0,   99,    2, 0x08 /* Private */,
-       6,    0,  100,    2, 0x08 /* Private */,
-       7,    0,  101,    2, 0x08 /* Private */,
-       8,    0,  102,    2, 0x08 /* Private */,
-       9,    0,  103,    2, 0x08 /* Private */,
-      10,    0,  104,    2, 0x08 /* Private */,
-      11,    0,  105,    2, 0x08 /* Private */,
-      12,    0,  106,    2, 0x08 /* Private */,
-      13,    2,  107,    2, 0x08 /* Private */,
-      17,    1,  112,    2, 0x08 /* Private */,
-      20,    1,  115,    2, 0x08 /* Private */,
-      23,    1,  118,    2, 0x08 /* Private */,
-      25,    0,  121,    2, 0x08 /* Private */,
+       3,    0,  102,    2, 0x08 /* Private */,
+       4,    0,  103,    2, 0x08 /* Private */,
+       5,    0,  104,    2, 0x08 /* Private */,
+       6,    0,  105,    2, 0x08 /* Private */,
+       7,    0,  106,    2, 0x08 /* Private */,
+       8,    0,  107,    2, 0x08 /* Private */,
+       9,    0,  108,    2, 0x08 /* Private */,
+      10,    0,  109,    2, 0x08 /* Private */,
+      11,    0,  110,    2, 0x08 /* Private */,
+      12,    0,  111,    2, 0x08 /* Private */,
+      13,    2,  112,    2, 0x08 /* Private */,
+      17,    1,  117,    2, 0x08 /* Private */,
+      20,    1,  120,    2, 0x08 /* Private */,
+      23,    1,  123,    2, 0x08 /* Private */,
+      25,    0,  126,    2, 0x08 /* Private */,
+      26,    0,  127,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -251,6 +254,7 @@ static const uint qt_meta_data_MainWindow1[] = {
     QMetaType::Void, 0x80000000 | 18,   19,
     QMetaType::Void, 0x80000000 | 21,   22,
     QMetaType::Void, QMetaType::Int,   24,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -279,6 +283,7 @@ void MainWindow1::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 13: _t->refresh_stages((*reinterpret_cast< laser_device*(*)>(_a[1]))); break;
         case 14: _t->handle_stage_results((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 15: _t->on_picture_tracer_triggered(); break;
+        case 16: _t->on_publicize_triggered(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -333,13 +338,13 @@ int MainWindow1::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     }
     return _id;
 }

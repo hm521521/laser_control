@@ -42,6 +42,7 @@ public:
     QAction *new_workspace;
     QAction *open_workspace;
     QAction *picture_tracer;
+    QAction *publicize;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     QWidget *widget;
@@ -158,6 +159,8 @@ public:
         open_workspace->setCheckable(false);
         picture_tracer = new QAction(MainWindow1);
         picture_tracer->setObjectName(QString::fromUtf8("picture_tracer"));
+        publicize = new QAction(MainWindow1);
+        publicize->setObjectName(QString::fromUtf8("publicize"));
         centralwidget = new QWidget(MainWindow1);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -213,11 +216,11 @@ public:
         m_scenes_book->setObjectName(QString::fromUtf8("m_scenes_book"));
         page_14 = new QWidget();
         page_14->setObjectName(QString::fromUtf8("page_14"));
-        page_14->setGeometry(QRect(0, 0, 98, 28));
+        page_14->setGeometry(QRect(0, 0, 69, 513));
         m_scenes_book->addItem(page_14, QString::fromUtf8("Page 1"));
         page_15 = new QWidget();
         page_15->setObjectName(QString::fromUtf8("page_15"));
-        page_15->setGeometry(QRect(0, 0, 98, 28));
+        page_15->setGeometry(QRect(0, 0, 100, 30));
         m_scenes_book->addItem(page_15, QString::fromUtf8("Page 2"));
 
         horizontalLayout_8->addWidget(m_scenes_book);
@@ -542,7 +545,7 @@ public:
         quick_scenes_book->addItem(page_3, QString::fromUtf8("Page 1"));
         page_4 = new QWidget();
         page_4->setObjectName(QString::fromUtf8("page_4"));
-        page_4->setGeometry(QRect(0, 0, 98, 28));
+        page_4->setGeometry(QRect(0, 0, 68, 205));
         quick_scenes_book->addItem(page_4, QString::fromUtf8("Page 2"));
 
         horizontalLayout_3->addWidget(quick_scenes_book);
@@ -606,6 +609,7 @@ public:
         menu_2->addAction(new_workspace);
         menu_2->addAction(open_workspace);
         menu_3->addAction(picture_tracer);
+        menu_3->addAction(publicize);
 
         retranslateUi(MainWindow1);
 
@@ -613,7 +617,7 @@ public:
         stackedWidget_2->setCurrentIndex(1);
         m_scenes_book->setCurrentIndex(0);
         m_scenes_stack->setCurrentIndex(1);
-        quick_tabWidget->setCurrentIndex(1);
+        quick_tabWidget->setCurrentIndex(0);
         quick_scenes_book->setCurrentIndex(0);
         quick_scenes_stack->setCurrentIndex(0);
 
@@ -630,6 +634,7 @@ public:
         new_workspace->setText(QApplication::translate("MainWindow1", "\346\226\260\345\273\272\345\267\245\344\275\234\345\214\272", nullptr));
         open_workspace->setText(QApplication::translate("MainWindow1", "\346\211\223\345\274\200\345\267\245\344\275\234\345\214\272", nullptr));
         picture_tracer->setText(QApplication::translate("MainWindow1", "\345\233\276\347\211\207\347\244\272\350\270\252\345\211\202", nullptr));
+        publicize->setText(QApplication::translate("MainWindow1", "\345\256\243\344\274\240\350\257\255", nullptr));
         pushButton_grid->setText(QApplication::translate("MainWindow1", "\347\275\221\346\240\274", nullptr));
         pushButton_timeline->setText(QApplication::translate("MainWindow1", "\346\227\266\351\227\264\347\272\277", nullptr));
         pushButton_playlist->setText(QApplication::translate("MainWindow1", " \346\222\255\346\224\276\345\210\227\350\241\250", nullptr));
