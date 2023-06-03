@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -19,10 +19,11 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "output_panel.h"
+#include <main_panel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -37,17 +38,34 @@ public:
     QPushButton *btn_process;
     QPushButton *btn_play;
     QPushButton *btn_output;
+    QWidget *widget_7;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *label_4;
+    QSlider *thresh_horizontalSlider;
+    QSpinBox *thresh_spinBox;
     QWidget *widget_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label;
     QSlider *distance_horizontalSlider;
-    QDoubleSpinBox *distance_SpinBox;
+    QSpinBox *distance_spinBox;
+    QWidget *widget_4;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label_2;
+    QSlider *image_num_horizontalSlider;
+    QSpinBox *image_num_spinBox;
+    QWidget *widget_5;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *label_3;
+    QSlider *horizontalSlider_2;
+    QSpinBox *spinBox_2;
+    QWidget *widget_6;
+    QHBoxLayout *horizontalLayout_6;
+    QSpacerItem *horizontalSpacer;
+    scene_panel *pub_scene_panel;
+    QSpacerItem *horizontalSpacer_2;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer;
-    output_panel *public_panel_1;
-    output_panel *public_panel_2;
-    QSpacerItem *verticalSpacer;
+    QGridLayout *publicize_gridLayout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -55,7 +73,7 @@ public:
     {
         if (publicize->objectName().isEmpty())
             publicize->setObjectName(QString::fromUtf8("publicize"));
-        publicize->resize(800, 600);
+        publicize->resize(354, 488);
         centralwidget = new QWidget(publicize);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -87,6 +105,33 @@ public:
 
         verticalLayout->addWidget(widget_2);
 
+        widget_7 = new QWidget(centralwidget);
+        widget_7->setObjectName(QString::fromUtf8("widget_7"));
+        horizontalLayout_7 = new QHBoxLayout(widget_7);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        label_4 = new QLabel(widget_7);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        horizontalLayout_7->addWidget(label_4);
+
+        thresh_horizontalSlider = new QSlider(widget_7);
+        thresh_horizontalSlider->setObjectName(QString::fromUtf8("thresh_horizontalSlider"));
+        thresh_horizontalSlider->setMaximum(255);
+        thresh_horizontalSlider->setValue(127);
+        thresh_horizontalSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_7->addWidget(thresh_horizontalSlider);
+
+        thresh_spinBox = new QSpinBox(widget_7);
+        thresh_spinBox->setObjectName(QString::fromUtf8("thresh_spinBox"));
+        thresh_spinBox->setMaximum(255);
+        thresh_spinBox->setValue(127);
+
+        horizontalLayout_7->addWidget(thresh_spinBox);
+
+
+        verticalLayout->addWidget(widget_7);
+
         widget_3 = new QWidget(centralwidget);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
         horizontalLayout_3 = new QHBoxLayout(widget_3);
@@ -102,45 +147,103 @@ public:
 
         horizontalLayout_3->addWidget(distance_horizontalSlider);
 
-        distance_SpinBox = new QDoubleSpinBox(widget_3);
-        distance_SpinBox->setObjectName(QString::fromUtf8("distance_SpinBox"));
+        distance_spinBox = new QSpinBox(widget_3);
+        distance_spinBox->setObjectName(QString::fromUtf8("distance_spinBox"));
 
-        horizontalLayout_3->addWidget(distance_SpinBox);
+        horizontalLayout_3->addWidget(distance_spinBox);
 
 
         verticalLayout->addWidget(widget_3);
+
+        widget_4 = new QWidget(centralwidget);
+        widget_4->setObjectName(QString::fromUtf8("widget_4"));
+        horizontalLayout_4 = new QHBoxLayout(widget_4);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        label_2 = new QLabel(widget_4);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        horizontalLayout_4->addWidget(label_2);
+
+        image_num_horizontalSlider = new QSlider(widget_4);
+        image_num_horizontalSlider->setObjectName(QString::fromUtf8("image_num_horizontalSlider"));
+        image_num_horizontalSlider->setMinimum(4);
+        image_num_horizontalSlider->setMaximum(88);
+        image_num_horizontalSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_4->addWidget(image_num_horizontalSlider);
+
+        image_num_spinBox = new QSpinBox(widget_4);
+        image_num_spinBox->setObjectName(QString::fromUtf8("image_num_spinBox"));
+        image_num_spinBox->setMinimum(4);
+        image_num_spinBox->setMaximum(88);
+
+        horizontalLayout_4->addWidget(image_num_spinBox);
+
+
+        verticalLayout->addWidget(widget_4);
+
+        widget_5 = new QWidget(centralwidget);
+        widget_5->setObjectName(QString::fromUtf8("widget_5"));
+        horizontalLayout_5 = new QHBoxLayout(widget_5);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        label_3 = new QLabel(widget_5);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout_5->addWidget(label_3);
+
+        horizontalSlider_2 = new QSlider(widget_5);
+        horizontalSlider_2->setObjectName(QString::fromUtf8("horizontalSlider_2"));
+        horizontalSlider_2->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_5->addWidget(horizontalSlider_2);
+
+        spinBox_2 = new QSpinBox(widget_5);
+        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
+
+        horizontalLayout_5->addWidget(spinBox_2);
+
+
+        verticalLayout->addWidget(widget_5);
+
+        widget_6 = new QWidget(centralwidget);
+        widget_6->setObjectName(QString::fromUtf8("widget_6"));
+        horizontalLayout_6 = new QHBoxLayout(widget_6);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        horizontalSpacer = new QSpacerItem(75, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer);
+
+        pub_scene_panel = new scene_panel(widget_6);
+        pub_scene_panel->setObjectName(QString::fromUtf8("pub_scene_panel"));
+        pub_scene_panel->setMinimumSize(QSize(150, 150));
+        pub_scene_panel->setMaximumSize(QSize(150, 150));
+        pub_scene_panel->setBaseSize(QSize(0, 0));
+
+        horizontalLayout_6->addWidget(pub_scene_panel);
+
+        horizontalSpacer_2 = new QSpacerItem(75, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_2);
+
+
+        verticalLayout->addWidget(widget_6);
 
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        publicize_gridLayout = new QGridLayout();
+        publicize_gridLayout->setObjectName(QString::fromUtf8("publicize_gridLayout"));
 
-        horizontalLayout->addItem(horizontalSpacer);
-
-        public_panel_1 = new output_panel(widget);
-        public_panel_1->setObjectName(QString::fromUtf8("public_panel_1"));
-        public_panel_1->setMinimumSize(QSize(379, 379));
-
-        horizontalLayout->addWidget(public_panel_1);
-
-        public_panel_2 = new output_panel(widget);
-        public_panel_2->setObjectName(QString::fromUtf8("public_panel_2"));
-        public_panel_2->setMinimumSize(QSize(379, 379));
-
-        horizontalLayout->addWidget(public_panel_2);
+        horizontalLayout->addLayout(publicize_gridLayout);
 
 
         verticalLayout->addWidget(widget);
 
-        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
         publicize->setCentralWidget(centralwidget);
         menubar = new QMenuBar(publicize);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 23));
+        menubar->setGeometry(QRect(0, 0, 354, 23));
         publicize->setMenuBar(menubar);
         statusbar = new QStatusBar(publicize);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -158,7 +261,10 @@ public:
         btn_process->setText(QApplication::translate("publicize", "process", nullptr));
         btn_play->setText(QApplication::translate("publicize", "play", nullptr));
         btn_output->setText(QApplication::translate("publicize", "output", nullptr));
-        label->setText(QApplication::translate("publicize", "\350\267\235\347\246\273", nullptr));
+        label_4->setText(QApplication::translate("publicize", "\344\272\256\345\272\246\351\230\210\345\200\274", nullptr));
+        label->setText(QApplication::translate("publicize", "\347\202\271\351\227\264\350\267\235\347\246\273", nullptr));
+        label_2->setText(QApplication::translate("publicize", "\345\270\247\346\225\260", nullptr));
+        label_3->setText(QApplication::translate("publicize", "\346\222\255\346\224\276\351\200\237\345\272\246", nullptr));
     } // retranslateUi
 
 };

@@ -34,6 +34,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
     add_zones_dialog.cpp \
     cjimage.cpp \
+    cjpoint.cpp \
     cjsection.cpp \
     clockedit.cpp \
     color.cpp \
@@ -49,13 +50,11 @@ SOURCES += main.cpp\
     laser_output.cpp \
     laser_setting.cpp \
     main_panel.cpp \
-    mainwindow.cpp \
     mainwindow1.cpp \
     mp3_player.cpp \
     mygraphicsview.cpp \
     output_panel.cpp \
     picture_trace.cpp \
-    point.cpp \
     pointattribute.cpp \
     project_panel.cpp \
     projection_zones.cpp \
@@ -68,9 +67,10 @@ SOURCES += main.cpp\
     toggle_button.cpp \
     yls_play_event.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     add_zones_dialog.h \
     cjimage.h \
+    cjpoint.h \
     cjsection.h \
     clockedit.h \
     color.h \
@@ -93,7 +93,6 @@ HEADERS  += mainwindow.h \
     mygraphicsview.h \
     output_panel.h \
     picture_trace.h \
-    point.h \
     pointattribute.h \
     project_panel.h \
     projection_zones.h \
@@ -108,7 +107,7 @@ HEADERS  += mainwindow.h \
     yls_play_event.h
 
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     add_zones_dialog.ui \
     clockedit.ui \
     hardware.ui \

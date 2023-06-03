@@ -4,7 +4,7 @@
 #include<QVector>
 
 
-class CJImage:public QVector<CJSection>
+class CJImage:public QVector<CJSection>//一张动画的所有图
 {
 public:
     CJImage(QWidget* parent=0);

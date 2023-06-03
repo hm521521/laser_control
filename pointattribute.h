@@ -1,6 +1,6 @@
 #ifndef POINTATTRIBUTE_H
 #define POINTATTRIBUTE_H
-#include "point.h"
+#include "cjpoint.h"
 
 class Configuration;
 class PointAttribute
@@ -16,11 +16,12 @@ public:
     unsigned char B;
     bool Selected;
     void ClearColor();
-    Point Zoom(double s);
+    CJPoint Zoom(double s);
     void move_by_z2();
     void get_color(Configuration *config,unsigned char &r,unsigned char&g,unsigned char &b,unsigned char &gray);
-    Point get_point_by_config(Configuration *config,int &mix, int &miy);
-    Point get_point_by_config(Configuration *config);
+    CJPoint get_point_by_config(Configuration *config,int &mix, int &miy);
+    CJPoint get_point_by_config(Configuration *config);
+    PointAttribute translate(int dx,int dy);
 };
 
 #endif // POINTATTRIBUTE_H

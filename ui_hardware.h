@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'hardware.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.7
+** Created by: Qt User Interface Compiler version 5.12.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
@@ -60,47 +59,47 @@ public:
     void setupUi(QMainWindow *hardware)
     {
         if (hardware->objectName().isEmpty())
-            hardware->setObjectName(QStringLiteral("hardware"));
+            hardware->setObjectName(QString::fromUtf8("hardware"));
         hardware->resize(758, 508);
         centralwidget = new QWidget(hardware);
-        centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         widget_3 = new QWidget(centralwidget);
-        widget_3->setObjectName(QStringLiteral("widget_3"));
+        widget_3->setObjectName(QString::fromUtf8("widget_3"));
         horizontalLayout_3 = new QHBoxLayout(widget_3);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         widget = new QWidget(widget_3);
-        widget->setObjectName(QStringLiteral("widget"));
+        widget->setObjectName(QString::fromUtf8("widget"));
         horizontalLayout_2 = new QHBoxLayout(widget);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         Plus_Button = new QPushButton(widget);
-        Plus_Button->setObjectName(QStringLiteral("Plus_Button"));
+        Plus_Button->setObjectName(QString::fromUtf8("Plus_Button"));
 
         horizontalLayout_2->addWidget(Plus_Button);
 
         Up_Button = new QPushButton(widget);
-        Up_Button->setObjectName(QStringLiteral("Up_Button"));
+        Up_Button->setObjectName(QString::fromUtf8("Up_Button"));
 
         horizontalLayout_2->addWidget(Up_Button);
 
         Down_Button = new QPushButton(widget);
-        Down_Button->setObjectName(QStringLiteral("Down_Button"));
+        Down_Button->setObjectName(QString::fromUtf8("Down_Button"));
 
         horizontalLayout_2->addWidget(Down_Button);
 
         Delete_button = new QPushButton(widget);
-        Delete_button->setObjectName(QStringLiteral("Delete_button"));
+        Delete_button->setObjectName(QString::fromUtf8("Delete_button"));
 
         horizontalLayout_2->addWidget(Delete_button);
 
         Big_Icon = new QPushButton(widget);
-        Big_Icon->setObjectName(QStringLiteral("Big_Icon"));
+        Big_Icon->setObjectName(QString::fromUtf8("Big_Icon"));
 
         horizontalLayout_2->addWidget(Big_Icon);
 
         Small_Icon = new QPushButton(widget);
-        Small_Icon->setObjectName(QStringLiteral("Small_Icon"));
+        Small_Icon->setObjectName(QString::fromUtf8("Small_Icon"));
 
         horizontalLayout_2->addWidget(Small_Icon);
 
@@ -108,7 +107,7 @@ public:
         horizontalLayout_3->addWidget(widget);
 
         Refresh_Button = new QPushButton(widget_3);
-        Refresh_Button->setObjectName(QStringLiteral("Refresh_Button"));
+        Refresh_Button->setObjectName(QString::fromUtf8("Refresh_Button"));
 
         horizontalLayout_3->addWidget(Refresh_Button);
 
@@ -120,20 +119,20 @@ public:
         verticalLayout->addWidget(widget_3);
 
         tableView = new hardware_table(centralwidget);
-        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setObjectName(QString::fromUtf8("tableView"));
 
         verticalLayout->addWidget(tableView);
 
         widget_2 = new QWidget(centralwidget);
-        widget_2->setObjectName(QStringLiteral("widget_2"));
+        widget_2->setObjectName(QString::fromUtf8("widget_2"));
         horizontalLayout = new QHBoxLayout(widget_2);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
         pushButton_7 = new QPushButton(widget_2);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
 
         horizontalLayout->addWidget(pushButton_7);
 
@@ -142,20 +141,20 @@ public:
 
         hardware->setCentralWidget(centralwidget);
         menubar = new QMenuBar(hardware);
-        menubar->setObjectName(QStringLiteral("menubar"));
+        menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 758, 23));
         menu = new QMenu(menubar);
-        menu->setObjectName(QStringLiteral("menu"));
+        menu->setObjectName(QString::fromUtf8("menu"));
         menu_2 = new QMenu(menubar);
-        menu_2->setObjectName(QStringLiteral("menu_2"));
+        menu_2->setObjectName(QString::fromUtf8("menu_2"));
         menu_3 = new QMenu(menubar);
-        menu_3->setObjectName(QStringLiteral("menu_3"));
+        menu_3->setObjectName(QString::fromUtf8("menu_3"));
         hardware->setMenuBar(menubar);
         statusbar = new QStatusBar(hardware);
-        statusbar->setObjectName(QStringLiteral("statusbar"));
+        statusbar->setObjectName(QString::fromUtf8("statusbar"));
         hardware->setStatusBar(statusbar);
         toolBar = new QToolBar(hardware);
-        toolBar->setObjectName(QStringLiteral("toolBar"));
+        toolBar->setObjectName(QString::fromUtf8("toolBar"));
         hardware->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menubar->addAction(menu->menuAction());
@@ -169,19 +168,19 @@ public:
 
     void retranslateUi(QMainWindow *hardware)
     {
-        hardware->setWindowTitle(QApplication::translate("hardware", "MainWindow", Q_NULLPTR));
-        Plus_Button->setText(QApplication::translate("hardware", "+", Q_NULLPTR));
-        Up_Button->setText(QApplication::translate("hardware", "\342\206\221", Q_NULLPTR));
-        Down_Button->setText(QApplication::translate("hardware", "\342\206\223", Q_NULLPTR));
-        Delete_button->setText(QApplication::translate("hardware", "\303\227", Q_NULLPTR));
-        Big_Icon->setText(QApplication::translate("hardware", "\343\200\223", Q_NULLPTR));
-        Small_Icon->setText(QApplication::translate("hardware", "\342\230\260", Q_NULLPTR));
-        Refresh_Button->setText(QApplication::translate("hardware", "Refresh list and reset controllers", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("hardware", "PushButton", Q_NULLPTR));
-        menu->setTitle(QApplication::translate("hardware", "\347\241\254\344\273\266", Q_NULLPTR));
-        menu_2->setTitle(QApplication::translate("hardware", "\345\210\206\347\261\273", Q_NULLPTR));
-        menu_3->setTitle(QApplication::translate("hardware", "\350\247\206\345\233\276", Q_NULLPTR));
-        toolBar->setWindowTitle(QApplication::translate("hardware", "toolBar", Q_NULLPTR));
+        hardware->setWindowTitle(QApplication::translate("hardware", "MainWindow", nullptr));
+        Plus_Button->setText(QApplication::translate("hardware", "+", nullptr));
+        Up_Button->setText(QApplication::translate("hardware", "\342\206\221", nullptr));
+        Down_Button->setText(QApplication::translate("hardware", "\342\206\223", nullptr));
+        Delete_button->setText(QApplication::translate("hardware", "\303\227", nullptr));
+        Big_Icon->setText(QApplication::translate("hardware", "\343\200\223", nullptr));
+        Small_Icon->setText(QApplication::translate("hardware", "\342\230\260", nullptr));
+        Refresh_Button->setText(QApplication::translate("hardware", "Refresh list and reset controllers", nullptr));
+        pushButton_7->setText(QApplication::translate("hardware", "PushButton", nullptr));
+        menu->setTitle(QApplication::translate("hardware", "\347\241\254\344\273\266", nullptr));
+        menu_2->setTitle(QApplication::translate("hardware", "\345\210\206\347\261\273", nullptr));
+        menu_3->setTitle(QApplication::translate("hardware", "\350\247\206\345\233\276", nullptr));
+        toolBar->setWindowTitle(QApplication::translate("hardware", "toolBar", nullptr));
     } // retranslateUi
 
 };

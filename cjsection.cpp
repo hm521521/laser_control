@@ -1,9 +1,9 @@
 #include "cjsection.h"
-#include "point.h"
+#include "cjpoint.h"
 #include <QPainter>
 #include"cmath"
 
-int get_intersection(Point a, Point b, Point c, Point d, Point& intersection)//获取交叉点
+int get_intersection(CJPoint a, CJPoint b, CJPoint c, CJPoint d, CJPoint& intersection)//获取交叉点
 {
     if (std::abs(b.X - a.Y) + std::abs(b.X - a.X) + std::abs(d.Y - c.Y) + std::abs(d.X - c.X) == 0)
     {
@@ -71,13 +71,13 @@ void CJSection::draw_picture(QPainter *painter, int x, int y, int width, int hei
         for(int i=1;i<(int)this->size();i++)
         {
             PointAttribute& p1=this->at(i-1);//取出每一个点
-            Point pt1=p1.Zoom(scale);//调整点p1的位置，把位置保存在Point类对象中
+            CJPoint pt1=p1.Zoom(scale);//调整点p1的位置，把位置保存在Point类对象中
             QColor color=QColor(p1.R,p1.G,p1.B);
 
             painter->setPen(color);
             painter->setBrush(color);
             PointAttribute & p2=this->at(i);//取出当前点的下一个点
-            Point pt2=p2.Zoom(scale);
+            CJPoint pt2=p2.Zoom(scale);
             if(color.red()!=0||color.green()!=0||color.blue()!=0)
             {
                 if(pt2==pt1)
@@ -130,8 +130,8 @@ std::vector<ishow_data> CJSection::globalprocessing(Configuration *config)
     {
         return out_data;
     }
-    std::vector<Point> array = {Point(0, 0), Point(0, 255), Point(255, 255), Point(255, 0), Point(0, 0)};
-    Point item=Point(0,0);
+    std::vector<CJPoint> array = {CJPoint(0, 0), CJPoint(0, 255), CJPoint(255, 255), CJPoint(255, 0), CJPoint(0, 0)};
+    CJPoint item=CJPoint(0,0);
     for(int i=0;i<this->size();i++)
     {
         unsigned char red;
@@ -139,7 +139,7 @@ std::vector<ishow_data> CJSection::globalprocessing(Configuration *config)
         unsigned char blue;
         unsigned char gray;
         this->at(i).get_color(config,red,green,blue,gray);//把配置读到red,green等四个参数里
-        Point pt = (*this)[i].get_point_by_config(config, (*this)[i].X, (*this)[i].Y);//从config里获取点
+        CJPoint pt = (*this)[i].get_point_by_config(config, (*this)[i].X, (*this)[i].Y);//从config里获取点
         (*this)[i].R = red;
         (*this)[i].G = green;
         (*this)[i].B = blue;
@@ -150,7 +150,7 @@ std::vector<ishow_data> CJSection::globalprocessing(Configuration *config)
             {
                 break;
             }
-            Point b4 = (*this)[i + 1].get_point_by_config(config);
+            CJPoint b4 = (*this)[i + 1].get_point_by_config(config);
             if (b4.X < 0 || b4.X > 255 || b4.Y < 0 || b4.Y > 255)
             {
                 for (int j = 0; j < array.size() - 1; j++)
@@ -178,8 +178,8 @@ std::vector<ishow_data> CJSection::globalprocessing(Configuration *config)
         }
         else
         {
-            Point b4 = (*this)[i + 1].get_point_by_config(config);
-            std::vector<Point> list;
+            CJPoint b4 = (*this)[i + 1].get_point_by_config(config);
+            std::vector<CJPoint> list;
             for (int k = 0; k < array.size() - 1; k++)
             {
                 if (get_intersection(pt, b4, array[k], array[k + 1], item) == 1)

@@ -22,7 +22,7 @@ void PointAttribute::ClearColor()
     this->B=0;
 }
 
-Point PointAttribute::Zoom(double s)//调整点的位置
+CJPoint PointAttribute::Zoom(double s)//调整点的位置
 {
     return {static_cast<int>(static_cast<double>(this->X*s)),static_cast<int>(static_cast<double>(Y*s))};
 }
@@ -170,7 +170,7 @@ void PointAttribute::get_color(Configuration *config, unsigned char &r, unsigned
     }
 }
 
-Point PointAttribute::get_point_by_config(Configuration *config, int &mix, int &miy)
+CJPoint PointAttribute::get_point_by_config(Configuration *config, int &mix, int &miy)
 {
     float fx = static_cast<float>(this->X);
     float fy = static_cast<float>(this->Y);
@@ -208,7 +208,7 @@ Point PointAttribute::get_point_by_config(Configuration *config, int &mix, int &
     return { miy, mix };
 }
 
-Point PointAttribute::get_point_by_config(Configuration *config)
+CJPoint PointAttribute::get_point_by_config(Configuration *config)
 {
     float fx = static_cast<float>(this->X);
     float fy = static_cast<float>(this->Y);
@@ -241,4 +241,9 @@ Point PointAttribute::get_point_by_config(Configuration *config)
         return { static_cast<int>(fy), static_cast<int>(fx) };
     }
 
+}
+
+PointAttribute PointAttribute::translate(int dx, int dy)
+{
+    return PointAttribute(X+dx,Y+dy,Z,R,G,B);
 }
