@@ -35,13 +35,15 @@ private slots:
     void on_btn_process_clicked();
     void on_btn_play_clicked();
 
+    void on_thresh_checkBox_stateChanged(int arg1);
+
 private:
     Ui::publicize *ui;
     QString img_src;
     QString save_dir="./publicize/";
     QString m_type="publicize";
     int point_distance(cv::Point p1, cv::Point p2);
-    double distance = 10;
+    double distance = 3;
     cv::Mat thresh_dst;
     cv::Mat src_dst;
     std::vector<std::vector<cv::Point>> contours;

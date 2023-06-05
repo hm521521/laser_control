@@ -48,9 +48,9 @@ void publicize::datainit()
 {
 //    ui->public_panel_1->scene()->clear();
 //    ui->public_panel_2->scene()->clear();
-    init_sliderAndspin(ui->distance_horizontalSlider, ui->distance_spinBox, 0, 50, 1, 0.1, 0);
+    init_sliderAndspin(ui->distance_horizontalSlider, ui->distance_spinBox, 0, 50, 1, 1, 3);
     setAllbtn_style();
-    ui->distance_horizontalSlider->setValue(distance);
+//    ui->distance_horizontalSlider->setValue(distance);
     contours.clear();
     position.clear();
     m_scene->clear();
@@ -124,7 +124,9 @@ void publicize::on_btn_open_clicked()
     auto srcmaxsize=max(img.size().width,img.size().height);
     auto graphicminsize=min(ui->publicize_gridLayout->cellRect(0,0).width(),ui->publicize_gridLayout->cellRect(0,0).height());
     double scale=srcmaxsize/graphicminsize;
-    cv::resize(gray,src_dst,Size(img.size().width/scale,img.size().height/scale),0,0);//调整大小
+    Mat dst;
+    cv::resize(gray,dst,Size(img.size().width/scale,img.size().height/scale),0,0);//调整大小
+    GaussianBlur(dst,src_dst,Size(3,3),5);
 //    Mat dst1;
 }
 
@@ -137,64 +139,67 @@ int publicize::point_distance(cv::Point p1, cv::Point p2)
 void publicize::addeffect()
 {
 //    int effect_count = image_num;
-    effect *m_effect;
+      effect *m_effect;
 //                    effect* m_effect = effect::LoadEffect(br);
 //                    this->push_back(effect);
-          EffectType type=EffectType::ET_PICTURE;//初始化一个type
-          int idx = 0;
-          int start_frame_index = 0;
-          int frame_length = image_num;
-          PictureInfo temp_var(type,idx);
-          m_effect=effect::CreateEffect(&temp_var);
-        if(m_effect !=nullptr)
-        {
-            m_effect->Param.param_data[0]=0;
-            m_effect->Param.param_data[1]=image_num;
-            m_effect->Param.param_data[2]=1;
-            m_effect->Param.param_data[3]=1;
-            int picture_count=image_num;
+      EffectType type=EffectType::ET_PICTURE;//初始化一个type
+      int idx = 0;
+      int start_frame_index = 0;
+      int frame_length = image_num;
+      PictureInfo temp_var(type,idx);
+      m_effect=effect::CreateEffect(&temp_var);
+    if(m_effect !=nullptr)
+    {
+        m_effect->Param.param_data[0]=0;
+        m_effect->Param.param_data[1]=image_num;
+        m_effect->Param.param_data[2]=1;
+        m_effect->Param.param_data[3]=1;
+        int picture_count=image_num;
 //            strin.readRawData((char*)&picture_count, sizeof(int));//读图片数量，.isw文件里有的
-            m_effect->Load();
+        m_effect->Load();
 //                        m_effect->get_pictures().clear();//把当前效果对象的m_pictures清空，m_pictures是CJImage类型，CJImage是容器
 
-            CJImage m_pictures=m_effect->get_pictures();
+        CJImage m_pictures=m_effect->get_pictures();
 
-            for (int k = 0; k < picture_count; k++)
+        for (int k = 0; k < picture_count; k++)
+        {
+            int point_count = position.size();//读第一幅图点的数量
+
+            CJSection list;//定义点属性列表（一张图的所有点）
+            for (int l = 0; l < point_count; l++)//读每个点的信息
             {
-                int point_count = position.size();//读第一幅图点的数量
-
-                CJSection list;//定义点属性列表（一张图的所有点）
-                for (int l = 0; l < point_count; l++)//读每个点的信息
-                {
-                    double graphicminsize=max(ui->publicize_gridLayout->cellRect(0,0).width(),ui->publicize_gridLayout->cellRect(0,0).height());
-                    double scenesize=min(ui->pub_scene_panel->size().width(),ui->pub_scene_panel->size().height());
-                    double scale=graphicminsize/scenesize;
-                    auto x = position.at(l).X*scale;//点的横坐标
-                    auto y = position.at(l).Y*scale;//点的纵坐标
-                    //点的三个通道的值
-                    unsigned char r = 0;
-                    unsigned char g = 255;
-                    unsigned char b = 0;
-                    PointAttribute tempVar(x, y, 0, r, g, b);//把读到的点的信息存入临时点的属性对象
-                    list.push_back(tempVar);
-                }
-                m_pictures.push_back(list);
+                double graphicminsize=max(ui->publicize_gridLayout->cellRect(0,0).width(),ui->publicize_gridLayout->cellRect(0,0).height());
+                double scenesize=min(ui->pub_scene_panel->size().width(),ui->pub_scene_panel->size().height());
+                double scale=graphicminsize/scenesize;
+                auto x = position.at(l).X*scale;//点的横坐标
+                auto y = position.at(l).Y*scale;//点的纵坐标
+                //点的三个通道的值
+                unsigned char r = 0;
+                unsigned char g = 255;
+                unsigned char b = 0;
+                PointAttribute tempVar(x, y, 0, r, g, b);//把读到的点的信息存入临时点的属性对象
+                list.push_back(tempVar);
             }
-            m_effect->set_pictures(m_pictures);
-            m_effect->set_type(type);
-            m_effect->set_index(idx);
-            m_effect->set_start_index(start_frame_index);
-            m_effect->set_frame_length(frame_length);
-            m_pictures.clear();
+            m_pictures.push_back(list);
         }
-
-        m_scene->push_back(m_effect);
+        m_effect->set_pictures(m_pictures);
+        m_effect->set_type(type);
+        m_effect->set_index(idx);
+        m_effect->set_start_index(start_frame_index);
+        m_effect->set_frame_length(frame_length);
+        m_pictures.clear();
+    }
+    m_scene->push_back(m_effect);
 }
 
 void publicize::on_btn_process_clicked()
 {
-
-    threshold(src_dst,thresh_dst,thresh,255,THRESH_BINARY);
+//    if(ui->thresh_checkBox->isChecked())
+    m_scene->clear();
+    if(ui->thresh_checkBox->isChecked())
+        adaptiveThreshold(src_dst,thresh_dst,255,CV_ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY,3,5);
+    else
+        threshold(src_dst,thresh_dst,thresh,255,THRESH_BINARY);
     imshow("gaussian",thresh_dst);
     vector<Vec4i> hierarchy;
     findContours(thresh_dst, contours, hierarchy, RETR_CCOMP, CHAIN_APPROX_SIMPLE);
@@ -236,31 +241,29 @@ void publicize::on_btn_process_clicked()
     ui->pub_scene_panel->set_data_model(m_scene);
     ui->pub_scene_panel->do_draw(true);
 
-
-
-//    for(int i=0;i<image_num;i++)
-//    {
-//        for(int j=0;j<temp_sec.size();j++)
-//        {
-////            QRect scenerect=ui->publicize_gridLayout->cellRect(floor(j/laser_column_num),j%laser_column_num);
-////            auto point=temp_sec[i].translate(-laser_row_num*scenerect.width()/2,-laser_column_num*scenerect.height()/2);
-////            auto point=temp_sec[i].translate(-scenerect.width()/2,-scenerect.height()/2);
-//            auto point=temp_sec[i];
-//            m_section.push_back(point);
-//        }
-//        for(int k=0;k<m_output_panels.size();k++)
-//        {
-////            m_output_panels.at(k)->m_picture=m_section;
-////            m_output_panels.at(k)->do_draw();
-//        }
-////        m_section.push_back()
-//    }
-
 }
 
 
 void publicize::on_btn_play_clicked()
 {
+
+}
+
+
+void publicize::on_thresh_checkBox_stateChanged(int arg1)
+{
+    if(arg1==2)
+    {
+        ui->thresh_horizontalSlider->setEnabled(false);
+        ui->thresh_spinBox->setEnabled(false);
+        on_btn_process_clicked();
+    }
+    else if(arg1==0)
+    {
+        ui->thresh_horizontalSlider->setEnabled(true);
+        ui->thresh_spinBox->setEnabled(true);
+        on_btn_process_clicked();
+    }
 
 }
 

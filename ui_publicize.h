@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -43,6 +44,7 @@ public:
     QLabel *label_4;
     QSlider *thresh_horizontalSlider;
     QSpinBox *thresh_spinBox;
+    QCheckBox *thresh_checkBox;
     QWidget *widget_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label;
@@ -116,6 +118,7 @@ public:
 
         thresh_horizontalSlider = new QSlider(widget_7);
         thresh_horizontalSlider->setObjectName(QString::fromUtf8("thresh_horizontalSlider"));
+        thresh_horizontalSlider->setEnabled(true);
         thresh_horizontalSlider->setMaximum(255);
         thresh_horizontalSlider->setValue(127);
         thresh_horizontalSlider->setOrientation(Qt::Horizontal);
@@ -128,6 +131,11 @@ public:
         thresh_spinBox->setValue(127);
 
         horizontalLayout_7->addWidget(thresh_spinBox);
+
+        thresh_checkBox = new QCheckBox(widget_7);
+        thresh_checkBox->setObjectName(QString::fromUtf8("thresh_checkBox"));
+
+        horizontalLayout_7->addWidget(thresh_checkBox);
 
 
         verticalLayout->addWidget(widget_7);
@@ -143,12 +151,14 @@ public:
 
         distance_horizontalSlider = new QSlider(widget_3);
         distance_horizontalSlider->setObjectName(QString::fromUtf8("distance_horizontalSlider"));
+        distance_horizontalSlider->setValue(3);
         distance_horizontalSlider->setOrientation(Qt::Horizontal);
 
         horizontalLayout_3->addWidget(distance_horizontalSlider);
 
         distance_spinBox = new QSpinBox(widget_3);
         distance_spinBox->setObjectName(QString::fromUtf8("distance_spinBox"));
+        distance_spinBox->setValue(3);
 
         horizontalLayout_3->addWidget(distance_spinBox);
 
@@ -262,6 +272,7 @@ public:
         btn_play->setText(QApplication::translate("publicize", "play", nullptr));
         btn_output->setText(QApplication::translate("publicize", "output", nullptr));
         label_4->setText(QApplication::translate("publicize", "\344\272\256\345\272\246\351\230\210\345\200\274", nullptr));
+        thresh_checkBox->setText(QApplication::translate("publicize", "\350\207\252\345\212\250", nullptr));
         label->setText(QApplication::translate("publicize", "\347\202\271\351\227\264\350\267\235\347\246\273", nullptr));
         label_2->setText(QApplication::translate("publicize", "\345\270\247\346\225\260", nullptr));
         label_3->setText(QApplication::translate("publicize", "\346\222\255\346\224\276\351\200\237\345\272\246", nullptr));
