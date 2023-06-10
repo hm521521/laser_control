@@ -25,18 +25,31 @@ publicize::publicize(QWidget *parent) :
             QGraphicsScene *scene=new QGraphicsScene(scenerect);
             panel->setScene(scene);
             m_output_panels.push_back(panel);
-//            qreal dx=laser_row_num*scenerect.width()/2-scenerect.width()*row-scenerect.width()/2;
-//            qreal dy=laser_column_num*scenerect.height()/2-scenerect.height()*col-scenerect.height()/2;
-//            panel->translate(dx,dy);
         }
     }
-
+//    int wid=0;
+//    int hei=0;
+//    for(int row=0;row<laser_row_num;row++)
+//    {
+//        for(int col=0;col<laser_column_num;col++)
+//        {
+//            QRect scenerect=ui->publicize_gridLayout->cellRect(row,col);
+//            wid=wid+scenerect.width();
+//            hei=hei+scenerect.height();
+//        }
+//    }
 //    ui->public_panel_1->setScene(scene);
 //    QGraphicsScene *scene1=new QGraphicsScene(this);
 //    ui->public_panel_2->setScene(scene1);
     connectSliderAndSpin(ui->distance_horizontalSlider,ui->distance_spinBox);
     connectSliderAndSpin(ui->image_num_horizontalSlider,ui->image_num_spinBox);
     connectSliderAndSpin(ui->thresh_horizontalSlider,ui->thresh_spinBox);
+    publicize_worker *worker=new publicize_worker();
+    worker->moveToThread(&thread);
+    connect(&thread,&QThread::finished,&thread,&QThread::deleteLater);
+    connect(this,&publicize::operate,worker,&publicize_worker::run);
+    connect(worker,&publicize_worker::play,this,&publicize::on_thread_update);
+    thread.start();
 }
 
 publicize::~publicize()
@@ -49,6 +62,7 @@ void publicize::datainit()
 //    ui->public_panel_1->scene()->clear();
 //    ui->public_panel_2->scene()->clear();
     init_sliderAndspin(ui->distance_horizontalSlider, ui->distance_spinBox, 0, 50, 1, 1, 3);
+    init_sliderAndspin(ui->image_num_horizontalSlider, ui->image_num_spinBox, 1, 8, 1, 1, 1);
     setAllbtn_style();
 //    ui->distance_horizontalSlider->setValue(distance);
     contours.clear();
@@ -98,10 +112,10 @@ void publicize::connectSliderAndSpin(QSlider *slider, QSpinBox *spin)
         if(spin->objectName()=="distance_spinBox")
             this->distance = spin->value();
         else if(spin->objectName()=="image_num_spinBox")
-            this->image_num=spin->value();
+            this->image_num=spin->value()*4;
         else if(spin->objectName()=="thresh_spinBox")
             this->thresh=spin->value();
-        if(ui->btn_process->isChecked())
+        if(ui->btn_process->getValue())
             on_btn_process_clicked();
     });
 }
@@ -124,9 +138,9 @@ void publicize::on_btn_open_clicked()
     auto srcmaxsize=max(img.size().width,img.size().height);
     auto graphicminsize=min(ui->publicize_gridLayout->cellRect(0,0).width(),ui->publicize_gridLayout->cellRect(0,0).height());
     double scale=srcmaxsize/graphicminsize;
-    Mat dst;
-    cv::resize(gray,dst,Size(img.size().width/scale,img.size().height/scale),0,0);//调整大小
-    GaussianBlur(dst,src_dst,Size(3,3),5);
+//    Mat dst;
+    cv::resize(gray,src_dst,Size(img.size().width/scale,img.size().height/scale),0,0);//调整大小
+//    GaussianBlur(dst,src_dst,Size(3,3),5);
 //    Mat dst1;
 }
 
@@ -136,16 +150,18 @@ int publicize::point_distance(cv::Point p1, cv::Point p2)
     return qFloor(ans);
 }
 
-void publicize::addeffect()
+void publicize::addeffect(int idx)
 {
 //    int effect_count = image_num;
+//      int x_off=(ui->publicize_gridLayout->cellRect(0,0).width()/(image_num/4))*(idx-image_num/2);
+    int x_off=ui->publicize_gridLayout->cellRect(0,0).width()+(ui->publicize_gridLayout->cellRect(0,0).width())*(idx-image_num/2);
       effect *m_effect;
 //                    effect* m_effect = effect::LoadEffect(br);
 //                    this->push_back(effect);
       EffectType type=EffectType::ET_PICTURE;//初始化一个type
-      int idx = 0;
-      int start_frame_index = 0;
-      int frame_length = image_num;
+//      int idx = 0;
+      int start_frame_index = idx;
+      int frame_length = 0;
       PictureInfo temp_var(type,idx);
       m_effect=effect::CreateEffect(&temp_var);
     if(m_effect !=nullptr)
@@ -171,7 +187,7 @@ void publicize::addeffect()
                 double graphicminsize=max(ui->publicize_gridLayout->cellRect(0,0).width(),ui->publicize_gridLayout->cellRect(0,0).height());
                 double scenesize=min(ui->pub_scene_panel->size().width(),ui->pub_scene_panel->size().height());
                 double scale=graphicminsize/scenesize;
-                auto x = position.at(l).X*scale;//点的横坐标
+                auto x = position.at(l).X*scale+x_off;//点的横坐标
                 auto y = position.at(l).Y*scale;//点的纵坐标
                 //点的三个通道的值
                 unsigned char r = 0;
@@ -192,9 +208,8 @@ void publicize::addeffect()
     m_scene->push_back(m_effect);
 }
 
-void publicize::on_btn_process_clicked()
+void publicize::display()
 {
-//    if(ui->thresh_checkBox->isChecked())
     m_scene->clear();
     if(ui->thresh_checkBox->isChecked())
         adaptiveThreshold(src_dst,thresh_dst,255,CV_ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY,3,5);
@@ -220,17 +235,20 @@ void publicize::on_btn_process_clicked()
             {
                 if(j+1==contours[i].size()){
                     position.push_back(CJPoint(pre.x,pre.y));
+                    position.push_back(CJPoint(pre.x+1,pre.y));
                     position.push_back(CJPoint(now.x,now.y));
                 }
                 else{
                     position.push_back(CJPoint(pre.x,pre.y));
+                    position.push_back(CJPoint(pre.x+1,pre.y));
                 }
                 cv::line(kongbai,pre,now,cv::Scalar(0, 255, 0), 1);
                 cv::circle(kongbai,now,1,cv::Scalar(0,255, 0), 2);
                 pre=now;
                 sum++;
             }
-            addeffect();
+            for(int k=0;k<image_num;k++)
+                addeffect(k);
             position.clear();
         }
     }
@@ -240,12 +258,41 @@ void publicize::on_btn_process_clicked()
     ui->pub_scene_panel->setScene(ui->pub_scene_panel->m_graphicsScene);
     ui->pub_scene_panel->set_data_model(m_scene);
     ui->pub_scene_panel->do_draw(true);
+}
 
+void publicize::SetSliderAndSpinEnable(QSlider *slider, QSpinBox *spin, bool flag)
+{
+    slider->setEnabled(flag);
+    spin->setEnabled(flag);
+}
+
+void publicize::on_btn_process_clicked()
+{
+    if(ui->btn_process->isChecked())
+    {
+        SetSliderAndSpinEnable(ui->distance_horizontalSlider,ui->distance_spinBox,true);
+        display();
+    }
+    else
+        SetSliderAndSpinEnable(ui->distance_horizontalSlider,ui->distance_spinBox,false);
+//        ui->distance_horizontalSlider->setEnabled(false);
 }
 
 
 void publicize::on_btn_play_clicked()
 {
+    if(ui->btn_play->isChecked())
+    {
+        emit operate(true);
+        ui->btn_play->setText("stop");
+        SetSliderAndSpinEnable(ui->image_num_horizontalSlider,ui->image_num_spinBox,false);
+    }
+    else
+    {
+        emit operate(false);
+        ui->btn_play->setText("play");
+        SetSliderAndSpinEnable(ui->image_num_horizontalSlider,ui->image_num_spinBox,true);
+    }
 
 }
 
@@ -267,3 +314,57 @@ void publicize::on_thresh_checkBox_stateChanged(int arg1)
 
 }
 
+void publicize::on_thread_update()
+{
+
+    for(int i=0;i<m_output_panels.size();i++)
+    {
+        m_output_panels.at(i)->m_picture.clear();
+        CJSection *output_picture=&m_output_panels.at(i)->m_picture;
+        if(ui->btn_play->isChecked())
+        {
+            CJSection picture;
+//            int pic_dx=-(i%laser_column_num)*(m_output_panels.at(i)->rect().width()+m_output_panels.at(i)->rect().width()*2/ui->image_num_horizontalSlider->value());
+            int pic_dx=0;
+            if(i%laser_column_num!=0)
+                pic_dx=ui->publicize_gridLayout->cellRect(0,0).x()-ui->publicize_gridLayout->cellRect(i/laser_column_num,i%laser_column_num).x()-ui->publicize_gridLayout->cellRect(0,0).width()/4;
+            int pic_dy=0;
+            m_scene->render(&picture,m_frame_index);//从m_scene里获取到的CJsection
+            for(int j=0;j<picture.size();j++)
+            {
+                picture[j]=picture[j].translate(pic_dx,pic_dy);
+            }
+            if(picture.size()>0)
+            {
+                output_picture->insert(output_picture->end(),picture.begin(),picture.end());
+            }
+
+        }
+        m_output_panels.at(i)->do_draw();
+    }
+    m_frame_index++;
+    if(m_frame_index==image_num)
+        m_frame_index=0;
+}
+
+
+
+
+publicize_worker::publicize_worker(QObject *parent)
+{
+
+}
+
+publicize_worker::~publicize_worker()
+{
+
+}
+
+void publicize_worker::run(bool flag)
+{
+    while(true)
+    {
+        emit play();
+        QThread::msleep(100);
+    }
+}

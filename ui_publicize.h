@@ -25,6 +25,7 @@
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <main_panel.h>
+#include "toggle_button.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,7 +37,7 @@ public:
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *btn_open;
-    QPushButton *btn_process;
+    toggle_button *btn_process;
     QPushButton *btn_play;
     QPushButton *btn_output;
     QWidget *widget_7;
@@ -89,7 +90,7 @@ public:
 
         horizontalLayout_2->addWidget(btn_open);
 
-        btn_process = new QPushButton(widget_2);
+        btn_process = new toggle_button(widget_2);
         btn_process->setObjectName(QString::fromUtf8("btn_process"));
 
         horizontalLayout_2->addWidget(btn_process);
@@ -119,7 +120,7 @@ public:
         thresh_horizontalSlider = new QSlider(widget_7);
         thresh_horizontalSlider->setObjectName(QString::fromUtf8("thresh_horizontalSlider"));
         thresh_horizontalSlider->setEnabled(true);
-        thresh_horizontalSlider->setMaximum(255);
+        thresh_horizontalSlider->setMaximum(254);
         thresh_horizontalSlider->setValue(127);
         thresh_horizontalSlider->setOrientation(Qt::Horizontal);
 
@@ -127,7 +128,7 @@ public:
 
         thresh_spinBox = new QSpinBox(widget_7);
         thresh_spinBox->setObjectName(QString::fromUtf8("thresh_spinBox"));
-        thresh_spinBox->setMaximum(255);
+        thresh_spinBox->setMaximum(254);
         thresh_spinBox->setValue(127);
 
         horizontalLayout_7->addWidget(thresh_spinBox);
@@ -176,16 +177,21 @@ public:
 
         image_num_horizontalSlider = new QSlider(widget_4);
         image_num_horizontalSlider->setObjectName(QString::fromUtf8("image_num_horizontalSlider"));
-        image_num_horizontalSlider->setMinimum(4);
-        image_num_horizontalSlider->setMaximum(88);
+        image_num_horizontalSlider->setMinimum(1);
+        image_num_horizontalSlider->setMaximum(8);
+        image_num_horizontalSlider->setSingleStep(1);
+        image_num_horizontalSlider->setPageStep(10);
+        image_num_horizontalSlider->setValue(1);
         image_num_horizontalSlider->setOrientation(Qt::Horizontal);
 
         horizontalLayout_4->addWidget(image_num_horizontalSlider);
 
         image_num_spinBox = new QSpinBox(widget_4);
         image_num_spinBox->setObjectName(QString::fromUtf8("image_num_spinBox"));
-        image_num_spinBox->setMinimum(4);
-        image_num_spinBox->setMaximum(88);
+        image_num_spinBox->setMinimum(1);
+        image_num_spinBox->setMaximum(8);
+        image_num_spinBox->setSingleStep(1);
+        image_num_spinBox->setValue(1);
 
         horizontalLayout_4->addWidget(image_num_spinBox);
 

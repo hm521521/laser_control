@@ -58,3 +58,26 @@ void output_item::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     item_section->draw_picture(painter,-5,-5,width,height);
 
 }
+
+split_panel::split_panel(QWidget *parent)
+{
+
+}
+
+split_panel::~split_panel()
+{
+
+}
+
+void split_panel::do_draw()
+{
+    m_output_item=new output_item(this);
+    m_graphicsScene->addItem(m_output_item);
+    m_output_item->item_section=&m_picture;
+    m_output_item->update();//刷新面板会产生窗口重绘事件
+}
+
+void split_panel::setGraphicsScene(QGraphicsScene *scene)
+{
+    m_graphicsScene=scene;
+}

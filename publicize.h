@@ -29,14 +29,12 @@ public:
     void setbtn_style(QPushButton * button,QString buttonStyle);
     QString getMyType();
     void connectSliderAndSpin(QSlider * slider, QSpinBox * spin);
-
 private slots:
     void on_btn_open_clicked();
     void on_btn_process_clicked();
     void on_btn_play_clicked();
-
     void on_thresh_checkBox_stateChanged(int arg1);
-
+    void on_thread_update();
 private:
     Ui::publicize *ui;
     QString img_src;
@@ -52,13 +50,32 @@ private:
 //    CJImage m_image;
 //    CJSection m_section;
     single_scene *m_scene;//一组动画的所有信息
+    CJSection m_section;
     int laser_row_num=1;
     int laser_column_num=2;
     QVector<output_panel*> m_output_panels;
     QVector<CJPoint> position;
-    void addeffect();
+    void addeffect(int idx);
+    void display();
+    void SetSliderAndSpinEnable(QSlider *slider,QSpinBox *spin,bool flag);
+    QRect gridrect;
+    QThread thread;//处理显示和数据下发的子线程
+    int m_frame_index=0;
+signals:
+    void operate(bool flag);
+};
 
-//    QRect scenerect;
+class publicize_worker:public QObject
+{
+    Q_OBJECT
+public:
+    explicit publicize_worker(QObject *parent=nullptr);
+    ~publicize_worker();
+public slots:
+    void run(bool flag);
+signals:
+    void play();
+    void stop();
 };
 
 #endif // PUBLICIZE_H
