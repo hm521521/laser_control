@@ -55,14 +55,15 @@ private:
     int laser_column_num=2;
     QVector<output_panel*> m_output_panels;
     QVector<CJPoint> position;
-    void addeffect(int idx);
+    void addeffect(int idx,int start_idx,single_scene *scene);
     void display();
     void SetSliderAndSpinEnable(QSlider *slider,QSpinBox *spin,bool flag);
     QRect gridrect;
     QThread thread;//处理显示和数据下发的子线程
     int m_frame_index=0;
 signals:
-    void operate(bool flag);
+    void operate();
+    void playpause();
 };
 
 class publicize_worker:public QObject
@@ -72,10 +73,15 @@ public:
     explicit publicize_worker(QObject *parent=nullptr);
     ~publicize_worker();
 public slots:
-    void run(bool flag);
+    void run();
+    void pause();
 signals:
     void play();
     void stop();
+private:
+    bool m_start;
+    bool m_pause;
+
 };
 
 #endif // PUBLICIZE_H

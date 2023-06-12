@@ -47,8 +47,10 @@ publicize::publicize(QWidget *parent) :
     publicize_worker *worker=new publicize_worker();
     worker->moveToThread(&thread);
     connect(&thread,&QThread::finished,&thread,&QThread::deleteLater);
+    connect(this,&publicize::playpause,[=](){worker->pause();});
     connect(this,&publicize::operate,worker,&publicize_worker::run);
-    connect(worker,&publicize_worker::play,this,&publicize::on_thread_update);
+    connect(worker,&publicize_worker::play,this,&publicize::on_thread_update);    
+//    connect(worker,&publicize_worker::stop,&thread,&QThread::quit);
     thread.start();
 }
 
@@ -150,17 +152,17 @@ int publicize::point_distance(cv::Point p1, cv::Point p2)
     return qFloor(ans);
 }
 
-void publicize::addeffect(int idx)
+void publicize::addeffect(int idx,int start_idx,single_scene *scene)
 {
 //    int effect_count = image_num;
 //      int x_off=(ui->publicize_gridLayout->cellRect(0,0).width()/(image_num/4))*(idx-image_num/2);
-    int x_off=ui->publicize_gridLayout->cellRect(0,0).width()+(ui->publicize_gridLayout->cellRect(0,0).width())*(idx-image_num/2);
+    int x_off=ui->publicize_gridLayout->cellRect(0,0).width()+(ui->publicize_gridLayout->cellRect(0,0).width()*4/image_num)*(idx-image_num/2);
       effect *m_effect;
 //                    effect* m_effect = effect::LoadEffect(br);
 //                    this->push_back(effect);
       EffectType type=EffectType::ET_PICTURE;//初始化一个type
 //      int idx = 0;
-      int start_frame_index = idx;
+      int start_frame_index = start_idx;
       int frame_length = 0;
       PictureInfo temp_var(type,idx);
       m_effect=effect::CreateEffect(&temp_var);
@@ -205,11 +207,12 @@ void publicize::addeffect(int idx)
         m_effect->set_frame_length(frame_length);
         m_pictures.clear();
     }
-    m_scene->push_back(m_effect);
+    scene->push_back(m_effect);
 }
 
 void publicize::display()
 {
+    single_scene *temp_scene=new single_scene();
     m_scene->clear();
     if(ui->thresh_checkBox->isChecked())
         adaptiveThreshold(src_dst,thresh_dst,255,CV_ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY,3,5);
@@ -248,7 +251,8 @@ void publicize::display()
                 sum++;
             }
             for(int k=0;k<image_num;k++)
-                addeffect(k);
+                addeffect(k,k,m_scene);
+            addeffect(image_num/2-image_num/4,0,temp_scene);
             position.clear();
         }
     }
@@ -256,7 +260,8 @@ void publicize::display()
 //    addeffect();
     ui->pub_scene_panel->m_graphicsScene=new QGraphicsScene(this);
     ui->pub_scene_panel->setScene(ui->pub_scene_panel->m_graphicsScene);
-    ui->pub_scene_panel->set_data_model(m_scene);
+
+    ui->pub_scene_panel->set_data_model(temp_scene);
     ui->pub_scene_panel->do_draw(true);
 }
 
@@ -270,12 +275,15 @@ void publicize::on_btn_process_clicked()
 {
     if(ui->btn_process->isChecked())
     {
-        SetSliderAndSpinEnable(ui->distance_horizontalSlider,ui->distance_spinBox,true);
+//        SetSliderAndSpinEnable(ui->distance_horizontalSlider,ui->distance_spinBox,false);
+//        SetSliderAndSpinEnable(ui->thresh_horizontalSlider,ui->thresh_spinBox,false);
         display();
     }
     else
-        SetSliderAndSpinEnable(ui->distance_horizontalSlider,ui->distance_spinBox,false);
-//        ui->distance_horizontalSlider->setEnabled(false);
+    {
+//        SetSliderAndSpinEnable(ui->distance_horizontalSlider,ui->distance_spinBox,true);
+//        SetSliderAndSpinEnable(ui->thresh_horizontalSlider,ui->thresh_spinBox,true);
+    }//        ui->distance_horizontalSlider->setEnabled(false);
 }
 
 
@@ -283,13 +291,15 @@ void publicize::on_btn_play_clicked()
 {
     if(ui->btn_play->isChecked())
     {
-        emit operate(true);
+        m_frame_index=0;
+        emit operate();
         ui->btn_play->setText("stop");
         SetSliderAndSpinEnable(ui->image_num_horizontalSlider,ui->image_num_spinBox,false);
     }
     else
     {
-        emit operate(false);
+//        thread.quit();
+        emit playpause();
         ui->btn_play->setText("play");
         SetSliderAndSpinEnable(ui->image_num_horizontalSlider,ui->image_num_spinBox,true);
     }
@@ -349,7 +359,6 @@ void publicize::on_thread_update()
 
 
 
-
 publicize_worker::publicize_worker(QObject *parent)
 {
 
@@ -360,11 +369,24 @@ publicize_worker::~publicize_worker()
 
 }
 
-void publicize_worker::run(bool flag)
+void publicize_worker::run()
 {
-    while(true)
+    m_start=true;
+    m_pause=false;
+    while(m_start)
     {
+        if(m_pause)
+        {
+            m_start=false;
+        }
         emit play();
         QThread::msleep(100);
     }
+    emit stop();
 }
+
+void publicize_worker::pause()
+{
+    m_pause=true;
+}
+
