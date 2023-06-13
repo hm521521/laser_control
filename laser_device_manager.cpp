@@ -25,7 +25,7 @@ laser_device *laser_device_manager::get_default_device()
 
 void laser_device_manager::add_device(laser_type t, QString addr)
 {
-    std::lock_guard<std::mutex> lock(this->m_lock_obj);
+//    std::lock_guard<std::mutex> lock(this->m_lock_obj);
     emit manager_changed(m_device_list);
     for(int i=0;i<m_device_list.size();++i)
     {

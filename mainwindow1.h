@@ -38,9 +38,6 @@ protected:
     void run() Q_DECL_OVERRIDE;
 };
 
-
-
-
 class MainWindow1 : public QMainWindow
 {
     Q_OBJECT
@@ -50,7 +47,6 @@ public:
     explicit MainWindow1(QWidget *parent = nullptr);
     ~MainWindow1();
     QList<SubWindow*> getMyChildren();
-
 protected:
     void closeEvent(QCloseEvent *event);
     void resizeEvent(QResizeEvent *event);
@@ -68,10 +64,9 @@ private slots:
     void on_output_button_clicked();
     bool eventFilter(QObject *obj,QEvent *event);
     void add_stages(stage *s);
-
+    void set_publicize_play();
 private:
     Ui::MainWindow1 *ui;
-
     int m_device_num;
 //    QList<SubWindow*> m_children;
     scene_pool *m_scene_pool;
@@ -89,6 +84,8 @@ private:
     laser_device_manager *m_laser_device_manager;
     Picture_trace *m_pic_trace;
     publicize *m_publicize;
+    bool m_publicize_play=false;
+//    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
     void on_enable_output(yls_play_event& e);
     void on_play_show(yls_play_event &e);
@@ -97,14 +94,9 @@ private slots:
     void refresh_stages(laser_device* device);
     static void handle_stage_results(int result);//处理子线程的结果
     void on_picture_tracer_triggered();
-
     void on_publicize_triggered();
-
 signals:
     void stage_operate(const bool);//发送信号，触发线程
 };
-
-
-
 
 #endif // MAINWINDOW1_H

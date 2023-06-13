@@ -56,12 +56,16 @@ MainWindow1::MainWindow1(QWidget *parent) :
     {
         m_stages.push_back(s);
     }
+//    output_panel *op=new output_panel(this);
     m_hardware=new hardware(this);
     connect(m_laser_device_manager,SIGNAL(manager_changed(QVector<laser_device*>)),m_hardware,SLOT(refresh_laser_device(QVector<laser_device*>)));
     m_laser_setting=new laser_setting(this);
     connect(m_laser_device_manager,SIGNAL(manager_changed(QVector<laser_device*>)),m_laser_setting,SLOT(refresh_laser_device(QVector<laser_device*>)));
     connect(m_laser_device_manager,SIGNAL(new_device(laser_device*)),this,SLOT(refresh_stages(laser_device*)));
     connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
+    connect(m_publicize,&publicize::operate,this,&MainWindow1::set_publicize_play);
+    connect(m_publicize,&publicize::playpause,this,&MainWindow1::set_publicize_play);
+    //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
 //    stage_thread_pool.setExpiryTimeout(-1);
@@ -156,15 +160,14 @@ void MainWindow1::on_hardware_triggered()//每次打开都添加一个子窗口�
 
 void MainWindow1::on_laser_setting_triggered()
 {
-
     m_laser_setting->show();
 //    m_children.push_back(l);
 }
 
 void MainWindow1::on_projection_zones_triggered()
 {
- projection_zones *p=new projection_zones(this);
- p->show();
+     projection_zones *p=new projection_zones(this);
+     p->show();
 // m_children.push_back(p);
 }
 
@@ -220,10 +223,21 @@ void MainWindow1::on_thread_completion()
 void MainWindow1::on_thread_update()
 {
     m_output_panel->m_picture.clear();
+    for(int i=0;i<m_publicize->m_output_panels.size();++i)
+    {
+        m_publicize->m_output_panels.at(i)->m_picture.clear();
+    }
     m_main_panel->update_scene(m_send_data ? &m_output_panel->m_picture:nullptr);
     if(m_play_show)
     {
         m_project_panel->update_show(m_send_data ? &m_output_panel->m_picture:nullptr);
+    }
+    if(m_publicize_play)
+    {
+        for(int i=0;i<m_publicize->m_output_panels.size();++i)
+        {
+            m_publicize->update_show(m_send_data ? &m_publicize->m_output_panels.at(i)->m_picture:nullptr,i);
+        }
     }
     if(m_send_data&&m_output_panel->m_picture.size()>0)
     {
@@ -234,7 +248,24 @@ void MainWindow1::on_thread_update()
             s->add_send_data(out);
         }
     }
+    else if(m_send_data&&m_publicize_play)
+    {
+        for(int i=0;i<m_publicize->m_output_panels.size();++i)
+        {
+            if(m_publicize->m_output_panels.at(i)->m_picture.size()>0&&m_stages.size()>1)
+            {
+                auto s=m_stages.at(i);
+                std::vector<ishow_data> out=m_publicize->m_output_panels.at(i)->m_picture.globalprocessing(m_config);
+                s->add_send_data(out);
+            }
+        }
+
+    }
     m_output_panel->do_draw();
+    for(int i=0;i<m_publicize->m_output_panels.size();++i)
+    {
+        m_publicize->m_output_panels.at(i)->do_draw();
+    }
 }
 
 void MainWindow1::on_enable_output(yls_play_event &e)
@@ -402,6 +433,11 @@ void MainWindow1::add_stages(stage *s)
         m_stages.push_back(s);
 
     }
+}
+
+void MainWindow1::set_publicize_play()
+{
+    m_publicize_play=!m_publicize_play;
 }
 
 void MainWindow1::on_picture_tracer_triggered()

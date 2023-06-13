@@ -29,6 +29,8 @@ public:
     void setbtn_style(QPushButton * button,QString buttonStyle);
     QString getMyType();
     void connectSliderAndSpin(QSlider * slider, QSpinBox * spin);
+    void update_show(CJSection* section,int i);
+    QVector<output_panel*> m_output_panels;
 private slots:
     void on_btn_open_clicked();
     void on_btn_process_clicked();
@@ -53,7 +55,7 @@ private:
     CJSection m_section;
     int laser_row_num=1;
     int laser_column_num=2;
-    QVector<output_panel*> m_output_panels;
+
     QVector<CJPoint> position;
     void addeffect(int idx,int start_idx,single_scene *scene);
     void display();

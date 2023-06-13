@@ -49,9 +49,9 @@ publicize::publicize(QWidget *parent) :
     connect(&thread,&QThread::finished,&thread,&QThread::deleteLater);
     connect(this,&publicize::playpause,[=](){worker->pause();});
     connect(this,&publicize::operate,worker,&publicize_worker::run);
-    connect(worker,&publicize_worker::play,this,&publicize::on_thread_update);    
+//    connect(worker,&publicize_worker::play,this,&publicize::on_thread_update);
 //    connect(worker,&publicize_worker::stop,&thread,&QThread::quit);
-    thread.start();
+//    thread.start();
 }
 
 publicize::~publicize()
@@ -122,6 +122,37 @@ void publicize::connectSliderAndSpin(QSlider *slider, QSpinBox *spin)
     });
 }
 
+void publicize::update_show(CJSection *section, int i)
+{
+//    m_output_panels.at(i)->m_picture.clear();
+    CJSection *output_picture=section;
+    if(ui->btn_play->isChecked())
+    {
+        CJSection picture;
+//            int pic_dx=-(i%laser_column_num)*(m_output_panels.at(i)->rect().width()+m_output_panels.at(i)->rect().width()*2/ui->image_num_horizontalSlider->value());
+        int pic_dx=0;
+        if(i%laser_column_num!=0)
+            pic_dx=ui->publicize_gridLayout->cellRect(0,0).x()-ui->publicize_gridLayout->cellRect(i/laser_column_num,i%laser_column_num).x()-ui->publicize_gridLayout->cellRect(0,0).width()/4;
+        int pic_dy=0;
+        m_scene->render(&picture,m_frame_index);//从m_scene里获取到的CJsection
+        for(int j=0;j<picture.size();j++)
+        {
+            picture[j]=picture[j].translate(pic_dx,pic_dy);
+        }
+        if(picture.size()>0)
+        {
+            output_picture->insert(output_picture->end(),picture.begin(),picture.end());
+        }
+
+    }
+    if(i==laser_column_num*laser_row_num-1)
+    {
+        m_frame_index++;
+        if(m_frame_index==image_num)
+            m_frame_index=0;
+    }
+}
+
 
 void publicize::on_btn_open_clicked()
 {
@@ -156,15 +187,16 @@ void publicize::addeffect(int idx,int start_idx,single_scene *scene)
 {
 //    int effect_count = image_num;
 //      int x_off=(ui->publicize_gridLayout->cellRect(0,0).width()/(image_num/4))*(idx-image_num/2);
-    int x_off=ui->publicize_gridLayout->cellRect(0,0).width()+(ui->publicize_gridLayout->cellRect(0,0).width()*4/image_num)*(idx-image_num/2);
-      effect *m_effect;
+//    int x_off=ui->publicize_gridLayout->cellRect(0,0).width()+(ui->publicize_gridLayout->cellRect(0,0).width()*4/image_num)*(idx-image_num/2);
+    int x_off=ui->publicize_gridLayout->cellRect(0,0).width()+(600/image_num)*(idx-image_num/2);
+    effect *m_effect;
 //                    effect* m_effect = effect::LoadEffect(br);
 //                    this->push_back(effect);
-      EffectType type=EffectType::ET_PICTURE;//初始化一个type
+    EffectType type=EffectType::ET_PICTURE;//初始化一个type
 //      int idx = 0;
-      int start_frame_index = start_idx;
-      int frame_length = 0;
-      PictureInfo temp_var(type,idx);
+    int start_frame_index = start_idx;
+    int frame_length = 0;
+    PictureInfo temp_var(type,idx);
       m_effect=effect::CreateEffect(&temp_var);
     if(m_effect !=nullptr)
     {
@@ -218,7 +250,7 @@ void publicize::display()
         adaptiveThreshold(src_dst,thresh_dst,255,CV_ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY,3,5);
     else
         threshold(src_dst,thresh_dst,thresh,255,THRESH_BINARY);
-    imshow("gaussian",thresh_dst);
+//    imshow("gaussian",thresh_dst);
     vector<Vec4i> hierarchy;
     findContours(thresh_dst, contours, hierarchy, RETR_CCOMP, CHAIN_APPROX_SIMPLE);
     int sum=0;
@@ -256,7 +288,7 @@ void publicize::display()
             position.clear();
         }
     }
-    imshow("kongbai",kongbai);
+//    imshow("kongbai",kongbai);
 //    addeffect();
     ui->pub_scene_panel->m_graphicsScene=new QGraphicsScene(this);
     ui->pub_scene_panel->setScene(ui->pub_scene_panel->m_graphicsScene);
@@ -330,31 +362,32 @@ void publicize::on_thread_update()
     for(int i=0;i<m_output_panels.size();i++)
     {
         m_output_panels.at(i)->m_picture.clear();
-        CJSection *output_picture=&m_output_panels.at(i)->m_picture;
-        if(ui->btn_play->isChecked())
-        {
-            CJSection picture;
-//            int pic_dx=-(i%laser_column_num)*(m_output_panels.at(i)->rect().width()+m_output_panels.at(i)->rect().width()*2/ui->image_num_horizontalSlider->value());
-            int pic_dx=0;
-            if(i%laser_column_num!=0)
-                pic_dx=ui->publicize_gridLayout->cellRect(0,0).x()-ui->publicize_gridLayout->cellRect(i/laser_column_num,i%laser_column_num).x()-ui->publicize_gridLayout->cellRect(0,0).width()/4;
-            int pic_dy=0;
-            m_scene->render(&picture,m_frame_index);//从m_scene里获取到的CJsection
-            for(int j=0;j<picture.size();j++)
-            {
-                picture[j]=picture[j].translate(pic_dx,pic_dy);
-            }
-            if(picture.size()>0)
-            {
-                output_picture->insert(output_picture->end(),picture.begin(),picture.end());
-            }
+        this->update_show(&m_output_panels.at(i)->m_picture,i);
+//        CJSection *output_picture=&m_output_panels.at(i)->m_picture;
+//        if(ui->btn_play->isChecked())
+//        {
+//            CJSection picture;
+////            int pic_dx=-(i%laser_column_num)*(m_output_panels.at(i)->rect().width()+m_output_panels.at(i)->rect().width()*2/ui->image_num_horizontalSlider->value());
+//            int pic_dx=0;
+//            if(i%laser_column_num!=0)
+//                pic_dx=ui->publicize_gridLayout->cellRect(0,0).x()-ui->publicize_gridLayout->cellRect(i/laser_column_num,i%laser_column_num).x()-ui->publicize_gridLayout->cellRect(0,0).width()/4;
+//            int pic_dy=0;
+//            m_scene->render(&picture,m_frame_index);//从m_scene里获取到的CJsection
+//            for(int j=0;j<picture.size();j++)
+//            {
+//                picture[j]=picture[j].translate(pic_dx,pic_dy);
+//            }
+//            if(picture.size()>0)
+//            {
+//                output_picture->insert(output_picture->end(),picture.begin(),picture.end());
+//            }
 
-        }
+//        }
         m_output_panels.at(i)->do_draw();
     }
-    m_frame_index++;
-    if(m_frame_index==image_num)
-        m_frame_index=0;
+//    m_frame_index++;
+//    if(m_frame_index==image_num)
+//        m_frame_index=0;
 }
 
 
