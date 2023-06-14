@@ -47,7 +47,7 @@ private:
     cv::Mat thresh_dst;
     cv::Mat src_dst;
     std::vector<std::vector<cv::Point>> contours;
-    int image_num=4;
+    int image_num=6;
     int thresh=127;
 //    CJImage m_image;
 //    CJSection m_section;

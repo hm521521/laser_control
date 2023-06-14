@@ -114,7 +114,7 @@ void publicize::connectSliderAndSpin(QSlider *slider, QSpinBox *spin)
         if(spin->objectName()=="distance_spinBox")
             this->distance = spin->value();
         else if(spin->objectName()=="image_num_spinBox")
-            this->image_num=spin->value()*4;
+            this->image_num=spin->value()*6;
         else if(spin->objectName()=="thresh_spinBox")
             this->thresh=spin->value();
         if(ui->btn_process->getValue())
@@ -132,7 +132,7 @@ void publicize::update_show(CJSection *section, int i)
 //            int pic_dx=-(i%laser_column_num)*(m_output_panels.at(i)->rect().width()+m_output_panels.at(i)->rect().width()*2/ui->image_num_horizontalSlider->value());
         int pic_dx=0;
         if(i%laser_column_num!=0)
-            pic_dx=ui->publicize_gridLayout->cellRect(0,0).x()-ui->publicize_gridLayout->cellRect(i/laser_column_num,i%laser_column_num).x()-ui->publicize_gridLayout->cellRect(0,0).width()/4;
+            pic_dx=ui->publicize_gridLayout->cellRect(0,0).x()-ui->publicize_gridLayout->cellRect(i/laser_column_num,i%laser_column_num).x()-ui->publicize_gridLayout->cellRect(0,0).width()/6;
         int pic_dy=0;
         m_scene->render(&picture,m_frame_index);//从m_scene里获取到的CJsection
         for(int j=0;j<picture.size();j++)
@@ -284,7 +284,7 @@ void publicize::display()
             }
             for(int k=0;k<image_num;k++)
                 addeffect(k,k,m_scene);
-            addeffect(image_num/2-image_num/4,0,temp_scene);
+            addeffect(image_num/2-image_num/6-image_num/6,0,temp_scene);
             position.clear();
         }
     }
