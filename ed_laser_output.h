@@ -78,7 +78,7 @@ public:
     bool is_connected() override;
     void try_connect() override;
     bool is_create_by(QString mac) override;
-    void send_data(unsigned char *settings_data, QVector<unsigned char> &data) override;
+
     void query_firmware();//询问固件
     void prepare_stream();
     void begin_playback();
@@ -86,17 +86,19 @@ public:
     void write_data(QVector<ishow_data>& data);
     void on_recv_data(unsigned char* data,int len);
 //    QString get_name() override;
-private:
+private slots:
     void send_command();
 public slots:
     void on_socket_event();
     void onSocketStateChange(QAbstractSocket::SocketState state);
+    void send_data(unsigned char *settings_data, QVector<unsigned char> &data) override;
 private:
     QTcpSocket *m_socket;
 //    QString m_remote_addr;
     bool m_connected;
     QByteArray m_recv_data;//接收缓冲区
     QByteArray m_send_data;//发送缓冲区
+
 };
 
 class ed_v2_device_finder:QObject

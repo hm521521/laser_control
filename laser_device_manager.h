@@ -20,7 +20,7 @@ enum class laser_type
 
 class laser_device:public QObject
 {
-
+Q_OBJECT
 public:
     laser_device()=delete;
     laser_device(QString name);
@@ -29,16 +29,19 @@ public:
     virtual bool is_create_by(QString mac)=0;
     virtual bool is_connected()=0;
     virtual void try_connect()=0;
-    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data)=0;
+
     QString get_name();
 //    void send_data(char setting_data[8],QVector<char>& data);
-
+public slots:
+    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data)=0;
 protected:
     QString m_name;
     QString m_mac;
     QString m_tcp_addr;
 //    bool m_connected;
 //    projection_zones_manager* m_projection_zones;
+signals:
+    void send_continue();
 };
 
 

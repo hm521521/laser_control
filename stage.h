@@ -28,11 +28,15 @@ private:
     std::vector<ishow_data> m_debug_data_list;
     std::vector<std::vector<ishow_data>> m_output_data_list;
     Configuration* m_config;
-public:
+//    QVector<unsigned char> m_send_data;
+    QVector<unsigned char> send_data_i;
+    unsigned char settings_data[8]={0};
+public slots:
     void do_send_data();
 signals:
     void resultReady(const int result);
     void stage_finish();
+
 };
 
 

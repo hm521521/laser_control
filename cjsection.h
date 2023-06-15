@@ -18,6 +18,15 @@ struct ishow_data
     unsigned char blue;
     unsigned char gray;
 };
+//struct ishow_data_out
+//{
+//    int x;
+//    int y;
+//    unsigned char red;
+//    unsigned char green;
+//    unsigned char blue;
+//    unsigned char gray;
+//};
 
 class CJSection:public std::vector<PointAttribute>//一帧画面的所有点
 {

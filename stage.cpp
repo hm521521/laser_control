@@ -39,6 +39,7 @@ void stage::set_device(laser_device *dev)
         m_laser_device=nullptr;
     }
     m_laser_device=dev;
+
 //    if(m_laser_device==nullptr)
 //    {
 //        stage_thread.quit();
@@ -116,14 +117,27 @@ void stage::do_send_data()//发送数据给下位机
         settings_data[1] = static_cast<unsigned char>(m_config->PointGap);
         settings_data[2] = m_config->Delay;
         settings_data[3] = 0;
-        if(send_data.size()<1024)
+        if(send_data.size()<744)
+        {
+            for(int i=send_data.size();i<744;i++)
+            {
+                unsigned char x=0;
+                send_data.push_back(x);
+            }
             m_laser_device->send_data(settings_data, send_data);
+        }
         else
         {
-            int times=send_data.size()/1024;
+            int times=send_data.size()/744;
             for(int i=0;i<times+1;i++)
             {
-                QVector<unsigned char> send_data_i=send_data.mid(i*1024,1024);
+                QVector<unsigned char> send_data_i=send_data.mid(i*744,744);
+                for(int i=send_data_i.size();i<744;i++)
+                {
+                    unsigned char x=0;
+                    send_data_i.push_back(x);
+                }
+
                 m_laser_device->send_data(settings_data,send_data_i);
             }
         }

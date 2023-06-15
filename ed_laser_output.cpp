@@ -4,17 +4,15 @@
 
 ed_v2_device::ed_v2_device(QString tcp_addr)
     :laser_device("edv2")
-    ,m_socket(nullptr)
     ,m_connected(false)
     ,m_recv_data{0}
     ,m_send_data{0}
 {
     m_tcp_addr=tcp_addr;
     m_socket=new QTcpSocket(this);
-    connect(m_socket,SIGNAL(readyRead()),this,SLOT(on_socket_event()));
+//    connect(m_socket,SIGNAL(readyRead()),this,SLOT(send_command()));
     connect(m_socket,SIGNAL(stateChanged(QAbstractSocket::SocketState)),this,SLOT(onSocketStateChange(QAbstractSocket::SocketState)));
-//    onSocketStateChange(m_socket->state());
-
+    //    onSocketStateChange(m_socket->state());
 }
 
 ed_v2_device::~ed_v2_device()
@@ -83,34 +81,34 @@ void ed_v2_device::write_data(QVector<ishow_data> &data)//把数据发出去
     send_data.clear();
 //    int i=0;
     char header[]="ILDA";
-    send_data.append(header,sizeof (header));
+    send_data.append(header,4);
     char format[3];
     int a=0;
-    memcpy(format,&a,sizeof(format));
-    send_data.append(format,sizeof (format));
+    memcpy(format,&a,3);
+    send_data.append(format,3);
     a=5;
     char format1[1];
-    memcpy(format1,&a,sizeof(format1));
-    send_data.append(format1,sizeof (format1));
-    char frame[]="Frame";
-    send_data.append(frame,sizeof (frame));
-    char framename[3];
-    a=0;
-    memcpy(framename,&a,3);
-    send_data.append(framename,sizeof(framename));
+    memcpy(format1,&a,1);
+    send_data.append(format1,1);
+    char framename[]="Frame";
+    send_data.append(framename,8);
+//    char framename[2];
+//    a=0;
+//    memcpy(framename,&a,2);
+//    send_data.append(framename,sizeof(framename));
     char companyname[]="yls";
     send_data.append(companyname,8);
     a=data.size();
     char numpoints[2];
-    memcpy(numpoints,&a,sizeof(numpoints));
+    memcpy(numpoints,&a,2);
     send_data.append(numpoints,2);
     char framenum[2];
     a=0;
-    memcpy(framenum,&a,sizeof(framenum));
+    memcpy(framenum,&a,2);
     send_data.append(framenum,2);
     char totalframes[2];
     a=0;
-    memcpy(totalframes,&a,sizeof(totalframes));
+    memcpy(totalframes,&a,2);
     send_data.append(totalframes,2);
     char pronum[1];
     a=0;
@@ -118,91 +116,45 @@ void ed_v2_device::write_data(QVector<ishow_data> &data)//把数据发出去
     send_data.append(pronum,1);
     char reserved[1];
     a=0;
-    memcpy(reserved,&a,sizeof(reserved));
+    memcpy(reserved,&a,1);
     send_data.append(reserved,1);
+    int scale=4096/256;
     for(int i=0;i<data.size();++i)
     {
         auto& d=data.at(i);
-        a=d.x;
-        char secA[2];
-        memcpy(secA,&a,sizeof(secA));
+        a=d.x*scale;
+        char secA[1];
+        memcpy(secA,&a,2);
         send_data.append(secA,2);
-        a=d.y;
-        memcpy(secA,&a,sizeof(secA));
+        a=d.y*scale;
+        memcpy(secA,&a,2);
         send_data.append(secA,2);
         char ch[1];
         a=0;
         if (d.blue==0&&d.green==0&&d.red==0)
             a=1<<6;
-        memcpy(ch,&a,sizeof(ch));
+        memcpy(ch,&a,1);
         send_data.append(ch,1);
-        a=d.blue;
+        a=d.red;
         memcpy(ch,&a,sizeof(ch));
         send_data.append(ch,1);
         a=d.green;
         memcpy(ch,&a,sizeof(ch));
         send_data.append(ch,1);
-        a=d.red;
+        a=d.blue;
         memcpy(ch,&a,sizeof(ch));
         send_data.append(ch,1);
     }
-//    auto dc_command=0x64;
-//    char command[1];
-//    memcpy(command,&dc_command,sizeof(command));
-//    send_data.append(command);
-//    int dc_npoints=data.size();
-//    memcpy(command,&dc_npoints,sizeof (command));
-//    send_data.append(command);
-//    for(int i=0;i<dc_npoints;++i)
-//    {
-//        if(send_data.size()+sizeof (dac_point)>1021)
-//        {
-//            send_data.append("\0");
-//            m_send_data=send_data;
-//            this->send_command();
-//            send_data.clear();
-//        }
-//        auto& d=data.at(i);
-//        int dp_control=0;
-//        memcpy(command,&dp_control,sizeof (dp_control));
-//        send_data.append(command);
-//        int dp_x=d.x;
-//        memcpy(command,&dp_x,sizeof (dp_x));
-//        send_data.append(command);
-//        int dp_y=d.y;
-//        memcpy(command,&dp_y,sizeof (dp_y));
-//        send_data.append(command);
-//        int dp_r=d.red;
-//        memcpy(command,&dp_r,sizeof(dp_r));
-//        send_data.append(command);
-//        int dp_g=d.green;
-//        memcpy(command,&dp_g,sizeof(dp_g));
-//        send_data.append(command);
-//        int dp_b=d.blue;
-//        memcpy(command,&dp_b,sizeof(dp_b));
-//        send_data.append(command);
-//        int dp_i=0;
-//        memcpy(command,&dp_i,sizeof(dp_i));
-//        send_data.append(command);
-//        int dp_u1=0;
-//        memcpy(command,&dp_u1,sizeof(dp_u1));
-//        send_data.append(command);
-//        int dp_u2=0;
-//        memcpy(command,&dp_u2,sizeof(dp_u2));
-//        send_data.append(command);
-//    }
-//    send_data.append("\0");
-    send_data.append(header,sizeof (header));
-    send_data.append(format,sizeof (format));
-    send_data.append(format1,sizeof (format1));
-    send_data.append(frame,sizeof (frame));
-    send_data.append(framename,sizeof(framename));
-    send_data.append(companyname,8);
-    send_data.append(numpoints,2);
-    send_data.append(framenum,2);
-    send_data.append(totalframes,2);
-    send_data.append(pronum,1);
-    send_data.append(reserved,1);
+//    send_data.append(header,sizeof (header));
+//    send_data.append(format,sizeof (format));
+//    send_data.append(format1,sizeof (format1));
+//    send_data.append(framename,sizeof(framename));
+//    send_data.append(companyname,8);
+//    send_data.append(numpoints,2);
+//    send_data.append(framenum,2);
+//    send_data.append(totalframes,2);
+//    send_data.append(pronum,1);
+//    send_data.append(reserved,1);
     m_send_data=send_data;
     this->send_command();
 //    send_data.clear();
@@ -256,17 +208,23 @@ void ed_v2_device::send_command()
 //        data=m_send_data.mid(num,1024);
 //        this->m_socket->write(m_send_data);
     QMetaObject::invokeMethod(m_socket, std::bind( static_cast<qint64(QTcpSocket::*)(const QByteArray &)>( &QTcpSocket::write ), m_socket, m_send_data ) );
-        this->m_socket->flush();
+    this->m_socket->flush();
+    QThread::msleep(50);
 //        msleep(40);
 //        if(!m_socket->waitForBytesWritten(10000))
 //            return;
 //        num=num+1024;
 //    }
+//    if(m_socket->read(8).data()!="recv ok!")
+//        emit send_continue();
+    m_send_data.clear();
+//
 }
 
 
 void ed_v2_device::on_socket_event()
 {
+
 //    m_socket->read((char*)m_recv_data,1024);
 //    this->on_recv_data(m_recv_data,m_socket->pendingDatagramSize());
 

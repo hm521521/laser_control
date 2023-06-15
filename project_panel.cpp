@@ -58,6 +58,11 @@ void project_panel::update_show(CJSection *out_picture)
     m_track_panel->update_show(out_picture);
 }
 
+void project_panel::mousePressEvent(QMouseEvent *event)
+{
+    QGraphicsView::mousePressEvent(event);
+}
+
 
 
 
@@ -381,6 +386,12 @@ void track_panel::mousePressEvent(QGraphicsSceneMouseEvent *event)
         m_mouse_move_mode=MOUSE_MOVE_MODE::MMM_NONE;
 
     }
+    else if(event->button()==Qt::RightButton)
+    {
+        QMenu *pMenu=new QMenu();
+        QAction *del=new QAction("删除");
+        pMenu->addAction(del);
+    }
 }
 
 void track_panel::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -540,6 +551,7 @@ float track_panel::get_stop_postion()
     }
     return pos;
 }
+
 
 int track_panel::get_media_start_y(int idx)//idx代表第几条轨道
 {

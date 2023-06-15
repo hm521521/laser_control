@@ -220,7 +220,7 @@ public:
         m_scenes_book->addItem(page_14, QString::fromUtf8("Page 1"));
         page_15 = new QWidget();
         page_15->setObjectName(QString::fromUtf8("page_15"));
-        page_15->setGeometry(QRect(0, 0, 100, 30));
+        page_15->setGeometry(QRect(0, 0, 69, 513));
         m_scenes_book->addItem(page_15, QString::fromUtf8("Page 2"));
 
         horizontalLayout_8->addWidget(m_scenes_book);

@@ -246,6 +246,7 @@ void MainWindow1::on_thread_update()
             auto s=m_stages.at(i);
             std::vector<ishow_data> out=m_output_panel->m_picture.globalprocessing(m_config);
             s->add_send_data(out);
+
         }
     }
     else if(m_send_data&&m_publicize_play)
@@ -364,7 +365,7 @@ void main_frame_thread::run()
             emit update();
             next_frame+=100.f/25.0;//TODO设置可调节的播放速度
         }
-        msleep(50);
+        msleep(60);
     }
     emit completed();
     quit();

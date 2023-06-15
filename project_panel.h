@@ -38,7 +38,8 @@ public:
 private:
     QGraphicsScene *m_graphicsScene;
     track_panel *m_track_panel;
-
+protected:
+    void mousePressEvent(QMouseEvent *event) override;
 };
 
 class scene_info

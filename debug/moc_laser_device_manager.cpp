@@ -21,6 +21,128 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+struct qt_meta_stringdata_laser_device_t {
+    QByteArrayData data[8];
+    char stringdata0[98];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_laser_device_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_laser_device_t qt_meta_stringdata_laser_device = {
+    {
+QT_MOC_LITERAL(0, 0, 12), // "laser_device"
+QT_MOC_LITERAL(1, 13, 13), // "send_continue"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 9), // "send_data"
+QT_MOC_LITERAL(4, 38, 16), // "unsigned char[8]"
+QT_MOC_LITERAL(5, 55, 13), // "settings_data"
+QT_MOC_LITERAL(6, 69, 23), // "QVector<unsigned char>&"
+QT_MOC_LITERAL(7, 93, 4) // "data"
+
+    },
+    "laser_device\0send_continue\0\0send_data\0"
+    "unsigned char[8]\0settings_data\0"
+    "QVector<unsigned char>&\0data"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_laser_device[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       2,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   24,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+       3,    2,   25,    2, 0x0a /* Public */,
+
+ // signals: parameters
+    QMetaType::Void,
+
+ // slots: parameters
+    QMetaType::Void, 0x80000000 | 4, 0x80000000 | 6,    5,    7,
+
+       0        // eod
+};
+
+void laser_device::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<laser_device *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->send_continue(); break;
+        case 1: _t->send_data((*reinterpret_cast< unsigned char(*)[8]>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (laser_device::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&laser_device::send_continue)) {
+                *result = 0;
+                return;
+            }
+        }
+    }
+}
+
+QT_INIT_METAOBJECT const QMetaObject laser_device::staticMetaObject = { {
+    &QObject::staticMetaObject,
+    qt_meta_stringdata_laser_device.data,
+    qt_meta_data_laser_device,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *laser_device::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *laser_device::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_laser_device.stringdata0))
+        return static_cast<void*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int laser_device::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 2)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 2;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void laser_device::send_continue()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
 struct qt_meta_stringdata_laser_device_manager_t {
     QByteArrayData data[9];
     char stringdata0[123];
@@ -91,6 +213,24 @@ void laser_device_manager::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 2: _t->refresh_laser_device(); break;
         default: ;
         }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 0:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<laser_device*> >(); break;
+            }
+            break;
+        case 1:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< laser_device* >(); break;
+            }
+            break;
+        }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
@@ -144,7 +284,7 @@ int laser_device_manager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 3)
-            *reinterpret_cast<int*>(_a[0]) = -1;
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 3;
     }
     return _id;

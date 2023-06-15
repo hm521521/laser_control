@@ -300,6 +300,13 @@ void MainWindow1::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< stage* >(); break;
             }
             break;
+        case 14:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< laser_device* >(); break;
+            }
+            break;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
