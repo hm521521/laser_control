@@ -124,7 +124,7 @@ void stage::do_send_data()//发送数据给下位机
                 unsigned char x=0;
                 send_data.push_back(x);
             }
-            m_laser_device->send_data(settings_data, send_data);
+            m_laser_device->send_data(settings_data, send_data,true);
         }
         else
         {
@@ -132,13 +132,17 @@ void stage::do_send_data()//发送数据给下位机
             for(int i=0;i<times+1;i++)
             {
                 QVector<unsigned char> send_data_i=send_data.mid(i*744,744);
+                if(send_data_i.size()>708&&send_data_i.size()<744)
+                    times=times+1;
                 for(int i=send_data_i.size();i<744;i++)
                 {
                     unsigned char x=0;
                     send_data_i.push_back(x);
                 }
-
-                m_laser_device->send_data(settings_data,send_data_i);
+                if(i==times)
+                    m_laser_device->send_data(settings_data,send_data_i,true);
+                else
+                    m_laser_device->send_data(settings_data,send_data_i,false);
             }
         }
     }

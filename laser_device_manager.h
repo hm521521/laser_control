@@ -32,8 +32,9 @@ public:
 
     QString get_name();
 //    void send_data(char setting_data[8],QVector<char>& data);
+    QTcpSocket *m_socket;
 public slots:
-    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data)=0;
+    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data,bool flag)=0;
 protected:
     QString m_name;
     QString m_mac;

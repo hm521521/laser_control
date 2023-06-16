@@ -30,7 +30,7 @@ bool ishow_laser_device::is_create_by(QString tcp_addr)
     return tcp_addr==m_tcp_addr;
 }
 
-void ishow_laser_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data)
+void ishow_laser_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data,bool flag)
 {
 
 }

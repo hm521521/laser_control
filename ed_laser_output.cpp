@@ -52,7 +52,7 @@ bool ed_v2_device::is_create_by(QString mac)
     return mac==m_tcp_addr;
 }
 
-void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data)
+void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data,bool flag)
 {
 //    send_command(settings_data, 8);
     QVector<ishow_data> id;
@@ -67,7 +67,7 @@ void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char
         d.green=data[i*sizeof (ishow_data)+5];
         id.push_back(d);
     }
-    write_data(id);
+    write_data(id,flag);
 }
 
 void ed_v2_device::query_firmware()
@@ -75,7 +75,7 @@ void ed_v2_device::query_firmware()
 
 }
 
-void ed_v2_device::write_data(QVector<ishow_data> &data)//把数据发出去
+void ed_v2_device::write_data(QVector<ishow_data> &data,bool flag)//把数据发出去
 {
     QByteArray send_data;
     send_data.clear();
@@ -155,6 +155,26 @@ void ed_v2_device::write_data(QVector<ishow_data> &data)//把数据发出去
 //    send_data.append(totalframes,2);
 //    send_data.append(pronum,1);
 //    send_data.append(reserved,1);
+
+    if(flag)
+    {
+        int num=0;
+        int pos=0;
+        for(int i=0;i<data.size();i++)
+        {
+            auto& d=data.at(i);
+            if(d.x==0&&d.y==0)
+                num++;
+            if(num>2)
+            {
+                pos=i;
+                break;
+            }
+
+        }
+        QByteArray head=send_data.mid(0,32);
+        send_data.replace(pos*8+32,32,head);
+    }
     m_send_data=send_data;
     this->send_command();
 //    send_data.clear();
@@ -198,10 +218,10 @@ void ed_v2_device::on_recv_data(unsigned char *data, int len)
 
 void ed_v2_device::send_command()
 {
-    if(m_recv_data!="recv ok!")
-        return;
     if (this->m_connected == false)
         return;
+    if(m_recv_data!="Recv OK!")
+        this->m_socket->waitForReadyRead();
 //    int num=0;
 //    QByteArray data;
 //    int i=sizeof (m_send_data.data());
@@ -213,7 +233,6 @@ void ed_v2_device::send_command()
         return;
     QMetaObject::invokeMethod(m_socket, std::bind( static_cast<qint64(QTcpSocket::*)(const QByteArray &)>( &QTcpSocket::write ), m_socket, m_send_data ) );
     this->m_socket->flush();
-    QThread::msleep(50);
 //    if(m_socket->read(8).data()!="recv ok!")
 //        emit send_continue();
     m_send_data.clear();
@@ -224,7 +243,7 @@ void ed_v2_device::send_command()
 
 void ed_v2_device::on_socket_event()
 {
-    m_recv_data=m_socket->read(8);
+    m_recv_data=m_socket->readAll();
     //    this->on_recv_data(m_recv_data,m_socket->pendingDatagramSize());
 
 //    m_socket->readDatagram(m_recv_data,1024,&peerAddr,&peerPort);

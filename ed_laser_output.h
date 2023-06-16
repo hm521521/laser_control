@@ -83,7 +83,7 @@ public:
     void prepare_stream();
     void begin_playback();
     void queue_rate_change();
-    void write_data(QVector<ishow_data>& data);
+    void write_data(QVector<ishow_data>& data,bool flag);
     void on_recv_data(unsigned char* data,int len);
 //    QString get_name() override;
 private slots:
@@ -91,9 +91,9 @@ private slots:
 public slots:
     void on_socket_event();
     void onSocketStateChange(QAbstractSocket::SocketState state);
-    void send_data(unsigned char *settings_data, QVector<unsigned char> &data) override;
+    void send_data(unsigned char *settings_data, QVector<unsigned char> &data,bool flag) override;
 private:
-    QTcpSocket *m_socket;
+//    QTcpSocket *m_socket;
 //    QString m_remote_addr;
     bool m_connected;
     QByteArray m_recv_data;//接收缓冲区
@@ -112,6 +112,7 @@ public:
 private:
     laser_device_manager* m_manager;
     QUdpSocket * m_socket;
+    QTimer *timer;
 public slots:
     void on_socket_event();
 };

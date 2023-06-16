@@ -8,7 +8,7 @@
 #include<QMimeData>
 #include"dnd_scene_data_object.h"
 //#include<QUrl>
-#include "windows.h"
+//#include "windows.h"
 
 project_panel::project_panel(QWidget *parent):QGraphicsView(parent)
 {
@@ -71,8 +71,8 @@ track_panel::track_panel(project_panel *parent)
     ,m_play_start(0)
 {
     Init();
-    m_width=m_parent->width();
-    m_height=m_parent->height();
+//    m_width=m_parent->width();
+//    m_height=m_parent->height();
 //    setFlags(QGraphicsItem::ItemIsMovable);
     setAcceptDrops(true);
 
@@ -386,12 +386,50 @@ void track_panel::mousePressEvent(QGraphicsSceneMouseEvent *event)
         m_mouse_move_mode=MOUSE_MOVE_MODE::MMM_NONE;
 
     }
-    else if(event->button()==Qt::RightButton)
-    {
-        QMenu *pMenu=new QMenu();
-        QAction *del=new QAction("删除");
-        pMenu->addAction(del);
-    }
+//    else if(event->button()==Qt::RightButton)
+//    {
+//        m_menu=new QMenu();
+//        del=new QAction("删除");
+//        m_menu->addAction(del);
+//        m_menu->exec(QCursor::pos());
+
+//        int x=event->pos().x();
+//        int y=event->pos().y();
+//        int start_x=m_header_width+HEADER_INTERVAL_WIDTH;
+//        if(x<start_x)
+//            return;
+//        if(on_tick_panel(y))
+//        {
+//            return;
+//        }
+//        else
+//        {
+//            int media_idx=on_media_track(y);
+//            if(-1!=media_idx)
+//            {
+//                if(get_media(x,y)!=nullptr)
+//                {
+////                    m_mouse_move_mode=MOUSE_MOVE_MODE::MMM_MEDIA_DRAG;
+//                    m_current_index=media_idx;
+//                    m_last_x=x;
+//                    update();
+//                    return;
+//                }
+
+//            }
+//        }
+
+//        pMenu->popup(event->pos());
+//    }
+}
+void track_panel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    m_menu=new QMenu();
+    del=new QAction("删除");
+    m_menu->addAction(del);
+    right_click_pos=QCursor::pos();
+    m_menu->exec(QCursor::pos());
+    connect(del,SIGNAL(triggered(bool)),this,SLOT(slotRemoveItem(bool)));
 }
 
 void track_panel::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -550,6 +588,39 @@ float track_panel::get_stop_postion()
             pos=s.m_end_x;
     }
     return pos;
+}
+
+void track_panel::slotRemoveItem(bool flag)
+{
+    int x=right_click_pos.x();
+    int y=right_click_pos.y();
+    int start_x=m_header_width+HEADER_INTERVAL_WIDTH;
+    if(x<start_x)
+        return;
+    if(on_tick_panel(y))
+    {
+        return;
+    }
+    else
+    {
+        int media_idx=on_media_track(y);
+        if(-1!=media_idx)
+        {
+            auto medi=get_media(x,y);
+            if(medi!=nullptr)
+            {
+                for(int i=0;i<m_medias.size();i++)
+                {
+                    if(m_medias.at(i)==medi)
+                        m_medias.remove(i);
+                }
+                update();//画图
+                return;
+            }
+
+        }
+    }
+
 }
 
 

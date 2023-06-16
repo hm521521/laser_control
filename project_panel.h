@@ -100,8 +100,9 @@ private slots:
 
 };
 
-class track_panel:public QGraphicsItem
+class track_panel:public QObject,public QGraphicsItem
 {
+Q_OBJECT
 public:
     track_panel(project_panel *parent=0);
     ~track_panel();
@@ -126,10 +127,12 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+    void contextMenuEvent(QGraphicsSceneContextMenuEvent *event) override;
 private:
     int get_media_start_y(int idx);
     int get_laser_start_y(int idx);
     media_info* get_media(int x, int y);
+    QPoint right_click_pos;
 private:
     project_panel *m_parent;
     show_model m_show_model;
@@ -144,14 +147,18 @@ private:
     QVector<media_info*> m_medias;
     QVector<scene_info> m_scenes;
     int m_laser_x;//保存鼠标左键按下的最后位置
-    int m_width;
-    int m_height;
+    int m_width=900;
+    int m_height=900;
+    QMenu *m_menu;
+    QAction *del;
 private:
     int on_media_track(int y);
     bool on_tick_panel(int y);
     void set_selected_scene(int track_index);
     int on_laser_track(int y);
     float get_stop_postion();
+private slots:
+    void slotRemoveItem(bool flag);
 
 };
 
