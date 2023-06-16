@@ -10,7 +10,7 @@ ed_v2_device::ed_v2_device(QString tcp_addr)
 {
     m_tcp_addr=tcp_addr;
     m_socket=new QTcpSocket(this);
-//    connect(m_socket,SIGNAL(readyRead()),this,SLOT(send_command()));
+    connect(m_socket,SIGNAL(readyRead()),this,SLOT(on_socket_event()));
     connect(m_socket,SIGNAL(stateChanged(QAbstractSocket::SocketState)),this,SLOT(onSocketStateChange(QAbstractSocket::SocketState)));
     //    onSocketStateChange(m_socket->state());
 }
@@ -198,6 +198,8 @@ void ed_v2_device::on_recv_data(unsigned char *data, int len)
 
 void ed_v2_device::send_command()
 {
+    if(m_recv_data!="recv ok!")
+        return;
     if (this->m_connected == false)
         return;
 //    int num=0;
@@ -207,26 +209,23 @@ void ed_v2_device::send_command()
 //    {
 //        data=m_send_data.mid(num,1024);
 //        this->m_socket->write(m_send_data);
+    if(m_send_data.size()==0)
+        return;
     QMetaObject::invokeMethod(m_socket, std::bind( static_cast<qint64(QTcpSocket::*)(const QByteArray &)>( &QTcpSocket::write ), m_socket, m_send_data ) );
     this->m_socket->flush();
     QThread::msleep(50);
-//        msleep(40);
-//        if(!m_socket->waitForBytesWritten(10000))
-//            return;
-//        num=num+1024;
-//    }
 //    if(m_socket->read(8).data()!="recv ok!")
 //        emit send_continue();
     m_send_data.clear();
+    m_recv_data.clear();
 //
 }
 
 
 void ed_v2_device::on_socket_event()
 {
-
-//    m_socket->read((char*)m_recv_data,1024);
-//    this->on_recv_data(m_recv_data,m_socket->pendingDatagramSize());
+    m_recv_data=m_socket->read(8);
+    //    this->on_recv_data(m_recv_data,m_socket->pendingDatagramSize());
 
 //    m_socket->readDatagram(m_recv_data,1024,&peerAddr,&peerPort);
 
