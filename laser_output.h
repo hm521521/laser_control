@@ -15,7 +15,7 @@ public:
     bool is_connected() override;
     void try_connect() override;
     bool is_create_by(QString mac) override;
-    void send_data(unsigned char *settings_data, QVector<unsigned char> &data,bool flag) override;
+    void send_data(unsigned char *settings_data, QVector<unsigned char> &data,send_data_state flag,int posnum) override;
 
     unsigned char* get_settings_data();
 //    QString get_name() override;

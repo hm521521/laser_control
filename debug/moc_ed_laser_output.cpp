@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ed_v2_device_t {
-    QByteArrayData data[13];
-    char stringdata0[171];
+    QByteArrayData data[15];
+    char stringdata0[194];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,14 +44,16 @@ QT_MOC_LITERAL(8, 108, 14), // "unsigned char*"
 QT_MOC_LITERAL(9, 123, 13), // "settings_data"
 QT_MOC_LITERAL(10, 137, 23), // "QVector<unsigned char>&"
 QT_MOC_LITERAL(11, 161, 4), // "data"
-QT_MOC_LITERAL(12, 166, 4) // "flag"
+QT_MOC_LITERAL(12, 166, 15), // "send_data_state"
+QT_MOC_LITERAL(13, 182, 4), // "flag"
+QT_MOC_LITERAL(14, 187, 6) // "posnum"
 
     },
     "ed_v2_device\0send_command\0\0on_socket_event\0"
     "onSocketStateChange\0QAbstractSocket::SocketState\0"
     "state\0send_data\0unsigned char*\0"
     "settings_data\0QVector<unsigned char>&\0"
-    "data\0flag"
+    "data\0send_data_state\0flag\0posnum"
 };
 #undef QT_MOC_LITERAL
 
@@ -72,13 +74,13 @@ static const uint qt_meta_data_ed_v2_device[] = {
        1,    0,   34,    2, 0x08 /* Private */,
        3,    0,   35,    2, 0x0a /* Public */,
        4,    1,   36,    2, 0x0a /* Public */,
-       7,    3,   39,    2, 0x0a /* Public */,
+       7,    4,   39,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 5,    6,
-    QMetaType::Void, 0x80000000 | 8, 0x80000000 | 10, QMetaType::Bool,    9,   11,   12,
+    QMetaType::Void, 0x80000000 | 8, 0x80000000 | 10, 0x80000000 | 12, QMetaType::Int,    9,   11,   13,   14,
 
        0        // eod
 };
@@ -92,7 +94,7 @@ void ed_v2_device::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 0: _t->send_command(); break;
         case 1: _t->on_socket_event(); break;
         case 2: _t->onSocketStateChange((*reinterpret_cast< QAbstractSocket::SocketState(*)>(_a[1]))); break;
-        case 3: _t->send_data((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
+        case 3: _t->send_data((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< send_data_state(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

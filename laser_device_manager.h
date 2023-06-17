@@ -17,6 +17,13 @@ enum class laser_type
     lt_ishow, //i show 3.0
     lt_edv2,  //ether dream v2
 };
+enum class send_data_state
+{
+    sd_begin,
+    sd_middle,
+    sd_end,
+    sd_begin_end,
+};
 
 class laser_device:public QObject
 {
@@ -34,7 +41,7 @@ public:
 //    void send_data(char setting_data[8],QVector<char>& data);
     QTcpSocket *m_socket;
 public slots:
-    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data,bool flag)=0;
+    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data,send_data_state flag,int posnum)=0;
 protected:
     QString m_name;
     QString m_mac;

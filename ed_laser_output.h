@@ -2,6 +2,7 @@
 #define ED_LASER_OUTPUT_H
 #include "laser_device_manager.h"
 #include "cjsection.h"
+//#include "ildafile.h"
 
 
 struct dac_status
@@ -83,7 +84,7 @@ public:
     void prepare_stream();
     void begin_playback();
     void queue_rate_change();
-    void write_data(QVector<ishow_data>& data,bool flag);
+    void write_data(QVector<ishow_data>& data,send_data_state flag);
     void on_recv_data(unsigned char* data,int len);
 //    QString get_name() override;
 private slots:
@@ -91,14 +92,16 @@ private slots:
 public slots:
     void on_socket_event();
     void onSocketStateChange(QAbstractSocket::SocketState state);
-    void send_data(unsigned char *settings_data, QVector<unsigned char> &data,bool flag) override;
+    void send_data(unsigned char *settings_data, QVector<unsigned char> &data,send_data_state flag,int posnum) override;//flag位0代表开始，1代表中间，2代表结束，3代表
 private:
 //    QTcpSocket *m_socket;
 //    QString m_remote_addr;
     bool m_connected;
     QByteArray m_recv_data;//接收缓冲区
     QByteArray m_send_data;//发送缓冲区
-
+    void addildahead();
+    QByteArray send_data_pre;
+    int m_posnum=0;
 };
 
 class ed_v2_device_finder:QObject

@@ -52,9 +52,10 @@ bool ed_v2_device::is_create_by(QString mac)
     return mac==m_tcp_addr;
 }
 
-void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data,bool flag)
+void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data,send_data_state flag,int posnum)
 {
 //    send_command(settings_data, 8);
+    m_posnum=posnum;
     QVector<ishow_data> id;
     for(int i=0;i<(int)(data.size()/sizeof (ishow_data));++i)
     {
@@ -70,112 +71,115 @@ void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char
     write_data(id,flag);
 }
 
-void ed_v2_device::query_firmware()
+void ed_v2_device::addildahead()
 {
-
-}
-
-void ed_v2_device::write_data(QVector<ishow_data> &data,bool flag)//把数据发出去
-{
-    QByteArray send_data;
-    send_data.clear();
-//    int i=0;
     char header[]="ILDA";
-    send_data.append(header,4);
+    send_data_pre.append(header,4);
     char format[3];
     int a=0;
     memcpy(format,&a,3);
-    send_data.append(format,3);
+    send_data_pre.append(format,3);
     a=5;
     char format1[1];
     memcpy(format1,&a,1);
-    send_data.append(format1,1);
+    send_data_pre.append(format1,1);
     char framename[]="Frame";
-    send_data.append(framename,8);
+    send_data_pre.append(framename,8);
 //    char framename[2];
 //    a=0;
 //    memcpy(framename,&a,2);
 //    send_data.append(framename,sizeof(framename));
     char companyname[]="yls";
-    send_data.append(companyname,8);
-    a=data.size();
+    send_data_pre.append(companyname,8);
+    a=m_posnum;
     char numpoints[2];
     memcpy(numpoints,&a,2);
-    send_data.append(numpoints,2);
+    send_data_pre.append(numpoints,2);
     char framenum[2];
     a=0;
     memcpy(framenum,&a,2);
-    send_data.append(framenum,2);
+    send_data_pre.append(framenum,2);
     char totalframes[2];
     a=0;
     memcpy(totalframes,&a,2);
-    send_data.append(totalframes,2);
+    send_data_pre.append(totalframes,2);
     char pronum[1];
     a=0;
     memcpy(pronum,&a,sizeof(pronum));
-    send_data.append(pronum,1);
+    send_data_pre.append(pronum,1);
     char reserved[1];
     a=0;
     memcpy(reserved,&a,1);
-    send_data.append(reserved,1);
+    send_data_pre.append(reserved,1);
+}
+
+void ed_v2_device::query_firmware()
+{
+
+}
+
+void ed_v2_device::write_data(QVector<ishow_data> &data,send_data_state flag)//把数据发出去
+{
+
+    send_data_pre.clear();
+    if(flag==send_data_state::sd_begin||flag==send_data_state::sd_begin_end)
+        addildahead();
     int scale=4096/256;
+    int a=0;
     for(int i=0;i<data.size();++i)
     {
         auto& d=data.at(i);
         a=d.x*scale;
         char secA[1];
         memcpy(secA,&a,2);
-        send_data.append(secA,2);
+        send_data_pre.append(secA,2);
         a=d.y*scale;
         memcpy(secA,&a,2);
-        send_data.append(secA,2);
+        send_data_pre.append(secA,2);
         char ch[1];
         a=0;
         if (d.blue==0&&d.green==0&&d.red==0)
             a=1<<6;
         memcpy(ch,&a,1);
-        send_data.append(ch,1);
+        send_data_pre.append(ch,1);
         a=d.red;
         memcpy(ch,&a,sizeof(ch));
-        send_data.append(ch,1);
+        send_data_pre.append(ch,1);
         a=d.green;
         memcpy(ch,&a,sizeof(ch));
-        send_data.append(ch,1);
+        send_data_pre.append(ch,1);
         a=d.blue;
         memcpy(ch,&a,sizeof(ch));
-        send_data.append(ch,1);
+        send_data_pre.append(ch,1);
     }
-//    send_data.append(header,sizeof (header));
-//    send_data.append(format,sizeof (format));
-//    send_data.append(format1,sizeof (format1));
-//    send_data.append(framename,sizeof(framename));
-//    send_data.append(companyname,8);
-//    send_data.append(numpoints,2);
-//    send_data.append(framenum,2);
-//    send_data.append(totalframes,2);
-//    send_data.append(pronum,1);
-//    send_data.append(reserved,1);
-
-    if(flag)
+    if(flag==send_data_state::sd_end)//尾帧添加4个零数据
     {
-        int num=0;
-        int pos=0;
-        for(int i=0;i<data.size();i++)
+        for(int i=0;i<4;i++)
         {
-            auto& d=data.at(i);
-            if(d.x==0&&d.y==0)
-                num++;
-            if(num>2)
-            {
-                pos=i;
-                break;
-            }
-
+            a=0;
+            char secA[1];
+            memcpy(secA,&a,2);
+            send_data_pre.append(secA,2);
+            a=0;
+            memcpy(secA,&a,2);
+            send_data_pre.append(secA,2);
+            char ch[1];
+            a=1<<6;
+            memcpy(ch,&a,1);
+            send_data_pre.append(ch,1);
+            a=0;
+            memcpy(ch,&a,sizeof(ch));
+            send_data_pre.append(ch,1);
+            a=0;
+            memcpy(ch,&a,sizeof(ch));
+            send_data_pre.append(ch,1);
+            a=0;
+            memcpy(ch,&a,sizeof(ch));
+            send_data_pre.append(ch,1);
         }
-        QByteArray head=send_data.mid(0,32);
-        send_data.replace(pos*8+32,32,head);
     }
-    m_send_data=send_data;
+
+    m_send_data=send_data_pre;
     this->send_command();
 //    send_data.clear();
 }

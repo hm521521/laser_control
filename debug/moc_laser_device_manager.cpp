@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_laser_device_t {
-    QByteArrayData data[9];
-    char stringdata0[103];
+    QByteArrayData data[11];
+    char stringdata0[126];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,12 +40,15 @@ QT_MOC_LITERAL(4, 38, 16), // "unsigned char[8]"
 QT_MOC_LITERAL(5, 55, 13), // "settings_data"
 QT_MOC_LITERAL(6, 69, 23), // "QVector<unsigned char>&"
 QT_MOC_LITERAL(7, 93, 4), // "data"
-QT_MOC_LITERAL(8, 98, 4) // "flag"
+QT_MOC_LITERAL(8, 98, 15), // "send_data_state"
+QT_MOC_LITERAL(9, 114, 4), // "flag"
+QT_MOC_LITERAL(10, 119, 6) // "posnum"
 
     },
     "laser_device\0send_continue\0\0send_data\0"
     "unsigned char[8]\0settings_data\0"
-    "QVector<unsigned char>&\0data\0flag"
+    "QVector<unsigned char>&\0data\0"
+    "send_data_state\0flag\0posnum"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,13 +69,13 @@ static const uint qt_meta_data_laser_device[] = {
        1,    0,   24,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    3,   25,    2, 0x0a /* Public */,
+       3,    4,   25,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 4, 0x80000000 | 6, QMetaType::Bool,    5,    7,    8,
+    QMetaType::Void, 0x80000000 | 4, 0x80000000 | 6, 0x80000000 | 8, QMetaType::Int,    5,    7,    9,   10,
 
        0        // eod
 };
@@ -84,7 +87,7 @@ void laser_device::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->send_continue(); break;
-        case 1: _t->send_data((*reinterpret_cast< unsigned char(*)[8]>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
+        case 1: _t->send_data((*reinterpret_cast< unsigned char(*)[8]>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< send_data_state(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
