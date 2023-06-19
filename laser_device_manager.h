@@ -41,7 +41,7 @@ public:
 //    void send_data(char setting_data[8],QVector<char>& data);
     QTcpSocket *m_socket;
 public slots:
-    virtual void send_data(unsigned char settings_data[8],QVector<unsigned char>& data,send_data_state flag,int posnum)=0;
+    virtual void send_data(unsigned char settings_data[8],std::vector<unsigned char>& data,send_data_state flag,int posnum)=0;
 protected:
     QString m_name;
     QString m_mac;
@@ -61,15 +61,16 @@ public:
     ~laser_device_manager();
     laser_device* get_default_device();
     void add_device(laser_type t,QString addr);
-    QVector<laser_device*> get_device_list();
+    std::vector<laser_device*> get_device_list();
+    int get_device_number();
 public slots:
     void refresh_laser_device();
 private:
     ed_v2_device_finder* m_device_finder;
     std::mutex m_lock_obj;
-    QVector<laser_device*> m_device_list;
+    std::vector<laser_device*> m_device_list;
 signals:
-    void manager_changed(QVector<laser_device*> device_list);
+    void manager_changed(std::vector<laser_device*> device_list);
     void new_device(laser_device* dev);
 };
 

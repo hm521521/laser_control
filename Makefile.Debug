@@ -1932,7 +1932,6 @@ debug\moc_main_panel.cpp: main_panel.h \
 		effect.h \
 		cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -3320,9 +3319,11 @@ debug\moc_picture_trace.cpp: picture_trace.h \
 
 debug\moc_project_panel.cpp: project_panel.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -3344,34 +3345,12 @@ debug\moc_project_panel.cpp: project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -3381,6 +3360,24 @@ debug\moc_project_panel.cpp: project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -3397,6 +3394,7 @@ debug\moc_project_panel.cpp: project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -3488,6 +3486,7 @@ debug\moc_project_panel.cpp: project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QWheelEvent \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPixmap \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QDateTime \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatetime.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QMultiMap \
@@ -5612,9 +5611,11 @@ debug\moc_qcustomplot.cpp: qcustomplot.h \
 
 debug\moc_stage.cpp: stage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -5636,34 +5637,12 @@ debug\moc_stage.cpp: stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -5673,6 +5652,24 @@ debug\moc_stage.cpp: stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -5689,6 +5686,7 @@ debug\moc_stage.cpp: stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -5732,6 +5730,7 @@ debug\moc_stage.cpp: stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QUrl \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QWidget \
 		laser_device_manager.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QMutex \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QObject \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtNetwork\QtNetwork \
@@ -7175,7 +7174,6 @@ ui_mainwindow1.h: mainwindow1.ui \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGraphicsItem \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgraphicsitem.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -7184,9 +7182,11 @@ ui_mainwindow1.h: mainwindow1.ui \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QUrl \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QWidget \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -7208,34 +7208,12 @@ ui_mainwindow1.h: mainwindow1.ui \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -7245,6 +7223,24 @@ ui_mainwindow1.h: mainwindow1.ui \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -7261,6 +7257,7 @@ ui_mainwindow1.h: mainwindow1.ui \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -7352,6 +7349,7 @@ ui_mainwindow1.h: mainwindow1.ui \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QWheelEvent \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPixmap \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QDateTime \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatetime.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QMultiMap \
@@ -7958,7 +7956,6 @@ ui_publicize.h: publicize.ui \
 		effect.h \
 		cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -8972,64 +8969,15 @@ debug\add_zones_dialog.obj: add_zones_dialog.cpp add_zones_dialog.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtouchdevice.h \
-		ui_add_zones_dialog.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qicon.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtabwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QWidget
+		ui_add_zones_dialog.h
 
 debug\cjimage.obj: cjimage.cpp cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -9051,34 +8999,12 @@ debug\cjimage.obj: cjimage.cpp cjimage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -9088,6 +9014,24 @@ debug\cjimage.obj: cjimage.cpp cjimage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -9104,6 +9048,7 @@ debug\cjimage.obj: cjimage.cpp cjimage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -9150,9 +9095,11 @@ debug\cjimage.obj: cjimage.cpp cjimage.h \
 debug\cjpoint.obj: cjpoint.cpp cjpoint.h
 
 debug\cjsection.obj: cjsection.cpp cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -9174,34 +9121,12 @@ debug\cjsection.obj: cjsection.cpp cjsection.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -9211,6 +9136,24 @@ debug\cjsection.obj: cjsection.cpp cjsection.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -9227,6 +9170,7 @@ debug\cjsection.obj: cjsection.cpp cjsection.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -9404,60 +9348,7 @@ debug\clockedit.obj: clockedit.cpp clockedit.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbasictimer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QtMath \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmath.h \
-		ui_clockedit.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QFrame \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGroupBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgroupbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QRadioButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qradiobutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QToolBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtoolbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout
+		ui_clockedit.h
 
 debug\color.obj: color.cpp color.h
 
@@ -9694,7 +9585,6 @@ debug\dnd_scene_data_object.obj: dnd_scene_data_object.cpp dnd_scene_data_object
 		effect.h \
 		cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -10026,9 +9916,11 @@ debug\ed_laser_output.obj: ed_laser_output.cpp ed_laser_output.h \
 debug\effect.obj: effect.cpp effect.h \
 		cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -10050,34 +9942,12 @@ debug\effect.obj: effect.cpp effect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -10087,6 +9957,24 @@ debug\effect.obj: effect.cpp effect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -10103,6 +9991,7 @@ debug\effect.obj: effect.cpp effect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -10154,9 +10043,11 @@ debug\effect.obj: effect.cpp effect.h \
 
 debug\gdiplus_helper.obj: gdiplus_helper.cpp gdiplus_helper.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -10178,34 +10069,12 @@ debug\gdiplus_helper.obj: gdiplus_helper.cpp gdiplus_helper.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -10215,6 +10084,24 @@ debug\gdiplus_helper.obj: gdiplus_helper.cpp gdiplus_helper.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -10231,6 +10118,7 @@ debug\gdiplus_helper.obj: gdiplus_helper.cpp gdiplus_helper.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -10727,35 +10615,7 @@ debug\hardware.obj: hardware.cpp hardware.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstyle.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtabbar.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qrubberband.h \
-		ui_hardware.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QToolBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtoolbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout
+		ui_hardware.h
 
 debug\laser_device.obj: laser_device.cpp laser_device.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QString \
@@ -10791,18 +10651,6 @@ debug\laser_device.obj: laser_device.cpp laser_device.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -10812,6 +10660,7 @@ debug\laser_device.obj: laser_device.cpp laser_device.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -10821,6 +10670,15 @@ debug\laser_device.obj: laser_device.cpp laser_device.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -10837,6 +10695,7 @@ debug\laser_device.obj: laser_device.cpp laser_device.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -11786,46 +11645,6 @@ debug\laser_setting.obj: laser_setting.cpp laser_setting.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPolygon \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QList \
 		ui_laser_setting.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGroupBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgroupbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSlider \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpinBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qspinbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStackedWidget \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstackedwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QDebug
 
 debug\main_panel.obj: main_panel.cpp main_panel.h \
@@ -11940,7 +11759,6 @@ debug\main_panel.obj: main_panel.cpp main_panel.h \
 		effect.h \
 		cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -12745,15 +12563,6 @@ debug\mainwindow1.obj: mainwindow1.cpp mainwindow1.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QButtonGroup \
 		publicize.h \
 		ui_mainwindow1.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout \
 		projection_zones.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QFileDialog \
 		gdiplus_helper.h \
@@ -13096,7 +12905,6 @@ debug\output_panel.obj: output_panel.cpp output_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGraphicsItem \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgraphicsitem.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -13589,38 +13397,6 @@ debug\picture_trace.obj: picture_trace.cpp picture_trace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtabbar.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qrubberband.h \
 		ui_picture_trace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpinBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QToolBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtoolbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QToolButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtoolbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMessageBox \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QFileDialog \
@@ -13739,9 +13515,11 @@ debug\pointattribute.obj: pointattribute.cpp pointattribute.h \
 
 debug\project_panel.obj: project_panel.cpp project_panel.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -13763,34 +13541,12 @@ debug\project_panel.obj: project_panel.cpp project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -13800,6 +13556,24 @@ debug\project_panel.obj: project_panel.cpp project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -13816,6 +13590,7 @@ debug\project_panel.obj: project_panel.cpp project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -13907,6 +13682,7 @@ debug\project_panel.obj: project_panel.cpp project_panel.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QWheelEvent \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPixmap \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QDateTime \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatetime.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QMultiMap \
@@ -15050,18 +14826,6 @@ debug\projection_zones.obj: projection_zones.cpp projection_zones.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QButtonGroup \
 		publicize.h \
 		ui_projection_zones.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGroupBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QListView \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout \
 		add_zones_dialog.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMessageBox
 
@@ -15531,44 +15295,6 @@ debug\publicize.obj: publicize.cpp publicize.h \
 		cjimage.h \
 		color.h \
 		ui_publicize.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QHBoxLayout \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSlider \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpacerItem \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QSpinBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		main_panel.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QToolBox \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qtoolbox.h \
-		scene_tool_box.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QStackedWidget \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qstackedwidget.h \
-		dnd_scene_data_object.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QMimeData \
-		toggle_button.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\qfiledialog.h
 
@@ -16191,7 +15917,6 @@ debug\scene_pool.obj: scene_pool.cpp scene_pool.h \
 		effect.h \
 		cjimage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		pointattribute.h \
 		cjpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
@@ -16328,9 +16053,11 @@ debug\show_model.obj: show_model.cpp show_model.h
 
 debug\stage.obj: stage.cpp stage.h \
 		cjsection.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		pointattribute.h \
+		cjpoint.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qconfig.h \
@@ -16352,34 +16079,12 @@ debug\stage.obj: stage.cpp stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmutex.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnumeric.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qversiontagging.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
-		pointattribute.h \
-		cjpoint.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\QPainter \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpainter.h \
-		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtguiglobal.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtgui-config.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qnamespace.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrect.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qmargins.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpoint.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qscopedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpixmap.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpaintdevice.h \
@@ -16389,6 +16094,24 @@ debug\stage.obj: stage.cpp stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qwindowdefs_win.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qcolor.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qrgba64.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qsharedpointer.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qshareddata.h \
@@ -16405,6 +16128,7 @@ debug\stage.obj: stage.cpp stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qtransform.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qmatrix.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qvector.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtGui\qregion.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\qiodevice.h \
@@ -16448,6 +16172,7 @@ debug\stage.obj: stage.cpp stage.h \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QUrl \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtWidgets\QWidget \
 		laser_device_manager.h \
+		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QVector \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QMutex \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtCore\QObject \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtNetwork\QtNetwork \

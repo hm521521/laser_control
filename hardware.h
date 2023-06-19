@@ -65,7 +65,7 @@ signals:
     void stage_changed(stage * s);
     void refresh_controller();
 public slots:
-    void refresh_laser_device(QVector<laser_device*> m_device_list);
+    void refresh_laser_device(std::vector<laser_device*> m_device_list);
 
 };
 

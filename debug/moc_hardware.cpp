@@ -9,7 +9,6 @@
 #include "../hardware.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
-#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'hardware.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -93,7 +92,7 @@ int SubWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 struct qt_meta_stringdata_hardware_t {
     QByteArrayData data[12];
-    char stringdata0[177];
+    char stringdata0[181];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -112,14 +111,14 @@ QT_MOC_LITERAL(6, 52, 22), // "on_Plus_Button_clicked"
 QT_MOC_LITERAL(7, 75, 25), // "on_Refresh_Button_clicked"
 QT_MOC_LITERAL(8, 101, 17), // "on_table_selected"
 QT_MOC_LITERAL(9, 119, 20), // "refresh_laser_device"
-QT_MOC_LITERAL(10, 140, 22), // "QVector<laser_device*>"
-QT_MOC_LITERAL(11, 163, 13) // "m_device_list"
+QT_MOC_LITERAL(10, 140, 26), // "std::vector<laser_device*>"
+QT_MOC_LITERAL(11, 167, 13) // "m_device_list"
 
     },
     "hardware\0stage_changed\0\0stage*\0s\0"
     "refresh_controller\0on_Plus_Button_clicked\0"
     "on_Refresh_Button_clicked\0on_table_selected\0"
-    "refresh_laser_device\0QVector<laser_device*>\0"
+    "refresh_laser_device\0std::vector<laser_device*>\0"
     "m_device_list"
 };
 #undef QT_MOC_LITERAL
@@ -171,7 +170,7 @@ void hardware::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 2: _t->on_Plus_Button_clicked(); break;
         case 3: _t->on_Refresh_Button_clicked(); break;
         case 4: _t->on_table_selected((*reinterpret_cast< QVariant(*)>(_a[1]))); break;
-        case 5: _t->refresh_laser_device((*reinterpret_cast< QVector<laser_device*>(*)>(_a[1]))); break;
+        case 5: _t->refresh_laser_device((*reinterpret_cast< std::vector<laser_device*>(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -182,13 +181,6 @@ void hardware::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< stage* >(); break;
-            }
-            break;
-        case 5:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<laser_device*> >(); break;
             }
             break;
         }

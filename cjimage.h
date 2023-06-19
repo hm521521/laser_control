@@ -1,10 +1,10 @@
 #ifndef CJIMAGE_H
 #define CJIMAGE_H
 #include "cjsection.h"
-#include<QVector>
+//#include<QVector>
 
 
-class CJImage:public QVector<CJSection>//一张动画的所有图
+class CJImage:public std::vector<CJSection>//一张动画的所有图
 {
 public:
     CJImage(QWidget* parent=0);

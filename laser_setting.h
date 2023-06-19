@@ -137,7 +137,7 @@ private slots:
     void on_blueMinU_spinBox_valueChanged(int arg1);
     void on_blueMaxU_horizontalSlider_sliderMoved(int position);
     void on_blueMaxU_spinBox_valueChanged(int arg1);
-    void refresh_laser_device(QVector<laser_device*> laser_device);
+    void refresh_laser_device(std::vector<laser_device*> laser_device);
     void on_OpenConfigButton_clicked();
     void on_actionopensettins_triggered();
     void on_saveConfigButton_clicked();

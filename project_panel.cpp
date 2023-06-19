@@ -612,6 +612,7 @@ void track_panel::slotRemoveItem(bool flag)
                 for(int i=0;i<m_medias.size();i++)
                 {
                     if(m_medias.at(i)==medi)
+//                        m_medias.erase(m_medias.begin()+i);
                         m_medias.remove(i);
                 }
                 update();//画图
@@ -1081,7 +1082,7 @@ void media_info::setBuffer()
     for(int i=0;i<count;i++)
     {
         double val=data[i]/peak;
-        m_sample.append(val);
+        m_sample.push_back(val);
     }
 }
 

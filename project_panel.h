@@ -70,7 +70,7 @@ public:
     void draw_level(QPainter *painter, int x, int y, int width, int height);
     QString m_filename;
     QMediaPlayer* m_mp3_player;
-    QVector<double> m_sample;
+    std::vector<double> m_sample;
     int m_start_x; //media开始位置
     //int m_media_length; //media长度
     //int m_last_x;

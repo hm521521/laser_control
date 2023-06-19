@@ -77,7 +77,7 @@ private:
     output_panel* m_output_panel;
     bool m_send_data;
     project_panel * m_project_panel;
-    QVector<stage*> m_stages;
+    std::vector<stage*> m_stages;
     bool m_multi_play;
     hardware *m_hardware;
     laser_setting *m_laser_setting;

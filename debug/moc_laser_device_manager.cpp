@@ -9,7 +9,6 @@
 #include "../laser_device_manager.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
-#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'laser_device_manager.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -23,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_laser_device_t {
     QByteArrayData data[11];
-    char stringdata0[126];
+    char stringdata0[130];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,16 +37,16 @@ QT_MOC_LITERAL(2, 27, 0), // ""
 QT_MOC_LITERAL(3, 28, 9), // "send_data"
 QT_MOC_LITERAL(4, 38, 16), // "unsigned char[8]"
 QT_MOC_LITERAL(5, 55, 13), // "settings_data"
-QT_MOC_LITERAL(6, 69, 23), // "QVector<unsigned char>&"
-QT_MOC_LITERAL(7, 93, 4), // "data"
-QT_MOC_LITERAL(8, 98, 15), // "send_data_state"
-QT_MOC_LITERAL(9, 114, 4), // "flag"
-QT_MOC_LITERAL(10, 119, 6) // "posnum"
+QT_MOC_LITERAL(6, 69, 27), // "std::vector<unsigned char>&"
+QT_MOC_LITERAL(7, 97, 4), // "data"
+QT_MOC_LITERAL(8, 102, 15), // "send_data_state"
+QT_MOC_LITERAL(9, 118, 4), // "flag"
+QT_MOC_LITERAL(10, 123, 6) // "posnum"
 
     },
     "laser_device\0send_continue\0\0send_data\0"
     "unsigned char[8]\0settings_data\0"
-    "QVector<unsigned char>&\0data\0"
+    "std::vector<unsigned char>&\0data\0"
     "send_data_state\0flag\0posnum"
 };
 #undef QT_MOC_LITERAL
@@ -87,7 +86,7 @@ void laser_device::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->send_continue(); break;
-        case 1: _t->send_data((*reinterpret_cast< unsigned char(*)[8]>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< send_data_state(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 1: _t->send_data((*reinterpret_cast< unsigned char(*)[8]>(_a[1])),(*reinterpret_cast< std::vector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< send_data_state(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -149,7 +148,7 @@ void laser_device::send_continue()
 }
 struct qt_meta_stringdata_laser_device_manager_t {
     QByteArrayData data[9];
-    char stringdata0[123];
+    char stringdata0[127];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -161,16 +160,16 @@ static const qt_meta_stringdata_laser_device_manager_t qt_meta_stringdata_laser_
 QT_MOC_LITERAL(0, 0, 20), // "laser_device_manager"
 QT_MOC_LITERAL(1, 21, 15), // "manager_changed"
 QT_MOC_LITERAL(2, 37, 0), // ""
-QT_MOC_LITERAL(3, 38, 22), // "QVector<laser_device*>"
-QT_MOC_LITERAL(4, 61, 11), // "device_list"
-QT_MOC_LITERAL(5, 73, 10), // "new_device"
-QT_MOC_LITERAL(6, 84, 13), // "laser_device*"
-QT_MOC_LITERAL(7, 98, 3), // "dev"
-QT_MOC_LITERAL(8, 102, 20) // "refresh_laser_device"
+QT_MOC_LITERAL(3, 38, 26), // "std::vector<laser_device*>"
+QT_MOC_LITERAL(4, 65, 11), // "device_list"
+QT_MOC_LITERAL(5, 77, 10), // "new_device"
+QT_MOC_LITERAL(6, 88, 13), // "laser_device*"
+QT_MOC_LITERAL(7, 102, 3), // "dev"
+QT_MOC_LITERAL(8, 106, 20) // "refresh_laser_device"
 
     },
     "laser_device_manager\0manager_changed\0"
-    "\0QVector<laser_device*>\0device_list\0"
+    "\0std::vector<laser_device*>\0device_list\0"
     "new_device\0laser_device*\0dev\0"
     "refresh_laser_device"
 };
@@ -212,7 +211,7 @@ void laser_device_manager::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         auto *_t = static_cast<laser_device_manager *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->manager_changed((*reinterpret_cast< QVector<laser_device*>(*)>(_a[1]))); break;
+        case 0: _t->manager_changed((*reinterpret_cast< std::vector<laser_device*>(*)>(_a[1]))); break;
         case 1: _t->new_device((*reinterpret_cast< laser_device*(*)>(_a[1]))); break;
         case 2: _t->refresh_laser_device(); break;
         default: ;
@@ -220,13 +219,6 @@ void laser_device_manager::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 0:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<laser_device*> >(); break;
-            }
-            break;
         case 1:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
@@ -238,7 +230,7 @@ void laser_device_manager::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (laser_device_manager::*)(QVector<laser_device*> );
+            using _t = void (laser_device_manager::*)(std::vector<laser_device*> );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&laser_device_manager::manager_changed)) {
                 *result = 0;
                 return;
@@ -295,7 +287,7 @@ int laser_device_manager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void laser_device_manager::manager_changed(QVector<laser_device*> _t1)
+void laser_device_manager::manager_changed(std::vector<laser_device*> _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

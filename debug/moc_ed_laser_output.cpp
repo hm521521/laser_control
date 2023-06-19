@@ -9,7 +9,6 @@
 #include "../ed_laser_output.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
-#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ed_laser_output.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -22,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ed_v2_device_t {
-    QByteArrayData data[15];
-    char stringdata0[194];
+    QByteArrayData data[16];
+    char stringdata0[213];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,18 +41,20 @@ QT_MOC_LITERAL(6, 92, 5), // "state"
 QT_MOC_LITERAL(7, 98, 9), // "send_data"
 QT_MOC_LITERAL(8, 108, 14), // "unsigned char*"
 QT_MOC_LITERAL(9, 123, 13), // "settings_data"
-QT_MOC_LITERAL(10, 137, 23), // "QVector<unsigned char>&"
-QT_MOC_LITERAL(11, 161, 4), // "data"
-QT_MOC_LITERAL(12, 166, 15), // "send_data_state"
-QT_MOC_LITERAL(13, 182, 4), // "flag"
-QT_MOC_LITERAL(14, 187, 6) // "posnum"
+QT_MOC_LITERAL(10, 137, 27), // "std::vector<unsigned char>&"
+QT_MOC_LITERAL(11, 165, 4), // "data"
+QT_MOC_LITERAL(12, 170, 15), // "send_data_state"
+QT_MOC_LITERAL(13, 186, 4), // "flag"
+QT_MOC_LITERAL(14, 191, 6), // "posnum"
+QT_MOC_LITERAL(15, 198, 14) // "connect_server"
 
     },
     "ed_v2_device\0send_command\0\0on_socket_event\0"
     "onSocketStateChange\0QAbstractSocket::SocketState\0"
     "state\0send_data\0unsigned char*\0"
-    "settings_data\0QVector<unsigned char>&\0"
-    "data\0send_data_state\0flag\0posnum"
+    "settings_data\0std::vector<unsigned char>&\0"
+    "data\0send_data_state\0flag\0posnum\0"
+    "connect_server"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +64,7 @@ static const uint qt_meta_data_ed_v2_device[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,16 +72,18 @@ static const uint qt_meta_data_ed_v2_device[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x08 /* Private */,
-       3,    0,   35,    2, 0x0a /* Public */,
-       4,    1,   36,    2, 0x0a /* Public */,
-       7,    4,   39,    2, 0x0a /* Public */,
+       1,    0,   39,    2, 0x08 /* Private */,
+       3,    0,   40,    2, 0x0a /* Public */,
+       4,    1,   41,    2, 0x0a /* Public */,
+       7,    4,   44,    2, 0x0a /* Public */,
+      15,    0,   53,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 5,    6,
     QMetaType::Void, 0x80000000 | 8, 0x80000000 | 10, 0x80000000 | 12, QMetaType::Int,    9,   11,   13,   14,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -94,7 +97,8 @@ void ed_v2_device::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 0: _t->send_command(); break;
         case 1: _t->on_socket_event(); break;
         case 2: _t->onSocketStateChange((*reinterpret_cast< QAbstractSocket::SocketState(*)>(_a[1]))); break;
-        case 3: _t->send_data((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< QVector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< send_data_state(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 3: _t->send_data((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< std::vector<unsigned char>(*)>(_a[2])),(*reinterpret_cast< send_data_state(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 4: _t->connect_server(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -140,13 +144,13 @@ int ed_v2_device::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

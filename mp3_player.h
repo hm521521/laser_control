@@ -11,7 +11,7 @@ public:
     mp3_player();
     bool open_file(QString file);
     int get_frame_length() {return m_frame_length;};
-    void get_music_data(QVector<unsigned int>& data);
+    void get_music_data(std::vector<unsigned int>& data);
 private:
     QString m_name;
     unsigned long m_handle;

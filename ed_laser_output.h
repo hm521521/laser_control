@@ -84,7 +84,7 @@ public:
     void prepare_stream();
     void begin_playback();
     void queue_rate_change();
-    void write_data(QVector<ishow_data>& data,send_data_state flag);
+    void write_data(std::vector<ishow_data>& data,send_data_state flag);
     void on_recv_data(unsigned char* data,int len);
 //    QString get_name() override;
 private slots:
@@ -92,7 +92,9 @@ private slots:
 public slots:
     void on_socket_event();
     void onSocketStateChange(QAbstractSocket::SocketState state);
-    void send_data(unsigned char *settings_data, QVector<unsigned char> &data,send_data_state flag,int posnum) override;//flag位0代表开始，1代表中间，2代表结束，3代表
+    void send_data(unsigned char *settings_data, std::vector<unsigned char> &data,send_data_state flag,int posnum) override;//flag位0代表开始，1代表中间，2代表结束，3代表
+    void connect_server();
+
 private:
 //    QTcpSocket *m_socket;
 //    QString m_remote_addr;

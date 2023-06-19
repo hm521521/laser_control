@@ -20,7 +20,7 @@ bool mp3_player::open_file(QString file)
     return true;
 }
 
-void mp3_player::get_music_data(QVector<unsigned int> &data)
+void mp3_player::get_music_data(std::vector<unsigned int> &data)
 {
     for(int i=0;i<m_byteArr->size();++i)
     {

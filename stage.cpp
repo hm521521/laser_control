@@ -67,7 +67,7 @@ void stage::do_send_data()//发送数据给下位机
 {
 
     unsigned char settings_data[8]={0};
-    QVector<unsigned char> send_data;
+    std::vector<unsigned char> send_data;
     send_data.clear();
     {
         if(this->OutputDebug)
@@ -126,18 +126,24 @@ void stage::do_send_data()//发送数据给下位机
                 send_data.push_back(x);
             }
             m_laser_device->send_data(settings_data, send_data,send_data_state::sd_begin_end,posnum);
+            send_data.erase(send_data.begin(),send_data.begin()+720);
         }
         else
         {
-            QVector<unsigned char> send_data_i=send_data.mid(0,744);
+            for(int i=send_data.size();i<744;i++)
+            {
+                unsigned char x=0;
+                send_data.push_back(x);
+            }
+            std::vector<unsigned char> send_data_i(send_data.begin(),send_data.begin()+744);
             m_laser_device->send_data(settings_data,send_data_i,send_data_state::sd_begin,posnum);
-            send_data.remove(0,744);
+            send_data.erase(send_data.begin(),send_data.begin()+744);
             int times=send_data.size()/768;
             for(int i=0;i<times;i++)
             {
-                QVector<unsigned char> send_data_i=send_data.mid(0,768);
+                std::vector<unsigned char> send_data_i(send_data.begin(),send_data.begin()+768);
                 m_laser_device->send_data(settings_data,send_data_i,send_data_state::sd_middle,posnum);
-                send_data.remove(0,768);
+                send_data.erase(send_data.begin(),send_data.begin()+768);
             }
             if(send_data.size()<744)
             {
@@ -146,9 +152,9 @@ void stage::do_send_data()//发送数据给下位机
                     unsigned char x=0;
                     send_data.push_back(x);
                 }
-                QVector<unsigned char> send_data_i=send_data.mid(0,744);
+                std::vector<unsigned char> send_data_i(send_data.begin(),send_data.begin()+744);
                 m_laser_device->send_data(settings_data,send_data_i,send_data_state::sd_end,posnum);
-                send_data.remove(0,744);
+                send_data.erase(send_data.begin(),send_data.begin()+744);
             }
             else
             {
@@ -157,17 +163,17 @@ void stage::do_send_data()//发送数据给下位机
                     unsigned char x=0;
                     send_data.push_back(x);
                 }
-                QVector<unsigned char> send_data_i=send_data.mid(0,768);
+                std::vector<unsigned char> send_data_i(send_data.begin(),send_data.begin()+768);
                 m_laser_device->send_data(settings_data,send_data_i,send_data_state::sd_middle,posnum);
-                send_data.remove(0,768);
+                send_data.erase(send_data.begin(),send_data.begin()+768);
                 for(int i=send_data.size();i<744;i++)
                 {
                     unsigned char x=0;
                     send_data.push_back(x);
                 }
-                send_data_i=send_data.mid(0,744);
-                m_laser_device->send_data(settings_data,send_data_i,send_data_state::sd_end,posnum);
-                send_data.remove(0,744);
+                std::vector<unsigned char> send_data_e(send_data.begin(),send_data.begin()+744);
+                m_laser_device->send_data(settings_data,send_data_e,send_data_state::sd_end,posnum);
+                send_data.erase(send_data.begin(),send_data.begin()+744);
             }
 
         }

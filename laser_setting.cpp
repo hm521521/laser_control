@@ -33,7 +33,7 @@ laser_setting::laser_setting(QWidget *parent) :
 }
 
 
-void laser_setting::refresh_laser_device(QVector<laser_device*> laser_device)
+void laser_setting::refresh_laser_device(std::vector<laser_device*> laser_device)
 {
 //    laser_device_manager *m=m_parent->get_laser_manager();
 //    laser_device *dev;

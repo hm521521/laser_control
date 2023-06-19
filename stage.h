@@ -29,7 +29,7 @@ private:
     std::vector<std::vector<ishow_data>> m_output_data_list;
     Configuration* m_config;
 //    QVector<unsigned char> m_send_data;
-    QVector<unsigned char> send_data_i;
+    std::vector<unsigned char> send_data_i;
     unsigned char settings_data[8]={0};
 public slots:
     void do_send_data();

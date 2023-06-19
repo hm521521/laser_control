@@ -12,6 +12,7 @@ ed_v2_device::ed_v2_device(QString tcp_addr)
     m_socket=new QTcpSocket(this);
     connect(m_socket,SIGNAL(readyRead()),this,SLOT(on_socket_event()));
     connect(m_socket,SIGNAL(stateChanged(QAbstractSocket::SocketState)),this,SLOT(onSocketStateChange(QAbstractSocket::SocketState)));
+    connect(m_socket,SIGNAL(disconnected()),this,SLOT(connect_server()),Qt::QueuedConnection);
     //    onSocketStateChange(m_socket->state());
 }
 
@@ -37,8 +38,9 @@ void ed_v2_device::try_connect()
 {
     do
     {
-        QHostAddress remote_addr(m_tcp_addr);
-        this->m_socket->connectToHost(m_tcp_addr,TCP_SERVER_PORT);
+//        QHostAddress remote_addr(m_tcp_addr);
+        QString ipv4_addr=m_tcp_addr.mid(7,m_tcp_addr.length()-7);
+        this->m_socket->connectToHost(ipv4_addr,TCP_SERVER_PORT,QAbstractSocket::ReadWrite, QAbstractSocket::IPv4Protocol);
         return;
     }
     while(0);
@@ -52,11 +54,11 @@ bool ed_v2_device::is_create_by(QString mac)
     return mac==m_tcp_addr;
 }
 
-void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char> &data,send_data_state flag,int posnum)
+void ed_v2_device::send_data(unsigned char *settings_data, std::vector<unsigned char> &data,send_data_state flag,int posnum)
 {
 //    send_command(settings_data, 8);
     m_posnum=posnum;
-    QVector<ishow_data> id;
+    std::vector<ishow_data> id;
     for(int i=0;i<(int)(data.size()/sizeof (ishow_data));++i)
     {
         ishow_data d;
@@ -69,6 +71,12 @@ void ed_v2_device::send_data(unsigned char *settings_data, QVector<unsigned char
         id.push_back(d);
     }
     write_data(id,flag);
+}
+
+void ed_v2_device::connect_server()
+{
+    this->m_connected=false;
+    try_connect();
 }
 
 void ed_v2_device::addildahead()
@@ -118,9 +126,8 @@ void ed_v2_device::query_firmware()
 
 }
 
-void ed_v2_device::write_data(QVector<ishow_data> &data,send_data_state flag)//把数据发出去
+void ed_v2_device::write_data(std::vector<ishow_data> &data,send_data_state flag)//把数据发出去
 {
-
     send_data_pre.clear();
     if(flag==send_data_state::sd_begin||flag==send_data_state::sd_begin_end)
         addildahead();
@@ -152,7 +159,7 @@ void ed_v2_device::write_data(QVector<ishow_data> &data,send_data_state flag)//�
         memcpy(ch,&a,sizeof(ch));
         send_data_pre.append(ch,1);
     }
-    if(flag==send_data_state::sd_end)//尾帧添加4个零数据
+    if(flag==send_data_state::sd_end||flag==send_data_state::sd_begin_end)//尾帧添加4个零数据
     {
         for(int i=0;i<4;i++)
         {
@@ -222,23 +229,15 @@ void ed_v2_device::on_recv_data(unsigned char *data, int len)
 
 void ed_v2_device::send_command()
 {
-    if (this->m_connected == false)
-        return;
+
     if(m_recv_data!="Recv OK!")
         this->m_socket->waitForReadyRead();
-//    int num=0;
-//    QByteArray data;
-//    int i=sizeof (m_send_data.data());
-//    while (num<m_send_data.size())
-//    {
-//        data=m_send_data.mid(num,1024);
-//        this->m_socket->write(m_send_data);
     if(m_send_data.size()==0)
+        return;
+    if (this->m_connected == false)
         return;
     QMetaObject::invokeMethod(m_socket, std::bind( static_cast<qint64(QTcpSocket::*)(const QByteArray &)>( &QTcpSocket::write ), m_socket, m_send_data ) );
     this->m_socket->flush();
-//    if(m_socket->read(8).data()!="recv ok!")
-//        emit send_continue();
     m_send_data.clear();
     m_recv_data.clear();
 //
@@ -283,10 +282,19 @@ ed_v2_device_finder::ed_v2_device_finder(laser_device_manager *manager)
     m_socket=new QUdpSocket(this);
     connect(m_socket,SIGNAL(readyRead()),
             this,SLOT(on_socket_event()));
+    timer=new QTimer(this);
+    connect(timer,&QTimer::timeout,this,[=](){
+        if(m_manager->get_device_number()!=0)
+            timer->stop();
+            broadcast();
+    });
     if(m_socket->bind(UDP_SERVER_PORT))
     {
         broadcast();
+        timer->start(5000);
+//        m_socket->waitForReadyRead(5000);
     }
+
 }
 
 ed_v2_device_finder::~ed_v2_device_finder()
@@ -336,11 +344,12 @@ void ed_v2_device_finder::on_socket_event()//发送UDP从7654到1200端口发送
     QByteArray   datagram;
     datagram.resize(m_socket->pendingDatagramSize());
     this->m_socket->readDatagram(datagram.data(),datagram.size(),&remote_addr,&peerPort);
-    int a=sizeof(j4cDAC_broadcast);
+//    int a=sizeof(j4cDAC_broadcast);
+
     if(datagram.size()==sizeof(j4cDAC_broadcast))
     {
-        j4cDAC_broadcast* msg=(j4cDAC_broadcast*)datagram.data();
-        int count=msg->status.point_count;
+//        j4cDAC_broadcast* msg=(j4cDAC_broadcast*)datagram.data();
+//        int count=msg->status.point_count;
         if(m_manager)
             m_manager->add_device(laser_type::lt_edv2, remote_addr.toString());
     }

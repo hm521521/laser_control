@@ -74,7 +74,7 @@ public:
 private:
     scene_pool* m_scene_pool;
 //    QToolBox* m_toolbox;
-    QVector<scene_panel*> m_scene_panels;
+    std::vector<scene_panel*> m_scene_panels;
     scene_panel *m_panel;
     QWidget *m_parent;
 //    QList<scene_panel* > m_panel_list;

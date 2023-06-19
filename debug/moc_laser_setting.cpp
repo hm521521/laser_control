@@ -9,7 +9,6 @@
 #include "../laser_setting.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
-#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'laser_setting.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -239,7 +238,7 @@ int laser_setting_data::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 struct qt_meta_stringdata_laser_setting_t {
     QByteArrayData data[42];
-    char stringdata0[1190];
+    char stringdata0[1194];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -283,13 +282,13 @@ QT_MOC_LITERAL(31, 877, 32), // "on_blueMinU_spinBox_valueChanged"
 QT_MOC_LITERAL(32, 910, 40), // "on_blueMaxU_horizontalSlider_..."
 QT_MOC_LITERAL(33, 951, 32), // "on_blueMaxU_spinBox_valueChanged"
 QT_MOC_LITERAL(34, 984, 20), // "refresh_laser_device"
-QT_MOC_LITERAL(35, 1005, 22), // "QVector<laser_device*>"
-QT_MOC_LITERAL(36, 1028, 12), // "laser_device"
-QT_MOC_LITERAL(37, 1041, 27), // "on_OpenConfigButton_clicked"
-QT_MOC_LITERAL(38, 1069, 30), // "on_actionopensettins_triggered"
-QT_MOC_LITERAL(39, 1100, 27), // "on_saveConfigButton_clicked"
-QT_MOC_LITERAL(40, 1128, 31), // "on_actionsavesettings_triggered"
-QT_MOC_LITERAL(41, 1160, 29) // "on_saveAsConfigButton_clicked"
+QT_MOC_LITERAL(35, 1005, 26), // "std::vector<laser_device*>"
+QT_MOC_LITERAL(36, 1032, 12), // "laser_device"
+QT_MOC_LITERAL(37, 1045, 27), // "on_OpenConfigButton_clicked"
+QT_MOC_LITERAL(38, 1073, 30), // "on_actionopensettins_triggered"
+QT_MOC_LITERAL(39, 1104, 27), // "on_saveConfigButton_clicked"
+QT_MOC_LITERAL(40, 1132, 31), // "on_actionsavesettings_triggered"
+QT_MOC_LITERAL(41, 1164, 29) // "on_saveAsConfigButton_clicked"
 
     },
     "laser_setting\0refresh\0\0"
@@ -320,7 +319,7 @@ QT_MOC_LITERAL(41, 1160, 29) // "on_saveAsConfigButton_clicked"
     "on_blueMinU_spinBox_valueChanged\0"
     "on_blueMaxU_horizontalSlider_sliderMoved\0"
     "on_blueMaxU_spinBox_valueChanged\0"
-    "refresh_laser_device\0QVector<laser_device*>\0"
+    "refresh_laser_device\0std::vector<laser_device*>\0"
     "laser_device\0on_OpenConfigButton_clicked\0"
     "on_actionopensettins_triggered\0"
     "on_saveConfigButton_clicked\0"
@@ -457,24 +456,13 @@ void laser_setting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 27: _t->on_blueMinU_spinBox_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 28: _t->on_blueMaxU_horizontalSlider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 29: _t->on_blueMaxU_spinBox_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 30: _t->refresh_laser_device((*reinterpret_cast< QVector<laser_device*>(*)>(_a[1]))); break;
+        case 30: _t->refresh_laser_device((*reinterpret_cast< std::vector<laser_device*>(*)>(_a[1]))); break;
         case 31: _t->on_OpenConfigButton_clicked(); break;
         case 32: _t->on_actionopensettins_triggered(); break;
         case 33: _t->on_saveConfigButton_clicked(); break;
         case 34: _t->on_actionsavesettings_triggered(); break;
         case 35: _t->on_saveAsConfigButton_clicked(); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 30:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<laser_device*> >(); break;
-            }
-            break;
         }
     }
 }
@@ -513,7 +501,7 @@ int laser_setting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 36;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 36)
-            qt_static_metacall(this, _c, _id, _a);
+            *reinterpret_cast<int*>(_a[0]) = -1;
         _id -= 36;
     }
     return _id;

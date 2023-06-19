@@ -148,7 +148,7 @@ void hardware::on_table_selected(QVariant s)
     emit stage_changed(m_output_stage);
 }
 
-void hardware::refresh_laser_device(QVector<laser_device*> device_list){
+void hardware::refresh_laser_device(std::vector<laser_device*> device_list){
 //    laser_device *dev;
     theModel->setRowCount(device_list.size());
 //    int i=0;

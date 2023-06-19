@@ -51,9 +51,14 @@ void laser_device_manager::add_device(laser_type t, QString addr)
     }
 }
 
-QVector<laser_device *> laser_device_manager::get_device_list()
+std::vector<laser_device *> laser_device_manager::get_device_list()
 {
     return m_device_list;
+}
+
+int laser_device_manager::get_device_number()
+{
+    return m_device_list.size();
 }
 
 void laser_device_manager::refresh_laser_device()

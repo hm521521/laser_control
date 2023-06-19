@@ -1,6 +1,6 @@
 #ifndef CJSECTION_H
 #define CJSECTION_H
-#include<QVector>
+//#include<QVector>
 #include "pointattribute.h"
 #include<QPainter>
 #include<QGraphicsView>
