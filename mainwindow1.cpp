@@ -35,9 +35,11 @@ MainWindow1::MainWindow1(QWidget *parent) :
     m_main_panel=new main_panel(this);
     m_scene_pool=new scene_pool();
     m_output_panel=ui->display_view;
-    connect(&m_main_thread,SIGNAL(completed()),this,SLOT(on_thread_completion()));
-    connect(&m_main_thread,SIGNAL(update()),this,SLOT(on_thread_update()));
-    m_main_thread.start();
+//    connect(&m_main_thread,SIGNAL(completed()),this,SLOT(on_thread_completion()));
+//    connect(&m_main_thread,SIGNAL(update()),this,SLOT(on_thread_update()));
+//    m_main_thread.start();
+    m_main_worker=new main_thread_worker(this);
+    connect(m_main_worker,SIGNAL(update()),this,SLOT(on_thread_update()));
     m_config=new Configuration();//配置对象
     m_config->Load();
     m_project_panel=ui->project_panel_view;
@@ -65,6 +67,9 @@ MainWindow1::MainWindow1(QWidget *parent) :
     connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
     connect(m_publicize,&publicize::operate,this,&MainWindow1::set_publicize_play);
     connect(m_publicize,&publicize::playpause,this,&MainWindow1::set_publicize_play);
+    QThreadPool::globalInstance()->setMaxThreadCount(10);
+
+    QThreadPool::globalInstance()->start(m_main_worker);
     //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
@@ -75,6 +80,7 @@ MainWindow1::MainWindow1(QWidget *parent) :
 
 MainWindow1::~MainWindow1()
 {
+    m_main_worker->setStop();
     QSettings *app_config=new QSettings("/MainFrame",QSettings::NativeFormat);
     if(app_config)
     {
@@ -105,15 +111,16 @@ MainWindow1::~MainWindow1()
     m_output_panel=nullptr;
     delete m_project_panel;
     m_project_panel=nullptr;
+    QThreadPool::globalInstance()->destroyed();
 }
 
 void MainWindow1::closeEvent(QCloseEvent *event)
 {
-    if(m_main_thread.isRunning())
-    {
-        m_main_thread.stopThread();
-        m_main_thread.wait();
-    }
+//    if(m_main_thread.isRunning())
+//    {
+//        m_main_thread.stopThread();
+//        m_main_thread.wait();
+//    }
     event->accept();
 }
 
@@ -199,11 +206,8 @@ void MainWindow1::on_open_workspace_triggered()//打开工作区
     delete ui->quick_scenes_stack;
     ui->quick_scenes_stack=new Scene_Stack(ui->widget);
     m_main_panel->set_data_model(m_scene_pool,ui->quick_scenes_stack,ui->quick_scenes_book,false);
-
 //输出ild文件
 //    m_main_panel->out_to_ild();
-
-
     ui->horizontalLayout_3->addWidget(ui->quick_scenes_book);
     ui->horizontalLayout_3->addWidget(ui->quick_scenes_stack);
 //    ui->horizontalLayout_3->setSpacing(0);
@@ -212,7 +216,6 @@ void MainWindow1::on_open_workspace_triggered()//打开工作区
     ui->quick_scenes_book->show();
     ui->quick_scenes_stack->show();
     connect(ui->quick_scenes_book,SIGNAL(currentChanged(int)),ui->quick_scenes_stack,SLOT(setCurrentIndex(int)));
-
 }
 
 void MainWindow1::on_thread_completion()
@@ -450,5 +453,30 @@ void MainWindow1::on_picture_tracer_triggered()
 void MainWindow1::on_publicize_triggered()
 {
     m_publicize->show();
+}
+
+
+
+
+main_thread_worker::main_thread_worker(QObject *parent)
+{
+    setAutoDelete(true);
+}
+
+void main_thread_worker::setStop()
+{
+    m_stop=true;
+}
+
+void main_thread_worker::run()
+{
+    m_stop=false;
+    double next_frame=0;
+    while(!m_stop)//循环主体
+    {
+        emit update();
+        next_frame+=100.f/25.0;
+        QThread::msleep(60);
+    }
 }
 

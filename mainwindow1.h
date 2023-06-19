@@ -21,6 +21,18 @@ namespace Ui {
 class MainWindow1;
 }
 
+class main_thread_worker:public QObject,public QRunnable
+{
+    Q_OBJECT
+public:
+    explicit main_thread_worker(QObject *parent=nullptr);
+    void setStop();
+private:
+    void run() override;
+    bool m_stop;
+signals:
+    void update();
+};
 
 class main_frame_thread:public QThread
 {
@@ -72,7 +84,7 @@ private:
     scene_pool *m_scene_pool;
     main_panel *m_main_panel;
     bool m_play_show;
-    main_frame_thread m_main_thread;
+//    main_frame_thread m_main_thread;
     Configuration* m_config;
     output_panel* m_output_panel;
     bool m_send_data;
@@ -85,6 +97,7 @@ private:
     Picture_trace *m_pic_trace;
     publicize *m_publicize;
     bool m_publicize_play=false;
+    main_thread_worker* m_main_worker;
 //    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
     void on_enable_output(yls_play_event& e);

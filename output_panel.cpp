@@ -3,12 +3,14 @@
 
 output_panel::output_panel(QWidget *parent):QGraphicsView(parent)
 {
-
+    m_graphicsScene=new QGraphicsScene(this);
 }
 
 output_panel::~output_panel()
 {
-    QList<QGraphicsItem *> item_list_p=m_graphicsScene->items();
+    QList<QGraphicsItem *> item_list_p;
+    if(m_graphicsScene)
+        item_list_p=m_graphicsScene->items();
     for(int i=0;i<item_list_p.size();++i)
     {
         m_graphicsScene->removeItem(item_list_p[i]);
