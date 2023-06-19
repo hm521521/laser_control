@@ -12,7 +12,7 @@ ed_v2_device::ed_v2_device(QString tcp_addr)
     m_socket=new QTcpSocket(this);
     connect(m_socket,SIGNAL(readyRead()),this,SLOT(on_socket_event()));
     connect(m_socket,SIGNAL(stateChanged(QAbstractSocket::SocketState)),this,SLOT(onSocketStateChange(QAbstractSocket::SocketState)));
-    connect(m_socket,SIGNAL(disconnected()),this,SLOT(connect_server()),Qt::QueuedConnection);
+//    connect(m_socket,SIGNAL(disconnected()),this,SLOT(connect_server()),Qt::QueuedConnection);
     //    onSocketStateChange(m_socket->state());
 }
 
@@ -73,11 +73,11 @@ void ed_v2_device::send_data(unsigned char *settings_data, std::vector<unsigned 
     write_data(id,flag);
 }
 
-void ed_v2_device::connect_server()
-{
-    this->m_connected=false;
-    try_connect();
-}
+//void ed_v2_device::connect_server()
+//{
+//    this->m_connected=false;
+//    try_connect();
+//}
 
 void ed_v2_device::addildahead()
 {
@@ -229,7 +229,8 @@ void ed_v2_device::on_recv_data(unsigned char *data, int len)
 
 void ed_v2_device::send_command()
 {
-
+    if (this->m_connected == false)
+        return;
     if(m_recv_data!="Recv OK!")
         this->m_socket->waitForReadyRead();
     if(m_send_data.size()==0)

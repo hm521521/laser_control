@@ -93,7 +93,7 @@ public slots:
     void on_socket_event();
     void onSocketStateChange(QAbstractSocket::SocketState state);
     void send_data(unsigned char *settings_data, std::vector<unsigned char> &data,send_data_state flag,int posnum) override;//flag位0代表开始，1代表中间，2代表结束，3代表
-    void connect_server();
+//    void connect_server();
 
 private:
 //    QTcpSocket *m_socket;
