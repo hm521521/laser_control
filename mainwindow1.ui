@@ -94,8 +94,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>69</width>
-                   <height>513</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <attribute name="label">
@@ -107,8 +107,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>69</width>
-                   <height>513</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <attribute name="label">
@@ -711,6 +711,7 @@
     <addaction name="hardware"/>
     <addaction name="laser_setting"/>
     <addaction name="projection_zones"/>
+    <addaction name="test_patterns"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -779,6 +780,11 @@
   <action name="publicize">
    <property name="text">
     <string>宣传语</string>
+   </property>
+  </action>
+  <action name="test_patterns">
+   <property name="text">
+    <string>测试模式</string>
    </property>
   </action>
  </widget>

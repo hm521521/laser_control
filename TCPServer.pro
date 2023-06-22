@@ -64,6 +64,7 @@ SOURCES += main.cpp\
     scene_tool_box.cpp \
     show_model.cpp \
     stage.cpp \
+    test_patterns.cpp \
     toggle_button.cpp \
     yls_play_event.cpp
 
@@ -103,6 +104,7 @@ HEADERS  += \
     show_model.h \
     stage.h \
     stop_watch.hpp \
+    test_patterns.h \
     toggle_button.h \
     yls_play_event.h
 
@@ -115,7 +117,8 @@ FORMS    += \
     mainwindow1.ui \
     picture_trace.ui \
     projection_zones.ui \
-    publicize.ui
+    publicize.ui \
+    test_patterns.ui
 
 
 RESOURCES += \

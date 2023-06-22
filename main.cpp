@@ -10,7 +10,5 @@ int main(int argc, char *argv[])
     w.show();
 //    Picture_trace p;
 //    p.show();
-
-
     return a.exec();
 }

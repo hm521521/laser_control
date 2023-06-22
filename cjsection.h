@@ -31,7 +31,7 @@ struct ishow_data
 class CJSection:public std::vector<PointAttribute>//一帧画面的所有点
 {
 public:
-    CJSection(QGraphicsView *parent=0);
+    CJSection(QObject *parent=0);
     void draw_picture(QPainter *painter,int x,int y, int width,int height,bool show_point=false,bool show_selected=false);
     std::vector<ishow_data> globalprocessing(Configuration *config);
 private:

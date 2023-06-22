@@ -20,7 +20,16 @@
 namespace Ui {
 class MainWindow1;
 }
-
+class workspace_worker:public QObject,public QRunnable
+{
+    Q_OBJECT
+public:
+    explicit workspace_worker(QObject *parent=nullptr);
+private:
+    void run() override;
+signals:
+    void workspace();
+};
 class main_thread_worker:public QObject,public QRunnable
 {
     Q_OBJECT
@@ -30,6 +39,7 @@ public:
 private:
     void run() override;
     bool m_stop;
+
 signals:
     void update();
 };
@@ -98,6 +108,7 @@ private:
     publicize *m_publicize;
     bool m_publicize_play=false;
     main_thread_worker* m_main_worker;
+    workspace_worker* m_workspace_worker;
 //    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
     void on_enable_output(yls_play_event& e);
@@ -108,6 +119,9 @@ private slots:
     static void handle_stage_results(int result);//处理子线程的结果
     void on_picture_tracer_triggered();
     void on_publicize_triggered();
+    void open_workspace();
+    void on_test_patterns_triggered();
+
 signals:
     void stage_operate(const bool);//发送信号，触发线程
 };

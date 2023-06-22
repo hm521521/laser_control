@@ -87,7 +87,6 @@ QString laser_setting::getMyType()
 
 
 
-
 void MyGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 { //鼠标左键按下事件
 

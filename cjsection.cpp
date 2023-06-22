@@ -36,9 +36,9 @@ int get_intersection(CJPoint a, CJPoint b, CJPoint c, CJPoint d, CJPoint& inters
     return -1;
 }
 
-CJSection::CJSection(QGraphicsView *parent)
+CJSection::CJSection(QObject *parent)
 {
-    m_parent=parent;
+//    m_parent=parent;
 }
 
 

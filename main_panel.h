@@ -10,7 +10,7 @@
 
 class scene_panel;
 
-class scene_item:public QGraphicsItem
+class scene_item:public QObject,public QGraphicsItem
 {
 
 public:

@@ -11,6 +11,7 @@
 //#include<QtConfig>
 //#define SET_NAME(x) graphicsView_##(x)//动态命名变量名
 #include<QSettings>
+#include"test_patterns.h"
 
 MainWindow1::MainWindow1(QWidget *parent) :
     QMainWindow(parent),
@@ -39,7 +40,8 @@ MainWindow1::MainWindow1(QWidget *parent) :
 //    connect(&m_main_thread,SIGNAL(update()),this,SLOT(on_thread_update()));
 //    m_main_thread.start();
     m_main_worker=new main_thread_worker(this);
-    connect(m_main_worker,SIGNAL(update()),this,SLOT(on_thread_update()));
+    m_workspace_worker=new workspace_worker(this);
+    connect(m_main_worker,SIGNAL(update()),this,SLOT(on_thread_update()),Qt::QueuedConnection);
     m_config=new Configuration();//配置对象
     m_config->Load();
     m_project_panel=ui->project_panel_view;
@@ -67,9 +69,10 @@ MainWindow1::MainWindow1(QWidget *parent) :
     connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
     connect(m_publicize,&publicize::operate,this,&MainWindow1::set_publicize_play);
     connect(m_publicize,&publicize::playpause,this,&MainWindow1::set_publicize_play);
-    QThreadPool::globalInstance()->setMaxThreadCount(10);
 
+    QThreadPool::globalInstance()->setMaxThreadCount(10);
     QThreadPool::globalInstance()->start(m_main_worker);
+
     //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
@@ -111,7 +114,7 @@ MainWindow1::~MainWindow1()
     m_output_panel=nullptr;
     delete m_project_panel;
     m_project_panel=nullptr;
-    QThreadPool::globalInstance()->destroyed();
+    QThreadPool::globalInstance()->clear();
 }
 
 void MainWindow1::closeEvent(QCloseEvent *event)
@@ -180,42 +183,8 @@ void MainWindow1::on_projection_zones_triggered()
 
 void MainWindow1::on_open_workspace_triggered()//打开工作区
 {
-
-    QUrl fileUrl=QFileDialog::getOpenFileUrl(this,"打开工作区",QUrl("./Workspace"),tr("workspaces(*.isw *.iSw)"));
-    if(!m_scene_pool->isEmpty())
-    {
-        m_main_panel->set_data_model(nullptr);
-        m_scene_pool->clearup();
-    }
-    m_scene_pool=new scene_pool(this);
-    m_scene_pool->read(fileUrl);
-    delete ui->m_scenes_book;
-    ui->m_scenes_book=new Scene_Tool_Box(ui->widget);
-    delete ui->m_scenes_stack;
-    ui->m_scenes_stack=new Scene_Stack(ui->widget);
-    m_main_panel->set_data_model(m_scene_pool,ui->m_scenes_stack,ui->m_scenes_book);
-    ui->horizontalLayout_8->addWidget(ui->m_scenes_book);
-    ui->horizontalLayout_8->addWidget(ui->m_scenes_stack);
-    if(ui->m_scenes_book->count()!=0)
-        ui->m_scenes_stack->setCurrentIndex(ui->m_scenes_book->currentIndex());
-    ui->m_scenes_book->show();
-    ui->m_scenes_stack->show();
-    connect(ui->m_scenes_book,SIGNAL(currentChanged(int)),ui->m_scenes_stack,SLOT(setCurrentIndex(int)));
-    delete ui->quick_scenes_book;
-    ui->quick_scenes_book=new Scene_Tool_Box(ui->widget);
-    delete ui->quick_scenes_stack;
-    ui->quick_scenes_stack=new Scene_Stack(ui->widget);
-    m_main_panel->set_data_model(m_scene_pool,ui->quick_scenes_stack,ui->quick_scenes_book,false);
-//输出ild文件
-//    m_main_panel->out_to_ild();
-    ui->horizontalLayout_3->addWidget(ui->quick_scenes_book);
-    ui->horizontalLayout_3->addWidget(ui->quick_scenes_stack);
-//    ui->horizontalLayout_3->setSpacing(0);
-    if(ui->quick_scenes_book->count()!=0)
-        ui->quick_scenes_stack->setCurrentIndex(ui->quick_scenes_book->currentIndex());
-    ui->quick_scenes_book->show();
-    ui->quick_scenes_stack->show();
-    connect(ui->quick_scenes_book,SIGNAL(currentChanged(int)),ui->quick_scenes_stack,SLOT(setCurrentIndex(int)));
+    connect(m_workspace_worker,SIGNAL(workspace()),this,SLOT(open_workspace()));
+    QThreadPool::globalInstance()->start(m_workspace_worker);
 }
 
 void MainWindow1::on_thread_completion()
@@ -249,7 +218,6 @@ void MainWindow1::on_thread_update()
             auto s=m_stages.at(i);
             std::vector<ishow_data> out=m_output_panel->m_picture.globalprocessing(m_config);
             s->add_send_data(out);
-
         }
     }
     else if(m_send_data&&m_publicize_play)
@@ -455,8 +423,44 @@ void MainWindow1::on_publicize_triggered()
     m_publicize->show();
 }
 
-
-
+void MainWindow1::open_workspace()
+{
+    QUrl fileUrl=QFileDialog::getOpenFileUrl(this,"打开工作区",QUrl("./Workspace"),tr("workspaces(*.isw *.iSw)"));
+    if(!m_scene_pool->isEmpty())
+    {
+        m_main_panel->set_data_model(nullptr);
+        m_scene_pool->clearup();
+    }
+    m_scene_pool=new scene_pool(this);
+    m_scene_pool->read(fileUrl);
+    delete ui->m_scenes_book;
+    ui->m_scenes_book=new Scene_Tool_Box(ui->widget);
+    delete ui->m_scenes_stack;
+    ui->m_scenes_stack=new Scene_Stack(ui->widget);
+    m_main_panel->set_data_model(m_scene_pool,ui->m_scenes_stack,ui->m_scenes_book);
+    ui->horizontalLayout_8->addWidget(ui->m_scenes_book);
+    ui->horizontalLayout_8->addWidget(ui->m_scenes_stack);
+    if(ui->m_scenes_book->count()!=0)
+        ui->m_scenes_stack->setCurrentIndex(ui->m_scenes_book->currentIndex());
+    ui->m_scenes_book->show();
+    ui->m_scenes_stack->show();
+    connect(ui->m_scenes_book,SIGNAL(currentChanged(int)),ui->m_scenes_stack,SLOT(setCurrentIndex(int)));
+    delete ui->quick_scenes_book;
+    ui->quick_scenes_book=new Scene_Tool_Box(ui->widget);
+    delete ui->quick_scenes_stack;
+    ui->quick_scenes_stack=new Scene_Stack(ui->widget);
+    m_main_panel->set_data_model(m_scene_pool,ui->quick_scenes_stack,ui->quick_scenes_book,false);
+//输出ild文件
+//    m_main_panel->out_to_ild();
+    ui->horizontalLayout_3->addWidget(ui->quick_scenes_book);
+    ui->horizontalLayout_3->addWidget(ui->quick_scenes_stack);
+//    ui->horizontalLayout_3->setSpacing(0);
+    if(ui->quick_scenes_book->count()!=0)
+        ui->quick_scenes_stack->setCurrentIndex(ui->quick_scenes_book->currentIndex());
+    ui->quick_scenes_book->show();
+    ui->quick_scenes_stack->show();
+    connect(ui->quick_scenes_book,SIGNAL(currentChanged(int)),ui->quick_scenes_stack,SLOT(setCurrentIndex(int)));
+}
 
 main_thread_worker::main_thread_worker(QObject *parent)
 {
@@ -476,7 +480,24 @@ void main_thread_worker::run()
     {
         emit update();
         next_frame+=100.f/25.0;
-        QThread::msleep(60);
+        QThread::msleep(50);
     }
+}
+
+
+workspace_worker::workspace_worker(QObject *parent)
+{
+     setAutoDelete(true);
+}
+
+void workspace_worker::run()
+{
+    emit workspace();
+}
+
+void MainWindow1::on_test_patterns_triggered()
+{
+    test_patterns* test_pattern=new test_patterns(this);
+    test_pattern->show();
 }
 
