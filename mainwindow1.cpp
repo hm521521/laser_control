@@ -62,9 +62,9 @@ MainWindow1::MainWindow1(QWidget *parent) :
     }
 //    output_panel *op=new output_panel(this);
     m_hardware=new hardware(this);
-    connect(m_laser_device_manager,SIGNAL(manager_changed(QVector<laser_device*>)),m_hardware,SLOT(refresh_laser_device(QVector<laser_device*>)));
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_hardware,SLOT(refresh_laser_device(std::vector<laser_device*>)));
     m_laser_setting=new laser_setting(this);
-    connect(m_laser_device_manager,SIGNAL(manager_changed(QVector<laser_device*>)),m_laser_setting,SLOT(refresh_laser_device(QVector<laser_device*>)));
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_laser_setting,SLOT(refresh_laser_device(std::vector<laser_device*>)));
     connect(m_laser_device_manager,SIGNAL(new_device(laser_device*)),this,SLOT(refresh_stages(laser_device*)));
     connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
     connect(m_publicize,&publicize::operate,this,&MainWindow1::set_publicize_play);
@@ -305,42 +305,42 @@ void MainWindow1::handle_stage_results(int result)
 
 
 
-main_frame_thread::main_frame_thread(QObject *parent)
-    :QThread(parent),m_main_frame(parent)
-{
+//main_frame_thread::main_frame_thread(QObject *parent)
+//    :QThread(parent),m_main_frame(parent)
+//{
 
-}
+//}
 
-void main_frame_thread::stopThread()
-{
-    m_stop=true;
-}
+//void main_frame_thread::stopThread()
+//{
+//    m_stop=true;
+//}
 
-void main_frame_thread::run()
-{
-    m_stop=false;//启动线程另m_stop=false
-    double next_frame=0;
-    stop_watch sw;
-    sw.start();
-    while(!m_stop)//循环主体
-    {
-        double current_time=sw.elapsed();
-        if (current_time>=next_frame)
-        {
-            if(current_time>=10000000.0)
-            {
-                sw.restart();
-                next_frame=0;
-            }
-            //通知主线程render以及更新scene control
-            emit update();
-            next_frame+=100.f/25.0;//TODO设置可调节的播放速度
-        }
-        msleep(60);
-    }
-    emit completed();
-    quit();
-}
+//void main_frame_thread::run()
+//{
+//    m_stop=false;//启动线程另m_stop=false
+//    double next_frame=0;
+//    stop_watch sw;
+//    sw.start();
+//    while(!m_stop)//循环主体
+//    {
+//        double current_time=sw.elapsed();
+//        if (current_time>=next_frame)
+//        {
+//            if(current_time>=10000000.0)
+//            {
+//                sw.restart();
+//                next_frame=0;
+//            }
+//            //通知主线程render以及更新scene control
+//            emit update();
+//            next_frame+=100.f/25.0;//TODO设置可调节的播放速度
+//        }
+//        msleep(60);
+//    }
+//    emit completed();
+//    quit();
+//}
 
 void MainWindow1::on_pushButton_grid_clicked()
 {

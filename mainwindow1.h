@@ -44,21 +44,21 @@ signals:
     void update();
 };
 
-class main_frame_thread:public QThread
-{
-    Q_OBJECT
-public:
-    main_frame_thread(QObject *parent = nullptr);
-    void stopThread();
-private:
-    QObject *m_main_frame;
-    bool m_stop;
-signals:
-    void update();
-    void completed();
-protected:
-    void run() Q_DECL_OVERRIDE;
-};
+//class main_frame_thread:public QThread
+//{
+//    Q_OBJECT
+//public:
+//    main_frame_thread(QObject *parent = nullptr);
+//    void stopThread();
+//private:
+//    QObject *m_main_frame;
+//    bool m_stop;
+//signals:
+//    void update();
+//    void completed();
+//protected:
+//    void run() Q_DECL_OVERRIDE;
+//};
 
 class MainWindow1 : public QMainWindow
 {
