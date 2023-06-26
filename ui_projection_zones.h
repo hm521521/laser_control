@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -21,6 +23,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
@@ -98,6 +101,60 @@ public:
     QGroupBox *groupBox_4;
     QGroupBox *groupBox_5;
     QWidget *tab_1;
+    QHBoxLayout *horizontalLayout_5;
+    QTabWidget *tabWidget_2;
+    QWidget *tab_7;
+    QHBoxLayout *horizontalLayout_6;
+    QGroupBox *groupBox_6;
+    QVBoxLayout *verticalLayout_7;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
+    QRadioButton *radioButton_4;
+    QRadioButton *radioButton_6;
+    QRadioButton *radioButton_7;
+    QRadioButton *radioButton_9;
+    QRadioButton *radioButton_8;
+    QRadioButton *radioButton_5;
+    QRadioButton *radioButton;
+    QPushButton *pushButton_13;
+    QPushButton *pushButton_15;
+    QWidget *widget_9;
+    QVBoxLayout *verticalLayout_8;
+    QWidget *widget_10;
+    QHBoxLayout *horizontalLayout_7;
+    QWidget *widget_12;
+    QVBoxLayout *verticalLayout_9;
+    QPushButton *pushButton_16;
+    QPushButton *pushButton_17;
+    QPushButton *pushButton_18;
+    QDoubleSpinBox *doubleSpinBox;
+    QPushButton *pushButton_19;
+    QPushButton *pushButton_20;
+    QPushButton *pushButton_21;
+    QWidget *widget_13;
+    QVBoxLayout *verticalLayout_10;
+    QPushButton *pushButton_22;
+    QSlider *verticalSlider;
+    QGraphicsView *graphicsView;
+    QWidget *widget_11;
+    QHBoxLayout *horizontalLayout_9;
+    QSpacerItem *horizontalSpacer_2;
+    QWidget *widget_15;
+    QVBoxLayout *verticalLayout_11;
+    QWidget *widget_14;
+    QHBoxLayout *horizontalLayout_8;
+    QSlider *horizontalSlider_2;
+    QPushButton *pushButton_23;
+    QWidget *widget_16;
+    QHBoxLayout *horizontalLayout_10;
+    QPushButton *pushButton_24;
+    QPushButton *pushButton_25;
+    QPushButton *pushButton_26;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QPushButton *pushButton_27;
+    QPushButton *pushButton_28;
+    QPushButton *pushButton_29;
+    QWidget *tab_8;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
@@ -377,6 +434,253 @@ public:
         tabWidget->addTab(tab, QString());
         tab_1 = new QWidget();
         tab_1->setObjectName(QString::fromUtf8("tab_1"));
+        horizontalLayout_5 = new QHBoxLayout(tab_1);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        tabWidget_2 = new QTabWidget(tab_1);
+        tabWidget_2->setObjectName(QString::fromUtf8("tabWidget_2"));
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QString::fromUtf8("tab_7"));
+        horizontalLayout_6 = new QHBoxLayout(tab_7);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        groupBox_6 = new QGroupBox(tab_7);
+        groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
+        groupBox_6->setMaximumSize(QSize(200, 16777215));
+        verticalLayout_7 = new QVBoxLayout(groupBox_6);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        radioButton_2 = new QRadioButton(groupBox_6);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+
+        verticalLayout_7->addWidget(radioButton_2);
+
+        radioButton_3 = new QRadioButton(groupBox_6);
+        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+
+        verticalLayout_7->addWidget(radioButton_3);
+
+        radioButton_4 = new QRadioButton(groupBox_6);
+        radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
+
+        verticalLayout_7->addWidget(radioButton_4);
+
+        radioButton_6 = new QRadioButton(groupBox_6);
+        radioButton_6->setObjectName(QString::fromUtf8("radioButton_6"));
+
+        verticalLayout_7->addWidget(radioButton_6);
+
+        radioButton_7 = new QRadioButton(groupBox_6);
+        radioButton_7->setObjectName(QString::fromUtf8("radioButton_7"));
+
+        verticalLayout_7->addWidget(radioButton_7);
+
+        radioButton_9 = new QRadioButton(groupBox_6);
+        radioButton_9->setObjectName(QString::fromUtf8("radioButton_9"));
+
+        verticalLayout_7->addWidget(radioButton_9);
+
+        radioButton_8 = new QRadioButton(groupBox_6);
+        radioButton_8->setObjectName(QString::fromUtf8("radioButton_8"));
+
+        verticalLayout_7->addWidget(radioButton_8);
+
+        radioButton_5 = new QRadioButton(groupBox_6);
+        radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
+
+        verticalLayout_7->addWidget(radioButton_5);
+
+        radioButton = new QRadioButton(groupBox_6);
+        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+
+        verticalLayout_7->addWidget(radioButton);
+
+        pushButton_13 = new QPushButton(groupBox_6);
+        pushButton_13->setObjectName(QString::fromUtf8("pushButton_13"));
+
+        verticalLayout_7->addWidget(pushButton_13);
+
+        pushButton_15 = new QPushButton(groupBox_6);
+        pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
+
+        verticalLayout_7->addWidget(pushButton_15);
+
+
+        horizontalLayout_6->addWidget(groupBox_6);
+
+        widget_9 = new QWidget(tab_7);
+        widget_9->setObjectName(QString::fromUtf8("widget_9"));
+        verticalLayout_8 = new QVBoxLayout(widget_9);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        widget_10 = new QWidget(widget_9);
+        widget_10->setObjectName(QString::fromUtf8("widget_10"));
+        horizontalLayout_7 = new QHBoxLayout(widget_10);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        widget_12 = new QWidget(widget_10);
+        widget_12->setObjectName(QString::fromUtf8("widget_12"));
+        verticalLayout_9 = new QVBoxLayout(widget_12);
+        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
+        pushButton_16 = new QPushButton(widget_12);
+        pushButton_16->setObjectName(QString::fromUtf8("pushButton_16"));
+        pushButton_16->setMaximumSize(QSize(16777215, 16777215));
+
+        verticalLayout_9->addWidget(pushButton_16);
+
+        pushButton_17 = new QPushButton(widget_12);
+        pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
+        pushButton_17->setMaximumSize(QSize(16777215, 16777215));
+
+        verticalLayout_9->addWidget(pushButton_17);
+
+        pushButton_18 = new QPushButton(widget_12);
+        pushButton_18->setObjectName(QString::fromUtf8("pushButton_18"));
+        pushButton_18->setMaximumSize(QSize(16777215, 16777215));
+
+        verticalLayout_9->addWidget(pushButton_18);
+
+        doubleSpinBox = new QDoubleSpinBox(widget_12);
+        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+
+        verticalLayout_9->addWidget(doubleSpinBox);
+
+        pushButton_19 = new QPushButton(widget_12);
+        pushButton_19->setObjectName(QString::fromUtf8("pushButton_19"));
+
+        verticalLayout_9->addWidget(pushButton_19);
+
+        pushButton_20 = new QPushButton(widget_12);
+        pushButton_20->setObjectName(QString::fromUtf8("pushButton_20"));
+
+        verticalLayout_9->addWidget(pushButton_20);
+
+        pushButton_21 = new QPushButton(widget_12);
+        pushButton_21->setObjectName(QString::fromUtf8("pushButton_21"));
+
+        verticalLayout_9->addWidget(pushButton_21);
+
+
+        horizontalLayout_7->addWidget(widget_12);
+
+        widget_13 = new QWidget(widget_10);
+        widget_13->setObjectName(QString::fromUtf8("widget_13"));
+        verticalLayout_10 = new QVBoxLayout(widget_13);
+        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        pushButton_22 = new QPushButton(widget_13);
+        pushButton_22->setObjectName(QString::fromUtf8("pushButton_22"));
+        pushButton_22->setMaximumSize(QSize(20, 16777215));
+
+        verticalLayout_10->addWidget(pushButton_22);
+
+        verticalSlider = new QSlider(widget_13);
+        verticalSlider->setObjectName(QString::fromUtf8("verticalSlider"));
+        verticalSlider->setOrientation(Qt::Vertical);
+
+        verticalLayout_10->addWidget(verticalSlider);
+
+
+        horizontalLayout_7->addWidget(widget_13);
+
+        graphicsView = new QGraphicsView(widget_10);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+
+        horizontalLayout_7->addWidget(graphicsView);
+
+
+        verticalLayout_8->addWidget(widget_10);
+
+        widget_11 = new QWidget(widget_9);
+        widget_11->setObjectName(QString::fromUtf8("widget_11"));
+        horizontalLayout_9 = new QHBoxLayout(widget_11);
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        horizontalSpacer_2 = new QSpacerItem(113, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_2);
+
+        widget_15 = new QWidget(widget_11);
+        widget_15->setObjectName(QString::fromUtf8("widget_15"));
+        widget_15->setMinimumSize(QSize(400, 0));
+        verticalLayout_11 = new QVBoxLayout(widget_15);
+        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        widget_14 = new QWidget(widget_15);
+        widget_14->setObjectName(QString::fromUtf8("widget_14"));
+        horizontalLayout_8 = new QHBoxLayout(widget_14);
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        horizontalSlider_2 = new QSlider(widget_14);
+        horizontalSlider_2->setObjectName(QString::fromUtf8("horizontalSlider_2"));
+        horizontalSlider_2->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_8->addWidget(horizontalSlider_2);
+
+        pushButton_23 = new QPushButton(widget_14);
+        pushButton_23->setObjectName(QString::fromUtf8("pushButton_23"));
+        pushButton_23->setMaximumSize(QSize(20, 16777215));
+
+        horizontalLayout_8->addWidget(pushButton_23);
+
+
+        verticalLayout_11->addWidget(widget_14);
+
+        widget_16 = new QWidget(widget_15);
+        widget_16->setObjectName(QString::fromUtf8("widget_16"));
+        horizontalLayout_10 = new QHBoxLayout(widget_16);
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        pushButton_24 = new QPushButton(widget_16);
+        pushButton_24->setObjectName(QString::fromUtf8("pushButton_24"));
+        pushButton_24->setMaximumSize(QSize(40, 16777215));
+
+        horizontalLayout_10->addWidget(pushButton_24);
+
+        pushButton_25 = new QPushButton(widget_16);
+        pushButton_25->setObjectName(QString::fromUtf8("pushButton_25"));
+        pushButton_25->setMaximumSize(QSize(40, 16777215));
+
+        horizontalLayout_10->addWidget(pushButton_25);
+
+        pushButton_26 = new QPushButton(widget_16);
+        pushButton_26->setObjectName(QString::fromUtf8("pushButton_26"));
+        pushButton_26->setMaximumSize(QSize(40, 16777215));
+
+        horizontalLayout_10->addWidget(pushButton_26);
+
+        doubleSpinBox_2 = new QDoubleSpinBox(widget_16);
+        doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
+
+        horizontalLayout_10->addWidget(doubleSpinBox_2);
+
+        pushButton_27 = new QPushButton(widget_16);
+        pushButton_27->setObjectName(QString::fromUtf8("pushButton_27"));
+        pushButton_27->setMaximumSize(QSize(30, 16777215));
+
+        horizontalLayout_10->addWidget(pushButton_27);
+
+        pushButton_28 = new QPushButton(widget_16);
+        pushButton_28->setObjectName(QString::fromUtf8("pushButton_28"));
+        pushButton_28->setMaximumSize(QSize(30, 16777215));
+
+        horizontalLayout_10->addWidget(pushButton_28);
+
+        pushButton_29 = new QPushButton(widget_16);
+        pushButton_29->setObjectName(QString::fromUtf8("pushButton_29"));
+        pushButton_29->setMaximumSize(QSize(30, 16777215));
+
+        horizontalLayout_10->addWidget(pushButton_29);
+
+
+        verticalLayout_11->addWidget(widget_16);
+
+
+        horizontalLayout_9->addWidget(widget_15);
+
+
+        verticalLayout_8->addWidget(widget_11);
+
+
+        horizontalLayout_6->addWidget(widget_9);
+
+        tabWidget_2->addTab(tab_7, QString());
+        tab_8 = new QWidget();
+        tab_8->setObjectName(QString::fromUtf8("tab_8"));
+        tabWidget_2->addTab(tab_8, QString());
+
+        horizontalLayout_5->addWidget(tabWidget_2);
+
         tabWidget->addTab(tab_1, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -440,7 +744,8 @@ public:
 
         retranslateUi(projection_zones);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
+        tabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(projection_zones);
@@ -487,7 +792,35 @@ public:
         groupBox_4->setTitle(QApplication::translate("projection_zones", "Advanced settings", nullptr));
         groupBox_5->setTitle(QApplication::translate("projection_zones", "Also to", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("projection_zones", "General", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_1), QApplication::translate("projection_zones", "Geometirc correction", nullptr));
+        groupBox_6->setTitle(QApplication::translate("projection_zones", " \346\240\241\346\255\243\347\261\273\345\236\213", nullptr));
+        radioButton_2->setText(QApplication::translate("projection_zones", "\345\244\247\345\260\217", nullptr));
+        radioButton_3->setText(QApplication::translate("projection_zones", "\344\275\215\347\275\256", nullptr));
+        radioButton_4->setText(QApplication::translate("projection_zones", "\346\227\213\350\275\254", nullptr));
+        radioButton_6->setText(QApplication::translate("projection_zones", "\347\272\277\346\200\247", nullptr));
+        radioButton_7->setText(QApplication::translate("projection_zones", "\345\257\271\347\247\260", nullptr));
+        radioButton_9->setText(QApplication::translate("projection_zones", "\351\207\215\345\277\203", nullptr));
+        radioButton_8->setText(QApplication::translate("projection_zones", "\351\222\210\345\236\253", nullptr));
+        radioButton_5->setText(QApplication::translate("projection_zones", "\345\274\223", nullptr));
+        radioButton->setText(QApplication::translate("projection_zones", "\344\277\256\345\211\252", nullptr));
+        pushButton_13->setText(QApplication::translate("projection_zones", " \351\207\215\350\256\276\351\241\271\347\233\256", nullptr));
+        pushButton_15->setText(QApplication::translate("projection_zones", " \351\207\215\350\256\276\346\211\200\346\234\211\351\241\271\347\233\256", nullptr));
+        pushButton_16->setText(QApplication::translate("projection_zones", "+1", nullptr));
+        pushButton_17->setText(QApplication::translate("projection_zones", "+0.1", nullptr));
+        pushButton_18->setText(QApplication::translate("projection_zones", "+0.01", nullptr));
+        pushButton_19->setText(QApplication::translate("projection_zones", "-0.01", nullptr));
+        pushButton_20->setText(QApplication::translate("projection_zones", "-0.1", nullptr));
+        pushButton_21->setText(QApplication::translate("projection_zones", "-1", nullptr));
+        pushButton_22->setText(QApplication::translate("projection_zones", "\342\227\207", nullptr));
+        pushButton_23->setText(QApplication::translate("projection_zones", "\342\227\207", nullptr));
+        pushButton_24->setText(QApplication::translate("projection_zones", "-1", nullptr));
+        pushButton_25->setText(QApplication::translate("projection_zones", "-0.1", nullptr));
+        pushButton_26->setText(QApplication::translate("projection_zones", "-0.01", nullptr));
+        pushButton_27->setText(QApplication::translate("projection_zones", "PushButton", nullptr));
+        pushButton_28->setText(QApplication::translate("projection_zones", "PushButton", nullptr));
+        pushButton_29->setText(QApplication::translate("projection_zones", "PushButton", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_7), QApplication::translate("projection_zones", "Universal Geometric Correction", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_8), QApplication::translate("projection_zones", "Free-form Mesh", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_1), QApplication::translate("projection_zones", "\345\207\240\344\275\225\346\240\241\346\255\243", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("projection_zones", "Preview", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("projection_zones", "Beam Attenuation Map", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("projection_zones", "Advanced", nullptr));

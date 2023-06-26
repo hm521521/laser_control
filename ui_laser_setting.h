@@ -1143,7 +1143,7 @@ public:
 
         retranslateUi(laser_setting);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(3);
         colorGradeStackedWidget->setCurrentIndex(0);
 
 
