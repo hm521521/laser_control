@@ -147,14 +147,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QListView" name="laser_list">
-         <property name="minimumSize">
-          <size>
-           <width>280</width>
-           <height>400</height>
-          </size>
-         </property>
-        </widget>
+        <widget class="laser_device_table" name="tableView"/>
        </item>
       </layout>
      </widget>
@@ -173,6 +166,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>laser_device_table</class>
+   <extends>QTableView</extends>
+   <header location="global">laser_setting.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -46,8 +46,19 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event);
 signals:
     void flagchanged();
+};
 
-
+class laser_device_table:public QTableView
+{
+    Q_OBJECT
+public:
+    laser_device_table(QWidget *parent=0);
+    ~laser_device_table();
+private:
+    QStandardItemModel *theModel;
+    QItemSelectionModel *theSelection;
+private slots:
+    void refresh_laser_device(std::vector<laser_device*> laser_device);
 };
 
 
@@ -72,7 +83,6 @@ private:
     int m_blueMaxU;
     int m_singleMinU;
     int m_singleMaxU;
-
 };
 
 class laser_setting : public SubWindow
@@ -83,11 +93,10 @@ public:
     explicit laser_setting(QWidget *parent = nullptr);
     ~laser_setting();
      QString getMyType();
+     laser_device_table *m_device_table;
 private:
     Ui::laser_setting *ui;
 //    MainWindow1 *m_parent;
-    QStandardItemModel *theModel;
-    QItemSelectionModel *theSelection;
     void xsizechange(int position);
     void ysizechange(int position);
     void postionchange(int position,POS_FLAG pf);
@@ -97,20 +106,11 @@ private:
     QString m_type;
 protected:
     Configuration* m_config;
-//    bool eventFilter(QObject *watched,QEvent *event);
-//    void mouseMove();
-//    void showResize();
-//    void resizeEvent(QResizeEvent *event);
-//    void mouseMoveEvent(QMouseEvent *event);
-//    void dragEvent(QDragMoveEvent *event);
-
-
 private slots:
     void refresh();
     void on_xsize_Slider_sliderMoved(int position);
     void on_xspinBox_valueChanged(int arg1);
     void onflagchanged();
-
     void on_ysize_Slider_sliderMoved(int position);
     void on_yspinBox_valueChanged(int arg1);
     void on_xposition_Slider_sliderMoved(int position);
@@ -137,7 +137,7 @@ private slots:
     void on_blueMinU_spinBox_valueChanged(int arg1);
     void on_blueMaxU_horizontalSlider_sliderMoved(int position);
     void on_blueMaxU_spinBox_valueChanged(int arg1);
-    void refresh_laser_device(std::vector<laser_device*> laser_device);
+
     void on_OpenConfigButton_clicked();
     void on_actionopensettins_triggered();
     void on_saveConfigButton_clicked();

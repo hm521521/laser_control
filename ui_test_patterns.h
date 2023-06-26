@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
@@ -21,6 +22,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <laser_setting.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -42,7 +44,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QListView *laser_list;
+    laser_device_table *tableView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -121,11 +123,10 @@ public:
 
         verticalLayout_2->addWidget(widget_4);
 
-        laser_list = new QListView(widget);
-        laser_list->setObjectName(QString::fromUtf8("laser_list"));
-        laser_list->setMinimumSize(QSize(280, 400));
+        tableView = new laser_device_table(widget);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
 
-        verticalLayout_2->addWidget(laser_list);
+        verticalLayout_2->addWidget(tableView);
 
 
         horizontalLayout->addWidget(widget);

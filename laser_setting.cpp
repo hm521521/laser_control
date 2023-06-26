@@ -17,23 +17,17 @@ laser_setting::laser_setting(QWidget *parent) :
 {
     ui->setupUi(this);
 //    m_parent=parent;
-    theModel = new QStandardItemModel(1,1,this); //创建数据模型
-    theSelection = new QItemSelectionModel(theModel);//Item选择模型
-    ui->tableView->setModel(theModel); //设置数据模型
-    ui->tableView->setSelectionModel(theSelection);//设置选择模型
-    ui->tableView->verticalHeader()->setHidden(true);
-    ui->tableView->horizontalHeader()->setHidden(true);
-    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+
 //    refresh_laser_device();
 //    connect(m_parent,SIGNAL(manager_changed()),this,SLOT(refresh()));
     connect(ui->view_size,SIGNAL(flagchanged()),this,SLOT(onflagchanged()));
     ui->colorGradeStackedWidget->setCurrentIndex(2);
     m_config=new Configuration(this);
+    m_device_table=ui->tableView;
 }
 
 
-void laser_setting::refresh_laser_device(std::vector<laser_device*> laser_device)
+void laser_device_table::refresh_laser_device(std::vector<laser_device*> laser_device)
 {
 //    laser_device_manager *m=m_parent->get_laser_manager();
 //    laser_device *dev;
@@ -696,4 +690,21 @@ void laser_setting::on_saveAsConfigButton_clicked()
 {
     if(m_config)
         m_config->SaveAs();
+}
+
+laser_device_table::laser_device_table(QWidget *parent)
+{
+    theModel = new QStandardItemModel(1,1,this); //创建数据模型
+    theSelection = new QItemSelectionModel(theModel);//Item选择模型
+    this->setModel(theModel); //设置数据模型
+    this->setSelectionModel(theSelection);//设置选择模型
+    this->verticalHeader()->setHidden(true);
+    this->horizontalHeader()->setHidden(true);
+    this->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    this->setSelectionBehavior(QAbstractItemView::SelectRows);
+}
+
+laser_device_table::~laser_device_table()
+{
+
 }

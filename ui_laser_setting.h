@@ -28,7 +28,6 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <laser_setting.h>
@@ -55,7 +54,7 @@ public:
     QPushButton *pushButton_8;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
-    QTableView *tableView;
+    laser_device_table *tableView;
     QTabWidget *tabWidget;
     QWidget *tab;
     QHBoxLayout *horizontalLayout_3;
@@ -299,7 +298,7 @@ public:
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         horizontalLayout_2 = new QHBoxLayout(widget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        tableView = new QTableView(widget_2);
+        tableView = new laser_device_table(widget_2);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setMinimumSize(QSize(150, 0));
         tableView->setMaximumSize(QSize(150, 16777215));

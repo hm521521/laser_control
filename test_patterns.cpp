@@ -9,6 +9,7 @@ test_patterns::test_patterns(QWidget *parent) :
     ui(new Ui::test_patterns)
 {
     ui->setupUi(this);
+    m_device_table=ui->tableView;
     QStandardItemModel* model=new QStandardItemModel;
     QString filename=QCoreApplication::applicationDirPath();
     filename.append(m_list_path);

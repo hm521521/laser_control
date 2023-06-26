@@ -64,22 +64,20 @@ MainWindow1::MainWindow1(QWidget *parent) :
     m_hardware=new hardware(this);
     connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_hardware,SLOT(refresh_laser_device(std::vector<laser_device*>)));
     m_laser_setting=new laser_setting(this);
-    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_laser_setting,SLOT(refresh_laser_device(std::vector<laser_device*>)));
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_laser_setting->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
     connect(m_laser_device_manager,SIGNAL(new_device(laser_device*)),this,SLOT(refresh_stages(laser_device*)));
     connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
     connect(m_publicize,&publicize::operate,this,&MainWindow1::set_publicize_play);
     connect(m_publicize,&publicize::playpause,this,&MainWindow1::set_publicize_play);
-
+    m_test_pattern=new test_patterns(this);
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_test_pattern->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
     QThreadPool::globalInstance()->setMaxThreadCount(10);
     QThreadPool::globalInstance()->start(m_main_worker);
-
     //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
 //    stage_thread_pool.setExpiryTimeout(-1);
-
 }
-
 
 MainWindow1::~MainWindow1()
 {
@@ -114,6 +112,7 @@ MainWindow1::~MainWindow1()
     m_output_panel=nullptr;
     delete m_project_panel;
     m_project_panel=nullptr;
+    delete m_test_pattern;
     QThreadPool::globalInstance()->clear();
 }
 
@@ -497,7 +496,6 @@ void workspace_worker::run()
 
 void MainWindow1::on_test_patterns_triggered()
 {
-    test_patterns* test_pattern=new test_patterns(this);
-    test_pattern->show();
+    m_test_pattern->show();
 }
 

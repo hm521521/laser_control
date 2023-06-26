@@ -16,6 +16,7 @@
 #include"output_panel.h"
 #include"picture_trace.h"
 #include"publicize.h"
+#include"test_patterns.h"
 //class scene_pool;
 namespace Ui {
 class MainWindow1;
@@ -109,6 +110,8 @@ private:
     bool m_publicize_play=false;
     main_thread_worker* m_main_worker;
     workspace_worker* m_workspace_worker;
+    test_patterns* m_test_pattern;
+
 //    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
     void on_enable_output(yls_play_event& e);

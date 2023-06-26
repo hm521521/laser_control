@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<QGraphicsView>
 #include<QCoreApplication>
+#include"laser_setting.h"
 
 namespace Ui {
 class test_patterns;
@@ -17,6 +18,7 @@ class test_patterns : public QMainWindow
 public:
     explicit test_patterns(QWidget *parent = nullptr);
     ~test_patterns();
+    laser_device_table *m_device_table;
 
 private:
     Ui::test_patterns *ui;

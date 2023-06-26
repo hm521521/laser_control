@@ -94,7 +94,7 @@
      <widget class="QWidget" name="widget_2" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QTableView" name="tableView">
+        <widget class="laser_device_table" name="tableView">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -1293,6 +1293,11 @@
   <customwidget>
    <class>MyGraphicsView</class>
    <extends>QGraphicsView</extends>
+   <header location="global">laser_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>laser_device_table</class>
+   <extends>QTableView</extends>
    <header location="global">laser_setting.h</header>
   </customwidget>
  </customwidgets>

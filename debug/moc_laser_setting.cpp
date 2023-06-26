@@ -166,6 +166,102 @@ void MyGraphicsView::flagchanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
+struct qt_meta_stringdata_laser_device_table_t {
+    QByteArrayData data[5];
+    char stringdata0[81];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_laser_device_table_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_laser_device_table_t qt_meta_stringdata_laser_device_table = {
+    {
+QT_MOC_LITERAL(0, 0, 18), // "laser_device_table"
+QT_MOC_LITERAL(1, 19, 20), // "refresh_laser_device"
+QT_MOC_LITERAL(2, 40, 0), // ""
+QT_MOC_LITERAL(3, 41, 26), // "std::vector<laser_device*>"
+QT_MOC_LITERAL(4, 68, 12) // "laser_device"
+
+    },
+    "laser_device_table\0refresh_laser_device\0"
+    "\0std::vector<laser_device*>\0laser_device"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_laser_device_table[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       1,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags
+       1,    1,   19,    2, 0x08 /* Private */,
+
+ // slots: parameters
+    QMetaType::Void, 0x80000000 | 3,    4,
+
+       0        // eod
+};
+
+void laser_device_table::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<laser_device_table *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->refresh_laser_device((*reinterpret_cast< std::vector<laser_device*>(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
+}
+
+QT_INIT_METAOBJECT const QMetaObject laser_device_table::staticMetaObject = { {
+    &QTableView::staticMetaObject,
+    qt_meta_stringdata_laser_device_table.data,
+    qt_meta_data_laser_device_table,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *laser_device_table::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *laser_device_table::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_laser_device_table.stringdata0))
+        return static_cast<void*>(this);
+    return QTableView::qt_metacast(_clname);
+}
+
+int laser_device_table::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QTableView::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 1)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 1;
+    }
+    return _id;
+}
 struct qt_meta_stringdata_laser_setting_data_t {
     QByteArrayData data[1];
     char stringdata0[19];
@@ -237,8 +333,8 @@ int laser_setting_data::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 struct qt_meta_stringdata_laser_setting_t {
-    QByteArrayData data[42];
-    char stringdata0[1194];
+    QByteArrayData data[39];
+    char stringdata0[1133];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -281,14 +377,11 @@ QT_MOC_LITERAL(30, 836, 40), // "on_blueMinU_horizontalSlider_..."
 QT_MOC_LITERAL(31, 877, 32), // "on_blueMinU_spinBox_valueChanged"
 QT_MOC_LITERAL(32, 910, 40), // "on_blueMaxU_horizontalSlider_..."
 QT_MOC_LITERAL(33, 951, 32), // "on_blueMaxU_spinBox_valueChanged"
-QT_MOC_LITERAL(34, 984, 20), // "refresh_laser_device"
-QT_MOC_LITERAL(35, 1005, 26), // "std::vector<laser_device*>"
-QT_MOC_LITERAL(36, 1032, 12), // "laser_device"
-QT_MOC_LITERAL(37, 1045, 27), // "on_OpenConfigButton_clicked"
-QT_MOC_LITERAL(38, 1073, 30), // "on_actionopensettins_triggered"
-QT_MOC_LITERAL(39, 1104, 27), // "on_saveConfigButton_clicked"
-QT_MOC_LITERAL(40, 1132, 31), // "on_actionsavesettings_triggered"
-QT_MOC_LITERAL(41, 1164, 29) // "on_saveAsConfigButton_clicked"
+QT_MOC_LITERAL(34, 984, 27), // "on_OpenConfigButton_clicked"
+QT_MOC_LITERAL(35, 1012, 30), // "on_actionopensettins_triggered"
+QT_MOC_LITERAL(36, 1043, 27), // "on_saveConfigButton_clicked"
+QT_MOC_LITERAL(37, 1071, 31), // "on_actionsavesettings_triggered"
+QT_MOC_LITERAL(38, 1103, 29) // "on_saveAsConfigButton_clicked"
 
     },
     "laser_setting\0refresh\0\0"
@@ -319,8 +412,7 @@ QT_MOC_LITERAL(41, 1164, 29) // "on_saveAsConfigButton_clicked"
     "on_blueMinU_spinBox_valueChanged\0"
     "on_blueMaxU_horizontalSlider_sliderMoved\0"
     "on_blueMaxU_spinBox_valueChanged\0"
-    "refresh_laser_device\0std::vector<laser_device*>\0"
-    "laser_device\0on_OpenConfigButton_clicked\0"
+    "on_OpenConfigButton_clicked\0"
     "on_actionopensettins_triggered\0"
     "on_saveConfigButton_clicked\0"
     "on_actionsavesettings_triggered\0"
@@ -334,7 +426,7 @@ static const uint qt_meta_data_laser_setting[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      36,   14, // methods
+      35,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -342,42 +434,41 @@ static const uint qt_meta_data_laser_setting[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  194,    2, 0x08 /* Private */,
-       3,    1,  195,    2, 0x08 /* Private */,
-       5,    1,  198,    2, 0x08 /* Private */,
-       7,    0,  201,    2, 0x08 /* Private */,
-       8,    1,  202,    2, 0x08 /* Private */,
-       9,    1,  205,    2, 0x08 /* Private */,
-      10,    1,  208,    2, 0x08 /* Private */,
-      11,    1,  211,    2, 0x08 /* Private */,
-      12,    1,  214,    2, 0x08 /* Private */,
-      13,    1,  217,    2, 0x08 /* Private */,
-      14,    1,  220,    2, 0x08 /* Private */,
-      15,    0,  223,    2, 0x08 /* Private */,
-      16,    0,  224,    2, 0x08 /* Private */,
-      17,    0,  225,    2, 0x08 /* Private */,
-      18,    1,  226,    2, 0x08 /* Private */,
-      19,    1,  229,    2, 0x08 /* Private */,
-      20,    1,  232,    2, 0x08 /* Private */,
-      21,    1,  235,    2, 0x08 /* Private */,
-      22,    1,  238,    2, 0x08 /* Private */,
-      23,    1,  241,    2, 0x08 /* Private */,
-      24,    1,  244,    2, 0x08 /* Private */,
-      25,    1,  247,    2, 0x08 /* Private */,
-      26,    1,  250,    2, 0x08 /* Private */,
-      27,    1,  253,    2, 0x08 /* Private */,
-      28,    1,  256,    2, 0x08 /* Private */,
-      29,    1,  259,    2, 0x08 /* Private */,
-      30,    1,  262,    2, 0x08 /* Private */,
-      31,    1,  265,    2, 0x08 /* Private */,
-      32,    1,  268,    2, 0x08 /* Private */,
-      33,    1,  271,    2, 0x08 /* Private */,
-      34,    1,  274,    2, 0x08 /* Private */,
-      37,    0,  277,    2, 0x08 /* Private */,
-      38,    0,  278,    2, 0x08 /* Private */,
-      39,    0,  279,    2, 0x08 /* Private */,
-      40,    0,  280,    2, 0x08 /* Private */,
-      41,    0,  281,    2, 0x08 /* Private */,
+       1,    0,  189,    2, 0x08 /* Private */,
+       3,    1,  190,    2, 0x08 /* Private */,
+       5,    1,  193,    2, 0x08 /* Private */,
+       7,    0,  196,    2, 0x08 /* Private */,
+       8,    1,  197,    2, 0x08 /* Private */,
+       9,    1,  200,    2, 0x08 /* Private */,
+      10,    1,  203,    2, 0x08 /* Private */,
+      11,    1,  206,    2, 0x08 /* Private */,
+      12,    1,  209,    2, 0x08 /* Private */,
+      13,    1,  212,    2, 0x08 /* Private */,
+      14,    1,  215,    2, 0x08 /* Private */,
+      15,    0,  218,    2, 0x08 /* Private */,
+      16,    0,  219,    2, 0x08 /* Private */,
+      17,    0,  220,    2, 0x08 /* Private */,
+      18,    1,  221,    2, 0x08 /* Private */,
+      19,    1,  224,    2, 0x08 /* Private */,
+      20,    1,  227,    2, 0x08 /* Private */,
+      21,    1,  230,    2, 0x08 /* Private */,
+      22,    1,  233,    2, 0x08 /* Private */,
+      23,    1,  236,    2, 0x08 /* Private */,
+      24,    1,  239,    2, 0x08 /* Private */,
+      25,    1,  242,    2, 0x08 /* Private */,
+      26,    1,  245,    2, 0x08 /* Private */,
+      27,    1,  248,    2, 0x08 /* Private */,
+      28,    1,  251,    2, 0x08 /* Private */,
+      29,    1,  254,    2, 0x08 /* Private */,
+      30,    1,  257,    2, 0x08 /* Private */,
+      31,    1,  260,    2, 0x08 /* Private */,
+      32,    1,  263,    2, 0x08 /* Private */,
+      33,    1,  266,    2, 0x08 /* Private */,
+      34,    0,  269,    2, 0x08 /* Private */,
+      35,    0,  270,    2, 0x08 /* Private */,
+      36,    0,  271,    2, 0x08 /* Private */,
+      37,    0,  272,    2, 0x08 /* Private */,
+      38,    0,  273,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -410,7 +501,6 @@ static const uint qt_meta_data_laser_setting[] = {
     QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void, QMetaType::Int,    6,
-    QMetaType::Void, 0x80000000 | 35,   36,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -456,12 +546,11 @@ void laser_setting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 27: _t->on_blueMinU_spinBox_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 28: _t->on_blueMaxU_horizontalSlider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 29: _t->on_blueMaxU_spinBox_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 30: _t->refresh_laser_device((*reinterpret_cast< std::vector<laser_device*>(*)>(_a[1]))); break;
-        case 31: _t->on_OpenConfigButton_clicked(); break;
-        case 32: _t->on_actionopensettins_triggered(); break;
-        case 33: _t->on_saveConfigButton_clicked(); break;
-        case 34: _t->on_actionsavesettings_triggered(); break;
-        case 35: _t->on_saveAsConfigButton_clicked(); break;
+        case 30: _t->on_OpenConfigButton_clicked(); break;
+        case 31: _t->on_actionopensettins_triggered(); break;
+        case 32: _t->on_saveConfigButton_clicked(); break;
+        case 33: _t->on_actionsavesettings_triggered(); break;
+        case 34: _t->on_saveAsConfigButton_clicked(); break;
         default: ;
         }
     }
@@ -496,13 +585,13 @@ int laser_setting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 36)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 36;
+        _id -= 35;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 36)
+        if (_id < 35)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 36;
+        _id -= 35;
     }
     return _id;
 }
