@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1370</width>
-    <height>1035</height>
+    <width>1010</width>
+    <height>687</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -70,472 +70,90 @@
        </item>
        <item>
         <widget class="QStackedWidget" name="stackedWidget_2">
+         <property name="minimumSize">
+          <size>
+           <width>700</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page_13">
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
-            <widget class="QWidget" name="widget_5" native="true">
-             <property name="minimumSize">
+            <widget class="Scene_Tool_Box" name="m_scenes_book">
+             <property name="maximumSize">
               <size>
-               <width>992</width>
-               <height>583</height>
+               <width>100</width>
+               <height>16777215</height>
               </size>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_8">
-              <item>
-               <widget class="Scene_Tool_Box" name="m_scenes_book">
-                <property name="currentIndex">
-                 <number>0</number>
-                </property>
-                <widget class="QWidget" name="page_14">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>98</width>
-                   <height>28</height>
-                  </rect>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="page_14">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>100</width>
+                <height>280</height>
+               </rect>
+              </property>
+              <attribute name="label">
+               <string>Page 1</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
                  </property>
-                 <attribute name="label">
-                  <string>Page 1</string>
-                 </attribute>
-                </widget>
-                <widget class="QWidget" name="page_15">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>98</width>
-                   <height>28</height>
-                  </rect>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>259</height>
+                  </size>
                  </property>
-                 <attribute name="label">
-                  <string>Page 2</string>
-                 </attribute>
-                </widget>
-               </widget>
-              </item>
-              <item>
-               <widget class="Scene_Stack" name="m_scenes_stack">
-                <property name="minimumSize">
-                 <size>
-                  <width>700</width>
-                  <height>521</height>
-                 </size>
-                </property>
-                <property name="currentIndex">
-                 <number>1</number>
-                </property>
-                <widget class="QWidget" name="page_16"/>
-                <widget class="QWidget" name="page_17">
-                 <layout class="QGridLayout" name="gridLayout_3">
-                  <item row="0" column="6">
-                   <widget class="QGraphicsView" name="graphicsView_87">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="5">
-                   <widget class="QGraphicsView" name="graphicsView_94">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QGraphicsView" name="graphicsView_90">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="4">
-                   <widget class="QGraphicsView" name="graphicsView_109">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="5">
-                   <widget class="QGraphicsView" name="graphicsView_118">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="2">
-                   <widget class="QGraphicsView" name="graphicsView_115">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QGraphicsView" name="graphicsView_105">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="7">
-                   <widget class="QGraphicsView" name="graphicsView_88">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="3">
-                   <widget class="QGraphicsView" name="graphicsView_108">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QGraphicsView" name="graphicsView_98">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="7">
-                   <widget class="QGraphicsView" name="graphicsView_112">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QGraphicsView" name="graphicsView_83">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="3">
-                   <widget class="QGraphicsView" name="graphicsView_100">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="7">
-                   <widget class="QGraphicsView" name="graphicsView_96">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="3">
-                   <widget class="QGraphicsView" name="graphicsView_92">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QGraphicsView" name="graphicsView_97">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="4">
-                   <widget class="QGraphicsView" name="graphicsView_93">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QGraphicsView" name="graphicsView_89">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="6">
-                   <widget class="QGraphicsView" name="graphicsView_103">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="7">
-                   <widget class="QGraphicsView" name="graphicsView_104">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="4">
-                   <widget class="QGraphicsView" name="graphicsView_117">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="2">
-                   <widget class="QGraphicsView" name="graphicsView_107">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="7">
-                   <widget class="QGraphicsView" name="graphicsView_120">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="5">
-                   <widget class="QGraphicsView" name="graphicsView_110">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="5">
-                   <widget class="QGraphicsView" name="graphicsView_86">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QGraphicsView" name="graphicsView_81">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="6">
-                   <widget class="QGraphicsView" name="graphicsView_95">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="5">
-                   <widget class="QGraphicsView" name="graphicsView_102">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="6">
-                   <widget class="QGraphicsView" name="graphicsView_119">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="3">
-                   <widget class="QGraphicsView" name="graphicsView_116">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QGraphicsView" name="graphicsView_91">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QGraphicsView" name="graphicsView_106">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="6">
-                   <widget class="QGraphicsView" name="graphicsView_111">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="3">
-                   <widget class="QGraphicsView" name="graphicsView_84">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QGraphicsView" name="graphicsView_113">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QGraphicsView" name="graphicsView_99">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QGraphicsView" name="graphicsView_114">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="4">
-                   <widget class="QGraphicsView" name="graphicsView_101">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="4">
-                   <widget class="QGraphicsView" name="graphicsView_85">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QGraphicsView" name="graphicsView_82">
-                    <property name="minimumSize">
-                     <size>
-                      <width>105</width>
-                      <height>105</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </widget>
-              </item>
-             </layout>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="page_15">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>100</width>
+                <height>280</height>
+               </rect>
+              </property>
+              <attribute name="label">
+               <string>Page 2</string>
+              </attribute>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="Scene_Stack" name="m_scenes_stack">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <widget class="QWidget" name="page_16"/>
+             <widget class="QWidget" name="page_17"/>
             </widget>
            </item>
           </layout>
@@ -600,7 +218,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>300</height>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="currentIndex">
@@ -628,7 +252,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>68</width>
-                <height>205</height>
+                <height>108</height>
                </rect>
               </property>
               <attribute name="label">
@@ -641,7 +265,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>68</width>
-                <height>205</height>
+                <height>108</height>
                </rect>
               </property>
               <attribute name="label">
@@ -678,16 +302,343 @@
         <widget class="output_panel" name="display_view">
          <property name="minimumSize">
           <size>
-           <width>300</width>
-           <height>300</height>
+           <width>250</width>
+           <height>250</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>300</width>
-           <height>300</height>
+           <width>16777215</width>
+           <height>16777215</height>
           </size>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>Dynamics</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QToolBox" name="toolBox">
+             <property name="currentIndex">
+              <number>2</number>
+             </property>
+             <widget class="QWidget" name="page_5">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>176</width>
+                <height>279</height>
+               </rect>
+              </property>
+              <attribute name="label">
+               <string>设置限制</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="page_6">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>257</width>
+                <height>352</height>
+               </rect>
+              </property>
+              <attribute name="label">
+               <string>Cue appearance</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>软暂停持续时间</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_4" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <widget class="QWidget" name="widget_8" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_9">
+                     <item>
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>节目格开始</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>74</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_9" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                     <item>
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>节目格结束</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_3">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>74</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="checkBox">
+                    <property name="text">
+                     <string>CheckBox</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_10" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_10">
+                     <item>
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>节目格开始</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_4">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>48</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_4">
+                       <property name="maximumSize">
+                        <size>
+                         <width>20</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string>Σ</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_11" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_11">
+                     <item>
+                      <widget class="QLabel" name="label_5">
+                       <property name="text">
+                        <string> 节目格结束</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_5">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>42</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_5">
+                       <property name="maximumSize">
+                        <size>
+                         <width>20</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string>Σ</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox_3">
+                 <property name="text">
+                  <string>在闪烁模式中启用开始效果</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox_4">
+                 <property name="text">
+                  <string>在闪烁模式中使用完成效果</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox_2">
+                 <property name="text">
+                  <string>Use Start effect in Flash Solo mode</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox_5">
+                 <property name="text">
+                  <string>Use Finish effect in Flash Solo mode</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="page_7">
+              <attribute name="label">
+               <string>过渡</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_7">
+               <item>
+                <widget class="my_list_view" name="trans_listView"/>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_12" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <item>
+                   <widget class="QLabel" name="label_6">
+                    <property name="text">
+                     <string>持续</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="doubleSpinBox_5"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_7">
+                    <property name="maximumSize">
+                     <size>
+                      <width>30</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>PushButton</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_6">
+                    <property name="maximumSize">
+                     <size>
+                      <width>30</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>PushButton</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_4">
+          <attribute name="title">
+           <string>Tab 2</string>
+          </attribute>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -700,7 +651,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1370</width>
+     <width>1010</width>
      <height>23</height>
     </rect>
    </property>
@@ -708,10 +659,19 @@
     <property name="title">
      <string>设置</string>
     </property>
+    <widget class="QMenu" name="menuDMX">
+     <property name="title">
+      <string>DMX</string>
+     </property>
+     <addaction name="DMX_ArtNet_Settings"/>
+     <addaction name="actionDMX_Monitor"/>
+     <addaction name="actionDMX_IN_State_Monitor"/>
+    </widget>
     <addaction name="hardware"/>
     <addaction name="laser_setting"/>
     <addaction name="projection_zones"/>
     <addaction name="test_patterns"/>
+    <addaction name="menuDMX"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -787,6 +747,21 @@
     <string>测试模式</string>
    </property>
   </action>
+  <action name="DMX_ArtNet_Settings">
+   <property name="text">
+    <string>DMX/ArtNet Settings</string>
+   </property>
+  </action>
+  <action name="actionDMX_Monitor">
+   <property name="text">
+    <string>DMX Monitor</string>
+   </property>
+  </action>
+  <action name="actionDMX_IN_State_Monitor">
+   <property name="text">
+    <string>DMX IN State Monitor</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -815,6 +790,11 @@
    <class>toggle_button</class>
    <extends>QPushButton</extends>
    <header>toggle_button.h</header>
+  </customwidget>
+  <customwidget>
+   <class>my_list_view</class>
+   <extends>QListView</extends>
+   <header location="global">test_patterns.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -14,7 +14,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -23,6 +22,7 @@
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <laser_setting.h>
+#include <test_patterns.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -37,7 +37,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
     QSlider *horizontalSlider;
-    QListView *test_list;
+    my_list_view *test_list;
     QWidget *widget;
     QVBoxLayout *verticalLayout_2;
     QWidget *widget_4;
@@ -89,7 +89,7 @@ public:
 
         verticalLayout->addWidget(widget_3);
 
-        test_list = new QListView(widget_2);
+        test_list = new my_list_view(widget_2);
         test_list->setObjectName(QString::fromUtf8("test_list"));
         test_list->setMinimumSize(QSize(280, 400));
         test_list->setMaximumSize(QSize(280, 16777215));

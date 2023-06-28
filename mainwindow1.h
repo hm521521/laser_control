@@ -17,6 +17,7 @@
 #include"picture_trace.h"
 #include"publicize.h"
 #include"test_patterns.h"
+#include"dmx_setup.h"
 //class scene_pool;
 namespace Ui {
 class MainWindow1;
@@ -111,6 +112,7 @@ private:
     main_thread_worker* m_main_worker;
     workspace_worker* m_workspace_worker;
     test_patterns* m_test_pattern;
+    DMX_setup* m_dmx_setup;
 
 //    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
@@ -124,6 +126,8 @@ private slots:
     void on_publicize_triggered();
     void open_workspace();
     void on_test_patterns_triggered();
+
+    void on_DMX_ArtNet_Settings_triggered();
 
 signals:
     void stage_operate(const bool);//发送信号，触发线程

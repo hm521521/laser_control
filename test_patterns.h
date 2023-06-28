@@ -5,10 +5,22 @@
 #include<QGraphicsView>
 #include<QCoreApplication>
 #include"laser_setting.h"
+#include<QListView>
 
 namespace Ui {
 class test_patterns;
 }
+
+class my_list_view:public QListView
+{
+public:
+    my_list_view(QWidget *parent=nullptr);
+    ~my_list_view();
+    void setup(QString list_path);
+private:
+    QString m_list_path;
+};
+
 
 
 class test_patterns : public QMainWindow
@@ -22,7 +34,6 @@ public:
 
 private:
     Ui::test_patterns *ui;
-    QString m_list_path="/system/test_list.txt";
 };
 
 #endif // TEST_PATTERNS_H

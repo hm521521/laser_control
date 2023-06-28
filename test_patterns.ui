@@ -87,7 +87,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QListView" name="test_list">
+        <widget class="my_list_view" name="test_list">
          <property name="minimumSize">
           <size>
            <width>280</width>
@@ -171,6 +171,11 @@
    <class>laser_device_table</class>
    <extends>QTableView</extends>
    <header location="global">laser_setting.h</header>
+  </customwidget>
+  <customwidget>
+   <class>my_list_view</class>
+   <extends>QListView</extends>
+   <header location="global">test_patterns.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

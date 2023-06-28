@@ -39,6 +39,7 @@ SOURCES += main.cpp\
     clockedit.cpp \
     color.cpp \
     configuration.cpp \
+    dmx_setup.cpp \
     dnd_scene_data_object.cpp \
     ed_laser_output.cpp \
     effect.cpp \
@@ -77,6 +78,7 @@ HEADERS  += \
     color.h \
     common.h \
     configuration.h \
+    dmx_setup.h \
     dnd_scene_data_object.h \
     ed_laser_output.h \
     effect.h \
@@ -112,6 +114,7 @@ HEADERS  += \
 FORMS    += \
     add_zones_dialog.ui \
     clockedit.ui \
+    dmx_setup.ui \
     hardware.ui \
     laser_setting.ui \
     mainwindow1.ui \

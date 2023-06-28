@@ -29,8 +29,8 @@ void main_panel::set_data_model(scene_pool *sp, Scene_Stack *stack, Scene_Tool_B
    if (m_scene_pool == nullptr)
        return;
 
-   book->setMinimumWidth(100);
-   book->setMinimumHeight(300);
+   book->setMaximumWidth(100);
+   book->setMaximumHeight(300);
 
    int scenes_count=m_scene_pool->size();
    int page_count=(scenes_count + 39) / 40;//每页有40个Scene,获取应该有多少页
@@ -65,9 +65,8 @@ void main_panel::set_data_model(scene_pool *sp, Scene_Stack *stack, Scene_Tool_B
     wid->setLayout(grid_sizer);
     QWidget * page_1 = new QWidget();
     page_1->setObjectName(QString::fromUtf8("page_")+QString::number(i));
-    page_1->setGeometry(QRect(0, 0, 68, 451));
+//    page_1->setGeometry(QRect(0, 0, 68, 451));
     book->addItem(page_1, QString::fromUtf8("page_")+QString::number(i));
-
     }
 }
 

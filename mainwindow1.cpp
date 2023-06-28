@@ -45,8 +45,8 @@ MainWindow1::MainWindow1(QWidget *parent) :
     m_config=new Configuration();//配置对象
     m_config->Load();
     m_project_panel=ui->project_panel_view;
-    ui->gridLayout_3->setHorizontalSpacing(0);
-    ui->gridLayout_3->setVerticalSpacing(0);
+//    ui->gridLayout_3->setHorizontalSpacing(0);
+//    ui->gridLayout_3->setVerticalSpacing(0);
     installEventFilter(this);
     do_select_page(ui->pushButton_timeline);
     //设备发现
@@ -73,10 +73,12 @@ MainWindow1::MainWindow1(QWidget *parent) :
     connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_test_pattern->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
     QThreadPool::globalInstance()->setMaxThreadCount(10);
     QThreadPool::globalInstance()->start(m_main_worker);
+    m_dmx_setup=new DMX_setup(this);
     //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
 //    stage_thread_pool.setExpiryTimeout(-1);
+    ui->trans_listView->setup("/system/trans_list.txt");
 }
 
 MainWindow1::~MainWindow1()
@@ -128,7 +130,8 @@ void MainWindow1::closeEvent(QCloseEvent *event)
 
 void MainWindow1::resizeEvent(QResizeEvent *event)
 {
-    QGraphicsScene *scene=new QGraphicsScene(ui->verticalLayout_4->itemAt(0)->geometry());
+//    QGraphicsScene *scene=new QGraphicsScene(ui->verticalLayout_4->itemAt(0)->geometry());
+    QGraphicsScene *scene=new QGraphicsScene();
     m_project_panel->set_scene(scene);
 }
 inline void set_button_bg(toggle_button* btn, bool pressed)
@@ -437,15 +440,17 @@ void MainWindow1::open_workspace()
     delete ui->m_scenes_stack;
     ui->m_scenes_stack=new Scene_Stack(ui->widget);
     m_main_panel->set_data_model(m_scene_pool,ui->m_scenes_stack,ui->m_scenes_book);
-    ui->horizontalLayout_8->addWidget(ui->m_scenes_book);
-    ui->horizontalLayout_8->addWidget(ui->m_scenes_stack);
+    ui->horizontalLayout_7->addWidget(ui->m_scenes_book);
+    ui->horizontalLayout_7->addWidget(ui->m_scenes_stack);
     if(ui->m_scenes_book->count()!=0)
         ui->m_scenes_stack->setCurrentIndex(ui->m_scenes_book->currentIndex());
     ui->m_scenes_book->show();
     ui->m_scenes_stack->show();
     connect(ui->m_scenes_book,SIGNAL(currentChanged(int)),ui->m_scenes_stack,SLOT(setCurrentIndex(int)));
+
     delete ui->quick_scenes_book;
     ui->quick_scenes_book=new Scene_Tool_Box(ui->widget);
+
     delete ui->quick_scenes_stack;
     ui->quick_scenes_stack=new Scene_Stack(ui->widget);
     m_main_panel->set_data_model(m_scene_pool,ui->quick_scenes_stack,ui->quick_scenes_book,false);
@@ -497,5 +502,11 @@ void workspace_worker::run()
 void MainWindow1::on_test_patterns_triggered()
 {
     m_test_pattern->show();
+}
+
+
+void MainWindow1::on_DMX_ArtNet_Settings_triggered()
+{
+    m_dmx_setup->show();
 }
 

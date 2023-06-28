@@ -13,7 +13,8 @@ protected:
 
 };
 
-class Scene_Stack:public QStackedWidget{
+class Scene_Stack:public QStackedWidget
+{
 public:
     Scene_Stack(QWidget *parent = nullptr);
 
