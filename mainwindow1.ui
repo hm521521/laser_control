@@ -667,11 +667,36 @@
      <addaction name="actionDMX_Monitor"/>
      <addaction name="actionDMX_IN_State_Monitor"/>
     </widget>
+    <widget class="QMenu" name="menuUser_interface_Access_Mode">
+     <property name="title">
+      <string>User interface Access Mode</string>
+     </property>
+     <addaction name="actionAdministrator"/>
+     <addaction name="actionUser"/>
+     <addaction name="Setup_User_Mode"/>
+     <addaction name="Setup_Administritor_Mode"/>
+    </widget>
+    <widget class="QMenu" name="menuMidi">
+     <property name="title">
+      <string>Midi</string>
+     </property>
+     <addaction name="Midi_Device_Settings"/>
+     <addaction name="Midi_Monitor"/>
+    </widget>
+    <widget class="QMenu" name="menuOSC">
+     <property name="title">
+      <string>OSC</string>
+     </property>
+     <addaction name="OSC_Settings"/>
+    </widget>
     <addaction name="hardware"/>
     <addaction name="laser_setting"/>
     <addaction name="projection_zones"/>
     <addaction name="test_patterns"/>
     <addaction name="menuDMX"/>
+    <addaction name="menuUser_interface_Access_Mode"/>
+    <addaction name="menuMidi"/>
+    <addaction name="menuOSC"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -760,6 +785,41 @@
   <action name="actionDMX_IN_State_Monitor">
    <property name="text">
     <string>DMX IN State Monitor</string>
+   </property>
+  </action>
+  <action name="actionAdministrator">
+   <property name="text">
+    <string>Administrator</string>
+   </property>
+  </action>
+  <action name="actionUser">
+   <property name="text">
+    <string>User</string>
+   </property>
+  </action>
+  <action name="Setup_User_Mode">
+   <property name="text">
+    <string>Setup User Mode</string>
+   </property>
+  </action>
+  <action name="Setup_Administritor_Mode">
+   <property name="text">
+    <string>Setup Administritor Mode</string>
+   </property>
+  </action>
+  <action name="Midi_Device_Settings">
+   <property name="text">
+    <string>Device Settings</string>
+   </property>
+  </action>
+  <action name="Midi_Monitor">
+   <property name="text">
+    <string>Midi Monitor</string>
+   </property>
+  </action>
+  <action name="OSC_Settings">
+   <property name="text">
+    <string>OSC Settings</string>
    </property>
   </action>
  </widget>

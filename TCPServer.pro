@@ -52,8 +52,11 @@ SOURCES += main.cpp\
     laser_setting.cpp \
     main_panel.cpp \
     mainwindow1.cpp \
+    midi_device_settings.cpp \
+    midi_moniter.cpp \
     mp3_player.cpp \
     mygraphicsview.cpp \
+    osc_settings.cpp \
     output_panel.cpp \
     picture_trace.cpp \
     pointattribute.cpp \
@@ -63,6 +66,8 @@ SOURCES += main.cpp\
     qcustomplot.cpp \
     scene_pool.cpp \
     scene_tool_box.cpp \
+    setup_administrator_mode.cpp \
+    setup_user_mode.cpp \
     show_model.cpp \
     stage.cpp \
     test_patterns.cpp \
@@ -78,6 +83,7 @@ HEADERS  += \
     color.h \
     common.h \
     configuration.h \
+    configvarbase.h \
     dmx_setup.h \
     dnd_scene_data_object.h \
     ed_laser_output.h \
@@ -92,8 +98,11 @@ HEADERS  += \
     laser_setting.h \
     main_panel.h \
     mainwindow1.h \
+    midi_device_settings.h \
+    midi_moniter.h \
     mp3_player.h \
     mygraphicsview.h \
+    osc_settings.h \
     output_panel.h \
     picture_trace.h \
     pointattribute.h \
@@ -103,6 +112,8 @@ HEADERS  += \
     qcustomplot.h \
     scene_pool.h \
     scene_tool_box.h \
+    setup_administrator_mode.h \
+    setup_user_mode.h \
     show_model.h \
     stage.h \
     stop_watch.hpp \
@@ -118,9 +129,14 @@ FORMS    += \
     hardware.ui \
     laser_setting.ui \
     mainwindow1.ui \
+    midi_device_settings.ui \
+    midi_moniter.ui \
+    osc_settings.ui \
     picture_trace.ui \
     projection_zones.ui \
     publicize.ui \
+    setup_administrator_mode.ui \
+    setup_user_mode.ui \
     test_patterns.ui
 
 

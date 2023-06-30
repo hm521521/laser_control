@@ -18,6 +18,11 @@
 #include"publicize.h"
 #include"test_patterns.h"
 #include"dmx_setup.h"
+#include"setup_administrator_mode.h"
+#include"setup_user_mode.h"
+#include"midi_device_settings.h"
+#include"midi_moniter.h"
+#include"osc_settings.h"
 //class scene_pool;
 namespace Ui {
 class MainWindow1;
@@ -113,7 +118,11 @@ private:
     workspace_worker* m_workspace_worker;
     test_patterns* m_test_pattern;
     DMX_setup* m_dmx_setup;
-
+    setup_Administrator_mode *m_setup_admin_mode;
+    setup_user_mode *m_setup_user_mode;
+    midi_device_settings *m_device_settings;
+    midi_moniter *m_midi_monitor;
+    osc_settings *m_osc_setting;
 //    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
     void on_enable_output(yls_play_event& e);
@@ -126,8 +135,14 @@ private slots:
     void on_publicize_triggered();
     void open_workspace();
     void on_test_patterns_triggered();
-
     void on_DMX_ArtNet_Settings_triggered();
+    void on_Setup_Administritor_Mode_triggered();
+    void on_Setup_User_Mode_triggered();
+    void on_Midi_Monitor_triggered();
+
+    void on_Midi_Device_Settings_triggered();
+
+    void on_OSC_Settings_triggered();
 
 signals:
     void stage_operate(const bool);//发送信号，触发线程

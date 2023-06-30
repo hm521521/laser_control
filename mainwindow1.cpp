@@ -1,7 +1,6 @@
 ﻿#include "mainwindow1.h"
 #include "ui_mainwindow1.h"
 //#include "ui_hardware.h"
-
 #include "laser_setting.h"
 #include "projection_zones.h"
 #include<QFileDialog>
@@ -13,7 +12,7 @@
 #include<QSettings>
 #include"test_patterns.h"
 
-MainWindow1::MainWindow1(QWidget *parent) :
+MainWindow1::MainWindow1(QWidget *parent):
     QMainWindow(parent),
     ui(new Ui::MainWindow1),
     m_device_num(0),
@@ -53,6 +52,8 @@ MainWindow1::MainWindow1(QWidget *parent) :
     m_laser_device_manager=new laser_device_manager(this);
     m_pic_trace=new Picture_trace(this);
     m_publicize=new publicize(this);
+    m_setup_admin_mode=new setup_Administrator_mode(this);
+    m_setup_user_mode=new setup_user_mode(this);
     stage*s=new stage(this);
     s->set_config(m_config);
     s->set_device(m_laser_device_manager->get_default_device());
@@ -74,6 +75,9 @@ MainWindow1::MainWindow1(QWidget *parent) :
     QThreadPool::globalInstance()->setMaxThreadCount(10);
     QThreadPool::globalInstance()->start(m_main_worker);
     m_dmx_setup=new DMX_setup(this);
+    m_device_settings=new midi_device_settings(this);
+    m_midi_monitor=new midi_moniter(this);
+    m_osc_setting=new osc_settings(this);
     //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
@@ -376,8 +380,6 @@ void MainWindow1::on_output_button_clicked()
     QCoreApplication::postEvent(this,event);
 }
 
-
-
 bool MainWindow1::eventFilter(QObject *obj, QEvent *event)
 {
     yls_play_event *e=dynamic_cast<yls_play_event*>(event);
@@ -447,10 +449,8 @@ void MainWindow1::open_workspace()
     ui->m_scenes_book->show();
     ui->m_scenes_stack->show();
     connect(ui->m_scenes_book,SIGNAL(currentChanged(int)),ui->m_scenes_stack,SLOT(setCurrentIndex(int)));
-
     delete ui->quick_scenes_book;
     ui->quick_scenes_book=new Scene_Tool_Box(ui->widget);
-
     delete ui->quick_scenes_stack;
     ui->quick_scenes_stack=new Scene_Stack(ui->widget);
     m_main_panel->set_data_model(m_scene_pool,ui->quick_scenes_stack,ui->quick_scenes_book,false);
@@ -508,5 +508,35 @@ void MainWindow1::on_test_patterns_triggered()
 void MainWindow1::on_DMX_ArtNet_Settings_triggered()
 {
     m_dmx_setup->show();
+}
+
+
+void MainWindow1::on_Setup_Administritor_Mode_triggered()
+{
+    m_setup_admin_mode->show();
+}
+
+
+void MainWindow1::on_Setup_User_Mode_triggered()
+{
+    m_setup_user_mode->show();
+}
+
+
+void MainWindow1::on_Midi_Monitor_triggered()
+{
+    m_midi_monitor->show();
+}
+
+
+void MainWindow1::on_Midi_Device_Settings_triggered()
+{
+    m_device_settings->show();
+}
+
+
+void MainWindow1::on_OSC_Settings_triggered()
+{
+    m_osc_setting->show();
 }
 
