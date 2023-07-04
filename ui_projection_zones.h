@@ -316,7 +316,7 @@ public:
     {
         if (projection_zones->objectName().isEmpty())
             projection_zones->setObjectName(QString::fromUtf8("projection_zones"));
-        projection_zones->resize(908, 641);
+        projection_zones->resize(908, 652);
         action = new QAction(projection_zones);
         action->setObjectName(QString::fromUtf8("action"));
         action_2 = new QAction(projection_zones);
@@ -1522,7 +1522,7 @@ public:
 
         retranslateUi(projection_zones);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(4);
         tabWidget_2->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
 

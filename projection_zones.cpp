@@ -29,6 +29,9 @@ projection_zones::projection_zones(MainWindow1 *parent) :
     ui->projector_tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->projector_tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     refresh_laser_device();
+    m_qsettings=new QSettings("/system/pro_zone_settings.ini",QSettings::IniFormat);
+    default_pro_setting();
+
 //    m_namelist.clear();
 }
 
@@ -125,5 +128,35 @@ void projection_zones::refresh_laser_device()
 //        theSelection->setCurrentIndex(index,QItemSelectionModel::Select); //定位到单元格
 //        theModel->setData(index,dev->get_name(),Qt::DisplayRole);//设置单元格字符串
 //        i++;
-//    }
+    //    }
+}
+
+void projection_zones::default_pro_setting()
+{
+    if(!m_qsettings)
+        return;
+    int size=m_qsettings->beginReadArray("projector_zone_settings");
+
+    for(int i=0;i<size;++i)
+    {
+        m_qsettings->setArrayIndex(i);
+        pro_zone_settings setting;
+        setting.apply_attenuation=m_qsettings->value("apply_attenuation").toBool();
+        setting.attenuation_picture=m_qsettings->value("attenuation_picture").toByteArray();
+        setting.beam_diameter=m_qsettings->value("beam_diameter").toInt();
+        setting.ct=m_qsettings->value("ct").value<correction_type>();
+        setting.dis_pat=m_qsettings->value("dis_pat").value<display_pattern>();
+        setting.height=m_qsettings->value("height").toInt();
+        setting.width=m_qsettings->value("width").toInt();
+        setting.position_x=m_qsettings->value("position_x").toInt();
+        setting.position_y=m_qsettings->value("position_y").toInt();
+        setting.prepat=m_qsettings->value("prepat").value<preview_pattern>();
+        setting.pro_zone_name=m_qsettings->value("pro_zone_name").toString();
+        setting.rotation=m_qsettings->value("rotation").toInt();
+        setting.x=m_qsettings->value("x").toInt();
+        setting.y=m_qsettings->value("y").toInt();
+        setting.YAG_projector=m_qsettings->value("YAG_projector").toBool();
+        m_settings.append(setting);
+    }
+    m_qsettings->endArray();
 }

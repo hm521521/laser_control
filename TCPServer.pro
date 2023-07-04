@@ -83,7 +83,6 @@ HEADERS  += \
     color.h \
     common.h \
     configuration.h \
-    configvarbase.h \
     dmx_setup.h \
     dnd_scene_data_object.h \
     ed_laser_output.h \

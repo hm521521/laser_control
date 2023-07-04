@@ -20,13 +20,13 @@ MainWindow1::MainWindow1(QWidget *parent):
     m_send_data(false)
 {
     ui->setupUi(this);
-    QSettings *pConfig=new QSettings("/MainFrame",QSettings::NativeFormat);
+    QSettings *pConfig=new QSettings("/system/settings.ini",QSettings::IniFormat);
     if(pConfig)
     {
         int x=pConfig->value("x",0).toInt();
         int y=pConfig->value("y",0).toInt();
-        int w=pConfig->value("w",1190).toInt();
-        int h=pConfig->value("h",644).toInt();
+        int w=pConfig->value("w",1010).toInt();
+        int h=pConfig->value("h",687).toInt();
         this->move(x,y);
         this->resize(w,h);
         m_multi_play=pConfig->value("multi",1).toBool();
@@ -88,7 +88,8 @@ MainWindow1::MainWindow1(QWidget *parent):
 MainWindow1::~MainWindow1()
 {
     m_main_worker->setStop();
-    QSettings *app_config=new QSettings("/MainFrame",QSettings::NativeFormat);
+    QSettings *app_config=new QSettings("/system/settings.ini",QSettings::IniFormat);
+    qDebug() << QCoreApplication::applicationDirPath();
     if(app_config)
     {
         int x,y,w,h;
@@ -103,9 +104,6 @@ MainWindow1::~MainWindow1()
         app_config->setValue("multi",m_multi_play);
         app_config->setValue("output",m_send_data);
     }
-//    m_hardware->close();
-//    m_hardware->deleteLater();
-//    m_hardware=nullptr;
     delete ui;
     delete m_hardware;
     delete m_config;
