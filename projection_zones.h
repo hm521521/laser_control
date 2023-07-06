@@ -62,20 +62,25 @@ private slots:
     void newZoneName(QString str);
     void on_addZones_pushButton_clicked();
     void on_delete_zone_pushButton_clicked();
+    void buttonClicked(int index);
 private:
     Ui::projection_zones *ui;
-     QString m_type;
-     QStringList m_namelist;
-     QStandardItemModel *theModel;
-     QItemSelectionModel *theSelection;
-     void refresh_laser_device();
-     MainWindow1 *m_parent;
-     QStandardItemModel *theProjectorModel;
-     QItemSelectionModel *theProjectorSelection;
-     QSettings *m_qsettings;
-     void default_pro_setting();
-     QList<pro_zone_settings> m_settings;
-
+    QString m_type;
+    QStringList m_namelist;
+    QStandardItemModel *theModel;
+    QItemSelectionModel *theSelection;
+    void refresh_laser_device();
+    MainWindow1 *m_parent;
+    QStandardItemModel *theProjectorModel;
+    QItemSelectionModel *theProjectorSelection;
+    QSettings *m_qsettings;
+    void load_settings();
+    void save_settings();
+    QList<pro_zone_settings> m_settings;
+    QButtonGroup *m_button_group;
+    void new_pro_settings();//clear current Projection Zone settings and load default settings
+    void open_settings();
+    void add_projection_zone();
 };
 
 #endif // PROJECTION_ZONES_H

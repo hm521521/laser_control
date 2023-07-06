@@ -19,7 +19,7 @@
      <widget class="QWidget" name="widget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="New_pushButton">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -32,7 +32,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="Open_pushButton">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -45,7 +45,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="Save_pushButton">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -58,7 +58,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="Add_pushButton">
          <property name="maximumSize">
           <size>
            <width>20</width>
@@ -71,7 +71,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="Del_pushButton">
          <property name="maximumSize">
           <size>
            <width>20</width>
@@ -80,44 +80,6 @@
          </property>
          <property name="text">
           <string>×</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>复制</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_11">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string> 粘贴</string>
          </property>
         </widget>
        </item>
@@ -151,7 +113,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_7">
+        <widget class="QPushButton" name="Copy_pushButton">
          <property name="minimumSize">
           <size>
            <width>10</width>
@@ -165,7 +127,7 @@
           </size>
          </property>
          <property name="text">
-          <string>粘贴</string>
+          <string>复制</string>
          </property>
         </widget>
        </item>
@@ -228,7 +190,7 @@
      <widget class="QWidget" name="widget_2" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QTableView" name="tableView">
+        <widget class="QTableView" name="zone_names_tableView">
          <property name="minimumSize">
           <size>
            <width>200</width>
@@ -246,7 +208,7 @@
        <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>4</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tab">
           <attribute name="title">

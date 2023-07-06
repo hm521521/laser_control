@@ -58,23 +58,21 @@ public:
     QVBoxLayout *verticalLayout;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_11;
+    QPushButton *New_pushButton;
+    QPushButton *Open_pushButton;
+    QPushButton *Save_pushButton;
+    QPushButton *Add_pushButton;
+    QPushButton *Del_pushButton;
     QLabel *label;
     QSlider *horizontalSlider;
-    QPushButton *pushButton_7;
+    QPushButton *Copy_pushButton;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
     QPushButton *pushButton_10;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
-    QTableView *tableView;
+    QTableView *zone_names_tableView;
     QTabWidget *tabWidget;
     QWidget *tab;
     QHBoxLayout *horizontalLayout_3;
@@ -353,49 +351,35 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        pushButton_6 = new QPushButton(widget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setMaximumSize(QSize(40, 16777215));
+        New_pushButton = new QPushButton(widget);
+        New_pushButton->setObjectName(QString::fromUtf8("New_pushButton"));
+        New_pushButton->setMaximumSize(QSize(40, 16777215));
 
-        horizontalLayout->addWidget(pushButton_6);
+        horizontalLayout->addWidget(New_pushButton);
 
-        pushButton_5 = new QPushButton(widget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setMaximumSize(QSize(40, 16777215));
+        Open_pushButton = new QPushButton(widget);
+        Open_pushButton->setObjectName(QString::fromUtf8("Open_pushButton"));
+        Open_pushButton->setMaximumSize(QSize(40, 16777215));
 
-        horizontalLayout->addWidget(pushButton_5);
+        horizontalLayout->addWidget(Open_pushButton);
 
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMaximumSize(QSize(40, 16777215));
+        Save_pushButton = new QPushButton(widget);
+        Save_pushButton->setObjectName(QString::fromUtf8("Save_pushButton"));
+        Save_pushButton->setMaximumSize(QSize(40, 16777215));
 
-        horizontalLayout->addWidget(pushButton_4);
+        horizontalLayout->addWidget(Save_pushButton);
 
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setMaximumSize(QSize(20, 16777215));
+        Add_pushButton = new QPushButton(widget);
+        Add_pushButton->setObjectName(QString::fromUtf8("Add_pushButton"));
+        Add_pushButton->setMaximumSize(QSize(20, 16777215));
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(Add_pushButton);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setMaximumSize(QSize(20, 16777215));
+        Del_pushButton = new QPushButton(widget);
+        Del_pushButton->setObjectName(QString::fromUtf8("Del_pushButton"));
+        Del_pushButton->setMaximumSize(QSize(20, 16777215));
 
-        horizontalLayout->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setMinimumSize(QSize(40, 0));
-        pushButton_3->setMaximumSize(QSize(20, 16777215));
-
-        horizontalLayout->addWidget(pushButton_3);
-
-        pushButton_11 = new QPushButton(widget);
-        pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
-        pushButton_11->setMinimumSize(QSize(40, 0));
-        pushButton_11->setMaximumSize(QSize(40, 16777215));
-
-        horizontalLayout->addWidget(pushButton_11);
+        horizontalLayout->addWidget(Del_pushButton);
 
         label = new QLabel(widget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -410,12 +394,12 @@ public:
 
         horizontalLayout->addWidget(horizontalSlider);
 
-        pushButton_7 = new QPushButton(widget);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
-        pushButton_7->setMinimumSize(QSize(10, 0));
-        pushButton_7->setMaximumSize(QSize(40, 16777215));
+        Copy_pushButton = new QPushButton(widget);
+        Copy_pushButton->setObjectName(QString::fromUtf8("Copy_pushButton"));
+        Copy_pushButton->setMinimumSize(QSize(10, 0));
+        Copy_pushButton->setMaximumSize(QSize(40, 16777215));
 
-        horizontalLayout->addWidget(pushButton_7);
+        horizontalLayout->addWidget(Copy_pushButton);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -446,12 +430,12 @@ public:
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         horizontalLayout_2 = new QHBoxLayout(widget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        tableView = new QTableView(widget_2);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setMinimumSize(QSize(200, 0));
-        tableView->setMaximumSize(QSize(200, 16777215));
+        zone_names_tableView = new QTableView(widget_2);
+        zone_names_tableView->setObjectName(QString::fromUtf8("zone_names_tableView"));
+        zone_names_tableView->setMinimumSize(QSize(200, 0));
+        zone_names_tableView->setMaximumSize(QSize(200, 16777215));
 
-        horizontalLayout_2->addWidget(tableView);
+        horizontalLayout_2->addWidget(zone_names_tableView);
 
         tabWidget = new QTabWidget(widget_2);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
@@ -1522,7 +1506,7 @@ public:
 
         retranslateUi(projection_zones);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(0);
         tabWidget_2->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
 
@@ -1547,15 +1531,13 @@ public:
         action_12->setText(QApplication::translate("projection_zones", "\347\246\201\347\224\250\346\211\200\346\234\211\346\265\213\350\257\225\346\250\241\345\274\217", nullptr));
         action_13->setText(QApplication::translate("projection_zones", "\346\267\273\345\212\240\346\212\225\345\275\261\345\214\272\345\237\237", nullptr));
         action_14->setText(QApplication::translate("projection_zones", "\345\210\240\351\231\244\346\212\225\345\275\261\345\214\272\345\237\237", nullptr));
-        pushButton_6->setText(QApplication::translate("projection_zones", " \346\226\260\345\273\272", nullptr));
-        pushButton_5->setText(QApplication::translate("projection_zones", "\346\211\223\345\274\200", nullptr));
-        pushButton_4->setText(QApplication::translate("projection_zones", "\344\277\235\345\255\230", nullptr));
-        pushButton->setText(QApplication::translate("projection_zones", "+", nullptr));
-        pushButton_2->setText(QApplication::translate("projection_zones", "\303\227", nullptr));
-        pushButton_3->setText(QApplication::translate("projection_zones", "\345\244\215\345\210\266", nullptr));
-        pushButton_11->setText(QApplication::translate("projection_zones", " \347\262\230\350\264\264", nullptr));
+        New_pushButton->setText(QApplication::translate("projection_zones", " \346\226\260\345\273\272", nullptr));
+        Open_pushButton->setText(QApplication::translate("projection_zones", "\346\211\223\345\274\200", nullptr));
+        Save_pushButton->setText(QApplication::translate("projection_zones", "\344\277\235\345\255\230", nullptr));
+        Add_pushButton->setText(QApplication::translate("projection_zones", "+", nullptr));
+        Del_pushButton->setText(QApplication::translate("projection_zones", "\303\227", nullptr));
         label->setText(QApplication::translate("projection_zones", "Brightness:", nullptr));
-        pushButton_7->setText(QApplication::translate("projection_zones", "\347\262\230\350\264\264", nullptr));
+        Copy_pushButton->setText(QApplication::translate("projection_zones", "\345\244\215\345\210\266", nullptr));
         pushButton_8->setText(QApplication::translate("projection_zones", "show it now", nullptr));
         pushButton_9->setText(QApplication::translate("projection_zones", "?", nullptr));
         pushButton_10->setText(QApplication::translate("projection_zones", "-", nullptr));
