@@ -181,6 +181,7 @@ void MainWindow1::on_laser_setting_triggered()
 void MainWindow1::on_projection_zones_triggered()
 {
      projection_zones *p=new projection_zones(this);
+     connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),p->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
      p->show();
 // m_children.push_back(p);
 }

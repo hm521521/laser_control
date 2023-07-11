@@ -5,49 +5,88 @@
 #include "mainwindow1.h"
 #include <QStandardItemModel>
 
-enum correction_type{
-    Size,
-    Position,
-    Rotation,
-    Linearity,
-    Symmetry,
-    Keystone,
-    Pincushion,
-    Bow,
-    Shear
+
+struct cor_Size{
+    float x=100;
+    float y=100;
 };
-enum preview_pattern{
-    Laser_Graphics,
-    Audience_Scanning_Beam
+struct cor_Position{
+    float x=0;
+    float y=0;
+};
+struct cor_Rotation{
+    float angle=0;
+};
+struct cor_Linearity{
+    float x=0;
+    float y=0;
+};
+struct cor_Symmetry{
+    float left=0;
+    float right=0;
+    float top=0;
+    float bottom=0;
+};
+struct cor_Keystone{
+    float x=0;
+    float y=0;
+};
+struct cor_Pincushion{
+    float left=0;
+    float right=0;
+    float top=0;
+    float bottom=0;
+};
+struct cor_Bow{
+    float left=0;
+    float right=0;
+    float top=0;
+    float bottom=0;
+};
+struct cor_Shear{
+    float x=0;
+    float y=0;
 };
 
-enum display_pattern{
-    GDI,
-    ERP
+
+struct Audience_Scanning_Beam{
+    float emuLaserPosX=0;
+    float emuLaserPosY=0;
 };
-Q_DECLARE_METATYPE(correction_type)
-Q_DECLARE_METATYPE(preview_pattern)
-Q_DECLARE_METATYPE(display_pattern)
+
+struct Preview_ERP{
+    int fogFrontBrightness=13;
+    int fogRearBrightness=71;
+    int fogDesigty=100;
+    int fogSpeed=0;
+    int gauzeScreenDistance=0;
+};
 namespace Ui {
 class projection_zones;
 }
 
 struct pro_zone_settings{
     QString pro_zone_name;//general
-    correction_type ct;//correction
-    float x;
-    float y;
-    preview_pattern prepat;//preview
-    bool YAG_projector;
-    int width;
-    int height;
-    int position_x;
-    int position_y;
-    int rotation;
-    int beam_diameter;
-    display_pattern dis_pat;
+    cor_Size corsize;
+    cor_Position corpos;
+    cor_Rotation corrot;
+    cor_Linearity corline;
+    cor_Symmetry corsym;
+    cor_Keystone corkeystone;
+    cor_Pincushion corpin;
+    cor_Bow corbow;
+    cor_Shear corshear;
+    int preview_width=100;
+    int preview_height=100;
+    int preview_position_x=0;
+    int preview_position_y=0;
+    int preview_rotation=0;
+    int preview_beam_diameter=1.0;
     QByteArray attenuation_picture;//beam attenuation 60*60
-    bool apply_attenuation;
+//    bool apply_attenuation;
+    QString projector_name;
+    Audience_Scanning_Beam scanbeam;
+    Preview_ERP preerp;
 };
 
 
@@ -58,6 +97,7 @@ public:
     explicit projection_zones(MainWindow1 *parent = nullptr);
     ~projection_zones();
     QString getMyType();
+    laser_device_table *m_device_table;
 private slots:
     void newZoneName(QString str);
     void on_addZones_pushButton_clicked();
@@ -81,6 +121,7 @@ private:
     void new_pro_settings();//clear current Projection Zone settings and load default settings
     void open_settings();
     void add_projection_zone();
+    void init_settings(pro_zone_settings &s);
 };
 
 #endif // PROJECTION_ZONES_H

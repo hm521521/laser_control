@@ -34,6 +34,7 @@
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <laser_setting.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -93,7 +94,7 @@ public:
     QPushButton *delete_zone_pushButton;
     QPushButton *pushButton_14;
     QLabel *label_3;
-    QTableView *projector_tableView;
+    laser_device_table *projector_tableView;
     QWidget *widget_7;
     QVBoxLayout *verticalLayout_5;
     QGroupBox *groupBox;
@@ -519,7 +520,7 @@ public:
 
         verticalLayout_6->addWidget(label_3);
 
-        projector_tableView = new QTableView(widget_8);
+        projector_tableView = new laser_device_table(widget_8);
         projector_tableView->setObjectName(QString::fromUtf8("projector_tableView"));
         projector_tableView->setMinimumSize(QSize(350, 0));
         projector_tableView->setMaximumSize(QSize(350, 16777215));
