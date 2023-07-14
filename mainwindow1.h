@@ -108,21 +108,21 @@ private:
     project_panel * m_project_panel;
     std::vector<stage*> m_stages;
     bool m_multi_play;
-    hardware *m_hardware;
-    laser_setting *m_laser_setting;
+//    hardware *m_hardware;
+//    laser_setting *m_laser_setting;
     laser_device_manager *m_laser_device_manager;
     Picture_trace *m_pic_trace;
     publicize *m_publicize;
     bool m_publicize_play=false;
     main_thread_worker* m_main_worker;
     workspace_worker* m_workspace_worker;
-    test_patterns* m_test_pattern;
-    DMX_setup* m_dmx_setup;
-    setup_Administrator_mode *m_setup_admin_mode;
-    setup_user_mode *m_setup_user_mode;
-    midi_device_settings *m_device_settings;
-    midi_moniter *m_midi_monitor;
-    osc_settings *m_osc_setting;
+//    test_patterns* m_test_pattern;
+//    DMX_setup* m_dmx_setup;
+//    setup_Administrator_mode *m_setup_admin_mode;
+//    setup_user_mode *m_setup_user_mode;
+//    midi_device_settings *m_device_settings;
+//    midi_moniter *m_midi_monitor;
+//    osc_settings *m_osc_setting;
 //    QVector<output_panel*> m_output_panels;//publicize多屏显示
 private:
     void on_enable_output(yls_play_event& e);

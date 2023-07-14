@@ -20,19 +20,8 @@ hardware::hardware(QWidget *parent) :
     m_output_stage=new stage(this);
     ui->setupUi(this);
 //    parent->setEnabled(false);
-    theModel = new QStandardItemModel(1,3,this); //创建数据模型
-    theSelection = new QItemSelectionModel(theModel);//Item选择模型
-    ui->tableView->setModel(theModel); //设置数据模型
-    ui->tableView->setSelectionModel(theSelection);//设置选择模型
-    ui->tableView->verticalHeader()->setHidden(true);
-    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
-    QStringList strList;//获取对话框上修改后的StringList
-    strList.append("#");
-    strList.append("Hardware-Projector");
-    strList.append("Projection Zones");
-    theModel->setHorizontalHeaderLabels(strList);// 设置模型的表头标题
-    connect(ui->tableView,SIGNAL(table_selected(QVariant)),this,SLOT(on_table_selected(QVariant)));
+    m_hardware_table=ui->tableView;
+    connect(m_hardware_table,SIGNAL(table_selected(QVariant)),this,SLOT(on_table_selected(QVariant)));
 }
 
 hardware::~hardware()
@@ -148,7 +137,7 @@ void hardware::on_table_selected(QVariant s)
     emit stage_changed(m_output_stage);
 }
 
-void hardware::refresh_laser_device(std::vector<laser_device*> device_list){
+void hardware_table::refresh_laser_device(std::vector<laser_device*> device_list){
 //    laser_device *dev;
     theModel->setRowCount(device_list.size());
 //    int i=0;
@@ -172,7 +161,25 @@ void hardware::refresh_laser_device(std::vector<laser_device*> device_list){
 hardware_table::hardware_table(QWidget *parent):QTableView(parent)
 {
 //    connect(this,clicked())
-//    connect(this,SIGNAL(QModelIndex),)
+    //    connect(this,SIGNAL(QModelIndex),)
+    theModel = new QStandardItemModel(1,3,this); //创建数据模型
+    theSelection = new QItemSelectionModel(theModel);//Item选择模型
+    setModel(theModel); //设置数据模型
+    setSelectionModel(theSelection);//设置选择模型
+    verticalHeader()->setHidden(true);
+    setEditTriggers(QAbstractItemView::NoEditTriggers);
+    setSelectionBehavior(QAbstractItemView::SelectRows);
+    QStringList strList;//获取对话框上修改后的StringList
+    strList.append("#");
+    strList.append("Hardware-Projector");
+    strList.append("Projection Zones");
+    theModel->setHorizontalHeaderLabels(strList);// 设置模型的表头标题
+}
+
+void hardware_table::set_device_manager(laser_device_manager *manager)
+{
+    m_manager=manager;
+    refresh_laser_device(m_manager->get_device_list());
 }
 
 

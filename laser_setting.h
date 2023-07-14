@@ -24,9 +24,16 @@ enum COLOR_TYPE{
     LINEAR_RESPONSE,
     LOG_RESPONSE
 };
+
+struct Laser_Info{
+    QString m_tcp_addr;
+    laser_type m_laser_type;
+};
+
+
 class MyGraphicsView:public QGraphicsView
 {
-  Q_OBJECT;
+  Q_OBJECT
 protected:
 //    void mouseMoveEvent(QMouseEvent *event);
 //    void mousePressEvent(QMouseEvent *event);
@@ -54,9 +61,11 @@ class laser_device_table:public QTableView
 public:
     laser_device_table(QWidget *parent=0);
     ~laser_device_table();
+    void set_device_manager(laser_device_manager *manager);
 private:
     QStandardItemModel *theModel;
     QItemSelectionModel *theSelection;
+    laser_device_manager *m_manager;
 private slots:
     void refresh_laser_device(std::vector<laser_device*> laser_device);
 };

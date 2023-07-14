@@ -36,17 +36,18 @@ bool ed_v2_device::is_connected()
 
 void ed_v2_device::try_connect()
 {
-    do
-    {
 //        QHostAddress remote_addr(m_tcp_addr);
+    do{
         QString ipv4_addr=m_tcp_addr.mid(7,m_tcp_addr.length()-7);
         this->m_socket->connectToHost(ipv4_addr,TCP_SERVER_PORT,QAbstractSocket::ReadWrite, QAbstractSocket::IPv4Protocol);
         return;
     }
-    while(0);
+    while (0) ;
     this->m_socket->close();
     delete this->m_socket;
     this->m_socket=nullptr;
+    return;
+
 }
 
 bool ed_v2_device::is_create_by(QString mac)

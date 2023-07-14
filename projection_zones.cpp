@@ -25,7 +25,7 @@ projection_zones::projection_zones(MainWindow1 *parent) :
 //    ui->zone_names_tableView->setWordWrap(true);
     if (m_namelist.length()<=1)
         ui->delete_zone_pushButton->setEnabled(false);
-  m_device_table=ui->projector_tableView;
+    m_device_table=ui->projector_tableView;
 //    refresh_laser_device();
     new_pro_settings();
     m_button_group=new QButtonGroup(this);

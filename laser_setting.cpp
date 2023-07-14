@@ -42,6 +42,7 @@ void laser_device_table::refresh_laser_device(std::vector<laser_device*> laser_d
         theModel->setData(index,dev->get_name(),Qt::DisplayRole);//设置单元格字符串
 
     }
+
 }
 
 
@@ -704,7 +705,15 @@ laser_device_table::laser_device_table(QWidget *parent)
     this->setSelectionBehavior(QAbstractItemView::SelectRows);
 }
 
+
+
 laser_device_table::~laser_device_table()
 {
 
+}
+
+void laser_device_table::set_device_manager(laser_device_manager *manager)
+{
+    m_manager=manager;
+    refresh_laser_device(m_manager->get_device_list());
 }

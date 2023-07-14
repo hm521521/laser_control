@@ -46,7 +46,6 @@ SOURCES += main.cpp\
     gdiplus_helper.cpp \
     graphicsrectitem.cpp \
     hardware.cpp\
-    laser_device.cpp \
     laser_device_manager.cpp \
     laser_output.cpp \
     laser_setting.cpp \
@@ -91,7 +90,6 @@ HEADERS  += \
     graphicsrectitem.h \
     hardware.h \
     ildafile.h \
-    laser_device.h \
     laser_device_manager.h \
     laser_output.h \
     laser_setting.h \

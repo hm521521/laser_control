@@ -52,8 +52,8 @@ MainWindow1::MainWindow1(QWidget *parent):
     m_laser_device_manager=new laser_device_manager(this);
     m_pic_trace=new Picture_trace(this);
     m_publicize=new publicize(this);
-    m_setup_admin_mode=new setup_Administrator_mode(this);
-    m_setup_user_mode=new setup_user_mode(this);
+
+
     stage*s=new stage(this);
     s->set_config(m_config);
     s->set_device(m_laser_device_manager->get_default_device());
@@ -62,22 +62,19 @@ MainWindow1::MainWindow1(QWidget *parent):
         m_stages.push_back(s);
     }
 //    output_panel *op=new output_panel(this);
-    m_hardware=new hardware(this);
-    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_hardware,SLOT(refresh_laser_device(std::vector<laser_device*>)));
-    m_laser_setting=new laser_setting(this);
-    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_laser_setting->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
+
+
     connect(m_laser_device_manager,SIGNAL(new_device(laser_device*)),this,SLOT(refresh_stages(laser_device*)));
-    connect(m_hardware,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
+
     connect(m_publicize,&publicize::operate,this,&MainWindow1::set_publicize_play);
     connect(m_publicize,&publicize::playpause,this,&MainWindow1::set_publicize_play);
-    m_test_pattern=new test_patterns(this);
-    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_test_pattern->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
+
     QThreadPool::globalInstance()->setMaxThreadCount(10);
     QThreadPool::globalInstance()->start(m_main_worker);
-    m_dmx_setup=new DMX_setup(this);
-    m_device_settings=new midi_device_settings(this);
-    m_midi_monitor=new midi_moniter(this);
-    m_osc_setting=new osc_settings(this);
+
+
+
+
     //调用moveToThread 将该任务交给workThread
     //调用moveToThread 将该任务交给workThread
 //    stage_thread_pool.setMaxThreadCount(5);
@@ -88,7 +85,7 @@ MainWindow1::MainWindow1(QWidget *parent):
 MainWindow1::~MainWindow1()
 {
     m_main_worker->setStop();
-    QSettings *app_config=new QSettings("/system/settings.ini",QSettings::IniFormat);
+    QSettings *app_config=new QSettings("./system/settings.ini",QSettings::IniFormat);
     qDebug() << QCoreApplication::applicationDirPath();
     if(app_config)
     {
@@ -105,10 +102,10 @@ MainWindow1::~MainWindow1()
         app_config->setValue("output",m_send_data);
     }
     delete ui;
-    delete m_hardware;
+//    delete m_hardware;
     delete m_config;
     delete m_scene_pool;
-    delete m_laser_setting;
+//    delete m_laser_setting;
     delete m_main_panel;
     m_stages.clear();
     m_scene_pool=nullptr;
@@ -116,7 +113,7 @@ MainWindow1::~MainWindow1()
     m_output_panel=nullptr;
     delete m_project_panel;
     m_project_panel=nullptr;
-    delete m_test_pattern;
+    delete m_laser_device_manager;
     QThreadPool::globalInstance()->clear();
 }
 
@@ -165,8 +162,12 @@ void MainWindow1::do_select_page(toggle_button *button)
 
 void MainWindow1::on_hardware_triggered()//每次打开都添加一个子窗口，需要修改、关闭程序tcp不断开，需要修改
 {
-
-    m_hardware->show();
+    hardware *h=new hardware(this);
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),h->m_hardware_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
+    connect(h,SIGNAL(refresh_controller()),m_laser_device_manager,SLOT(refresh_laser_device()));
+    h->m_hardware_table->set_device_manager(m_laser_device_manager);
+    h->setWindowModality(Qt::ApplicationModal);//阻塞其他窗体
+    h->show();
 
 //    h->set_output(m_stages.size()>0?m_stages.last():nullptr);
 //    m_children.push_back(h);
@@ -174,6 +175,10 @@ void MainWindow1::on_hardware_triggered()//每次打开都添加一个子窗口�
 
 void MainWindow1::on_laser_setting_triggered()
 {
+    laser_setting *m_laser_setting=new laser_setting(this);
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_laser_setting->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
+    m_laser_setting->m_device_table->set_device_manager(m_laser_device_manager);
+    m_laser_setting->setWindowModality(Qt::ApplicationModal);//阻塞其他窗体
     m_laser_setting->show();
 //    m_children.push_back(l);
 }
@@ -181,9 +186,11 @@ void MainWindow1::on_laser_setting_triggered()
 void MainWindow1::on_projection_zones_triggered()
 {
      projection_zones *p=new projection_zones(this);
+     p->m_device_table->set_device_manager(m_laser_device_manager);
      connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),p->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
-     p->show();
 // m_children.push_back(p);
+     p->setWindowModality(Qt::ApplicationModal);//阻塞其他窗体
+     p->show();
 }
 
 void MainWindow1::on_open_workspace_triggered()//打开工作区
@@ -500,42 +507,52 @@ void workspace_worker::run()
 
 void MainWindow1::on_test_patterns_triggered()
 {
+    test_patterns *m_test_pattern=new test_patterns(this);
+    connect(m_laser_device_manager,SIGNAL(manager_changed(std::vector<laser_device*>)),m_test_pattern->m_device_table,SLOT(refresh_laser_device(std::vector<laser_device*>)));
+    m_test_pattern->m_device_table->set_device_manager(m_laser_device_manager);
+    m_test_pattern->setWindowModality(Qt::ApplicationModal);//阻塞其他窗体
     m_test_pattern->show();
 }
 
 
 void MainWindow1::on_DMX_ArtNet_Settings_triggered()
 {
+    DMX_setup *m_dmx_setup=new DMX_setup(this);
     m_dmx_setup->show();
 }
 
 
 void MainWindow1::on_Setup_Administritor_Mode_triggered()
 {
+    setup_Administrator_mode *m_setup_admin_mode=new setup_Administrator_mode(this);
     m_setup_admin_mode->show();
 }
 
 
 void MainWindow1::on_Setup_User_Mode_triggered()
 {
+    setup_user_mode *m_setup_user_mode=new setup_user_mode(this);
     m_setup_user_mode->show();
 }
 
 
 void MainWindow1::on_Midi_Monitor_triggered()
 {
+    midi_moniter *m_midi_monitor=new midi_moniter(this);
     m_midi_monitor->show();
 }
 
 
 void MainWindow1::on_Midi_Device_Settings_triggered()
 {
+    midi_device_settings *m_device_settings=new midi_device_settings(this);
     m_device_settings->show();
 }
 
 
 void MainWindow1::on_OSC_Settings_triggered()
 {
+    osc_settings *m_osc_setting=new osc_settings(this);
     m_osc_setting->show();
 }
 

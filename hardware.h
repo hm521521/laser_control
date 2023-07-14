@@ -29,7 +29,7 @@ public:
     virtual QString getMyType()=0;
 };
 //class MainWindow1;
-
+class hardware_table;
 class hardware : public SubWindow
 {
     Q_OBJECT
@@ -41,6 +41,7 @@ public:
 //    QString getLocalIP();
     QString getMyType();
     void set_output(stage* output_stage);
+    hardware_table *m_hardware_table;
 private slots:
     void on_Plus_Button_clicked();
 //    void onNewConnection();//处理新连接
@@ -49,8 +50,6 @@ private slots:
     void on_table_selected(QVariant s);
 private:
     Ui::hardware *ui;
-    QStandardItemModel  *theModel;//数据模型
-    QItemSelectionModel *theSelection;//Item选择模型
     void init_menu_bar();
 //    laser_device_manager *m_manager;
     QUdpSocket *m_udpsocket;
@@ -58,14 +57,14 @@ private:
     QTimer *myTimer;
     QString m_type;
     bool m_enable_out;
+
 protected:
     void closeEvent(QCloseEvent *event);
     stage* m_output_stage;
 signals:
     void stage_changed(stage * s);
     void refresh_controller();
-public slots:
-    void refresh_laser_device(std::vector<laser_device*> m_device_list);
+
 
 };
 
@@ -74,10 +73,17 @@ class hardware_table:public QTableView
     Q_OBJECT
 public:
     hardware_table(QWidget *parent=nullptr);
+    void set_device_manager(laser_device_manager *manager);
 protected:
     void selectionChanged(const QItemSelection &selected, const QItemSelection &deselected) override;
 signals:
     void table_selected(QVariant s);
+private:
+    laser_device_manager *m_manager;
+    QStandardItemModel  *theModel;//数据模型
+    QItemSelectionModel *theSelection;//Item选择模型
+public slots:
+    void refresh_laser_device(std::vector<laser_device*> m_device_list);
 //    QModelIndexList selectedIndexes() const override;
 
 //    void currentChanged(const QModelIndex &current, const QModelIndex &previous) override;
