@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog_FB4_Export</class>
+ <widget class="QDialog" name="Dialog_FB4_Export">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>FB4 导出</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget_4" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QWidget" name="widget_5" native="true">
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>350</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>300</width>
+            <height>350</height>
+           </size>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QListWidget" name="listWidget_FB4_Ex">
+             <item>
+              <property name="text">
+               <string>上载内容包</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>测试框架-标准</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>测试框架-空白模板</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DMX“FB3”-工作空间</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DMX“FB3”-空白模板</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DMX“FB4”-工作空间</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DMX“FB4”-空白模板</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>自动-单文件</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>自动-表演列表</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>自动-日程表</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>自动-多日计划表</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>上载</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_6" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>250</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>250</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>300</width>
+            <height>250</height>
+           </size>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="minimumSize">
+              <size>
+               <width>252</width>
+               <height>250</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>252</width>
+               <height>250</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>252</width>
+               <height>250</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>请在左边选择要导出的项目</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="margin">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>489</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>确定</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>取消</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+  <zorder>widget</zorder>
+  <zorder>line</zorder>
+  <zorder>widget_4</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

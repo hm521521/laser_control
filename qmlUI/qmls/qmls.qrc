@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Block_Workspace.qml</file>
+    </qresource>
+</RCC>

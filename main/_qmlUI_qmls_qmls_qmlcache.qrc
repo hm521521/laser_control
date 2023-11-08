@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/">
+        <file alias="Block_Workspace.qml">../qmlUI/qmls/Block_Workspace.qml</file>
+    </qresource>
+</RCC>
