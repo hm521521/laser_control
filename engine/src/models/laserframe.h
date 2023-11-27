@@ -3,7 +3,12 @@
 
 #include <QObject>
 #include <QVector>
+#include "laserpoint.h"
 
-#define LaserFrame QVector<LaserPoint>
+//! 帧.
+/*!
+    一帧画面的数据，包含多个点
+*/
+typedef QVector<LaserPoint> LaserFrame;
 
 #endif // LASERFRAME_H

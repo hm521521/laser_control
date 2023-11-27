@@ -116,5 +116,6 @@
         <file>首页 icon-24_选中1-停止.png</file>
         <file>首页 icon-24_选中1-位置.png</file>
         <file>首页 icon-24_选中1-暂停.png</file>
+        <file>首页 icon-24_选中1-开始.png</file>
     </qresource>
 </RCC>

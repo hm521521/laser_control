@@ -2,11 +2,9 @@ TEMPLATE = lib
 CONFIG += staticlib
 TARGET = qwdUI
 
-QT       += core gui quickwidgets
+QT       += core gui widgets quickwidgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
 
 
 

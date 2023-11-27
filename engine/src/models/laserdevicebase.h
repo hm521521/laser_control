@@ -3,6 +3,10 @@
 
 #include <QObject>
 
+//! 硬件抽象类.
+/*!
+    todo
+*/
 class LaserDeviceBase : public QObject
 {
     Q_OBJECT

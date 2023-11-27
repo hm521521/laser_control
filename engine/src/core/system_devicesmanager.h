@@ -3,6 +3,10 @@
 
 #include <QObject>
 
+//! 硬件控制系统.
+/*!
+  todo
+*/
 class System_DevicesManager : public QObject
 {
     Q_OBJECT

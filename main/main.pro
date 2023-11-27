@@ -18,6 +18,15 @@ else:CONFIG(debug, debug|release): LIBS += \
 -L$$OUT_PWD/../qwdUI/src/debug/ -lqwdUI \
 -L$$OUT_PWD/../engine/src/debug/ -lengine
 
+CONFIG(release, debug|release): PRE_TARGETDEPS += \
+$$OUT_PWD/../qmlUI/src/release/qmlUI.lib \
+$$OUT_PWD/../qwdUI/src/release/qwdUI.lib \
+$$OUT_PWD/../engine/src/release/engine.lib
+else:CONFIG(debug, debug|release): PRE_TARGETDEPS += \
+$$OUT_PWD/../qmlUI/src/debug/qmlUI.lib \
+$$OUT_PWD/../qwdUI/src/debug/qwdUI.lib \
+$$OUT_PWD/../engine/src/debug/engine.lib
+
 INCLUDEPATH += \
 $$PWD/../qmlUI/src \
 $$PWD/../qwdUI/src \

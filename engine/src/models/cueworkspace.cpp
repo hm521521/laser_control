@@ -5,3 +5,5 @@ CueWorkspace::CueWorkspace(QObject *parent)
 {
 
 }
+
+

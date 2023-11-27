@@ -7,6 +7,8 @@
 #include<QListWidget>
 #include<QDebug>
 #include <QQuickWidget>
+#include <QQmlContext>>
+#include <QQuickView>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -40,7 +42,8 @@ MainWindow::MainWindow(QWidget *parent)
     });
     //打开工作空间
     connect(ui->actionOpen_Workspace,&QAction::triggered,this,[=](){
-       QFileDialog::getOpenFileName(this,"打开工作空间","/","BEYOND Workspace;;BEYOND Workspace only;;QuickShow Workspace(*.isw *.iSw)");
+       QString fn = QFileDialog::getOpenFileName(this,"打开工作空间","/","BEYOND Workspace;;BEYOND Workspace only;;QuickShow Workspace(*.isw *.iSw)");
+        emit this->openWorkspace(fn);
     });
 
     //保存工作空间
@@ -213,10 +216,19 @@ void MainWindow::initAll2()
     //ui->listView->setFixedSize(200,300);//设置listView的大小
 }
 
-void MainWindow::setQmlUIGrid(QUrl qml)
+void MainWindow::setQmlUIGrid(QUrl qml, QObject* ctx)
 {
+    QQuickView *v = new QQuickView(qml);
+    v->rootContext()->setContextProperty("UC_Workspace", ctx);
+    ui->page_104->layout()->removeWidget(ui->quickWidget);
 
-    ui->quickWidget->setSource(qml);
+    QWidget *container = QWidget::createWindowContainer(v, ui->page_104);
+    container->setObjectName("wrappingContainer");
+    ui->page_104->layout()->addWidget(container);
+
+    //ui->quickWidget->setSource(qml);
+    //ui->quickWidget->rootContext()->setContextProperty("UC_Workspace", ctx);
+    // set uictrl_cueWs
     //ui->widget_98->setParent(nullptr);
     //qDebug()<<ui->widget_98->geometry();
     //widget->setGeometry(ui->widget_98->geometry());

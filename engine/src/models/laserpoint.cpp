@@ -12,3 +12,10 @@ LaserPoint::LaserPoint(int x, int y, int z)
 
 
 }
+
+LaserPoint::LaserPoint()
+    : X(0), Y(0), Z(0),R(0), G(0), B(0)
+{
+
+
+}

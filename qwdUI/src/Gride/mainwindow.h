@@ -35,7 +35,7 @@ public:
      /*
       * @brief 在widget界面中插入qml-ui grid部分
       */
-     void setQmlUIGrid(QUrl qml);
+     void setQmlUIGrid(QUrl qml, QObject* ctx);
 
 
 
@@ -52,7 +52,8 @@ private slots:
 
 
 
-
+signals:
+    void openWorkspace(QString url);
 
 
 private:
