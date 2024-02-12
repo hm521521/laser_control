@@ -1,0 +1,327 @@
+﻿  Reading Qt configuration (C:/Qt/Qt5.12.12/5.12.12/msvc2017_64/bin/qmake)
+  Generate moc_predefs.h
+  add_id_dialog.cpp
+  add_zones_dialog.cpp
+  artnetcontroller.cpp
+  artnetpacketizer.cpp
+  artnetplugin.cpp
+  cjimage.cpp
+  cjpoint.cpp
+  cjsection.cpp
+f:\untitled-master\laser_control\artnetcontroller.cpp(31): warning C4189: “settings”: 局部变量已初始化但不引用
+f:\untitled-master\laser_control\artnetcontroller.cpp(346): warning C4715: “artgetLocalIP”: 不是所有的控件路径都返回值
+  clockedit.cpp
+f:\untitled-master\laser_control\cjimage.cpp(3): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\cjsection.cpp(39): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\cjsection.cpp(269): warning C4267: “初始化”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  color.cpp
+  configuration.cpp
+  configureartnet.cpp
+f:\untitled-master\laser_control\configuration.cpp(38): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\configuration.cpp(88): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\configuration.cpp(111): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\configuration.cpp(168): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\configuration.cpp(191): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  delete_projection_zone_dialog.cpp
+  delete_zone_id_dialog.cpp
+  dmax_out_artnet_dialog.cpp
+f:\untitled-master\laser_control\configureartnet.cpp(42): warning C4100: “parent”: 未引用的形参
+  dmax_output_dialog.cpp
+  dmx_setup.cpp
+  dnd_scene_data_object.cpp
+  ed_laser_output.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 ed_laser_output.cpp)
+f:\untitled-master\laser_control\dmax_output_dialog.cpp(59): warning C4715: “dmax_output_Dialog::get_output_id”: 不是所有的控件路径都返回值
+  effect.cpp
+  gdiplus_helper.cpp
+f:\untitled-master\laser_control\dmx_setup.cpp(96): warning C4100: “id”: 未引用的形参
+f:\untitled-master\laser_control\ed_laser_output.cpp(12): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\ed_laser_output.cpp(63): warning C4100: “settings_data”: 未引用的形参
+f:\untitled-master\laser_control\ed_laser_output.cpp(82): warning C4100: “error”: 未引用的形参
+f:\untitled-master\laser_control\ed_laser_output.cpp(87): warning C4100: “data”: 未引用的形参
+f:\untitled-master\laser_control\ed_laser_output.cpp(211): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\ed_laser_output.cpp(213): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
+  graphicsrectitem.cpp
+  hardware.cpp
+  laser_device_manager.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_device_manager.cpp)
+  laser_output.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_output.cpp)
+f:\untitled-master\laser_control\graphicsrectitem.cpp(7): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\graphicsrectitem.cpp(73): warning C4100: “widget”: 未引用的形参
+f:\untitled-master\laser_control\graphicsrectitem.cpp(73): warning C4100: “option”: 未引用的形参
+  laser_setting.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 hardware.cpp)
+f:\untitled-master\laser_control\laser_output.cpp(39): warning C4100: “posnum”: 未引用的形参
+f:\untitled-master\laser_control\laser_output.cpp(39): warning C4100: “flag”: 未引用的形参
+f:\untitled-master\laser_control\laser_output.cpp(39): warning C4100: “data”: 未引用的形参
+f:\untitled-master\laser_control\laser_output.cpp(39): warning C4100: “settings_data”: 未引用的形参
+f:\untitled-master\laser_control\laser_output.cpp(44): warning C4100: “socket”: 未引用的形参
+f:\untitled-master\laser_control\laser_device_manager.cpp(27): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\laser_device_manager.cpp(129): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\laser_device_manager.cpp(160): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\hardware.cpp(11): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\hardware.cpp(141): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\hardware.cpp(185): warning C4100: “deselected”: 未引用的形参
+  main.cpp
+  main_panel.cpp
+  mainwindow1.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 laser_setting.cpp)
+f:\untitled-master\laser_control\laser_setting.cpp(11): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\laser_setting.cpp(34): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\laser_setting.cpp(550): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\laser_setting.cpp(727): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 mainwindow1.cpp)
+f:\untitled-master\laser_control\main_panel.cpp(355): warning C4100: “widget”: 未引用的形参
+f:\untitled-master\laser_control\main_panel.cpp(355): warning C4100: “option”: 未引用的形参
+f:\untitled-master\laser_control\main_panel.cpp(418): warning C4189: “action”: 局部变量已初始化但不引用
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+  midi_device_settings.cpp
+  midi_moniter.cpp
+  mp3_player.cpp
+  mygraphicsview.cpp
+f:\untitled-master\laser_control\mainwindow1.cpp(177): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\mainwindow1.cpp(179): warning C4189: “scene”: 局部变量已初始化但不引用
+f:\untitled-master\laser_control\mainwindow1.cpp(257): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\mainwindow1.cpp(264): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\mainwindow1.cpp(251): warning C4100: “page”: 未引用的形参
+f:\untitled-master\laser_control\mainwindow1.cpp(344): warning C4554: “|”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\mainwindow1.cpp(438): warning C4100: “result”: 未引用的形参
+f:\untitled-master\laser_control\mainwindow1.cpp(538): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\mainwindow1.cpp(561): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\mainwindow1.cpp(727): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\mainwindow1.cpp(796): warning C4554: “|”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\mainwindow1.cpp(810): warning C4554: “|”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+  osc_settings.cpp
+  output_panel.cpp
+f:\untitled-master\laser_control\output_panel.cpp(59): warning C4100: “widget”: 未引用的形参
+f:\untitled-master\laser_control\output_panel.cpp(59): warning C4100: “option”: 未引用的形参
+f:\untitled-master\laser_control\output_panel.cpp(68): warning C4100: “parent”: 未引用的形参
+  output_universe_dialog.cpp
+  picture_trace.cpp
+  pointattribute.cpp
+  project_panel.cpp
+  projection_zones.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 projection_zones.cpp)
+  publicize.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 picture_trace.cpp)
+f:\untitled-master\laser_control\picture_trace.cpp(12): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\picture_trace.cpp(531): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(927): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(978): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(983): warning C4100: “height”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(983): warning C4100: “width”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(983): warning C4100: “y”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(983): warning C4100: “x”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(983): warning C4100: “painter”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1126): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1133): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1108): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1108): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1191): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1193): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1195): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1200): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1145): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1284): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1421): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1433): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1494): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1496): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1528): warning C4189: “si”: 局部变量已初始化但不引用
+f:\untitled-master\laser_control\project_panel.cpp(1585): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1580): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1596): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1602): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1607): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1614): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1645): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1649): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1669): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(1673): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1682): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1698): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1751): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1753): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1892): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1892): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1903): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1898): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1914): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1920): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1925): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1932): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+f:\untitled-master\laser_control\project_panel.cpp(1961): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1961): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(1969): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(2069): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\project_panel.cpp(2077): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(2077): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(2085): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(2146): warning C4100: “f”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(2146): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\project_panel.cpp(2150): warning C4100: “event”: 未引用的形参
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 publicize.cpp)
+  qcustomplot.cpp
+f:\untitled-master\laser_control\publicize.cpp(7): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\publicize.cpp(395): warning C4100: “parent”: 未引用的形参
+  scene_pool.cpp
+f:\untitled-master\laser_control\projection_zones.cpp(571): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\projection_zones.cpp(581): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\projection_zones.cpp(795): warning C4100: “spinvalue”: 未引用的形参
+  scene_tool_box.cpp
+f:\untitled-master\laser_control\scene_pool.cpp(12): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\scene_pool.cpp(127): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\scene_pool.cpp(173): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\scene_pool.cpp(184): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  setup_administrator_mode.cpp
+  setup_user_mode.cpp
+  show_model.cpp
+  stage.cpp
+  test_patterns.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 stage.cpp)
+  toggle_button.cpp
+f:\untitled-master\laser_control\stage.cpp(4): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\stage.cpp(113): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\stage.cpp(132): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\stage.cpp(158): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\stage.cpp(161): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 test_patterns.cpp)
+f:\untitled-master\laser_control\test_patterns.cpp(43): warning C4100: “parent”: 未引用的形参
+f:\untitled-master\laser_control\test_patterns.cpp(73): warning C4100: “previous”: 未引用的形参
+  yls_play_event.cpp
+f:\untitled-master\laser_control\test_patterns.cpp(98): warning C4789: 缓冲区“ch”(大小为 1 字节)将溢出；1 字节将在偏移 1 时开始写入
+f:\untitled-master\laser_control\test_patterns.cpp(93): warning C4789: 缓冲区“ch”(大小为 1 字节)将溢出；1 字节将在偏移 1 时开始写入
+  qrc_res.cpp
+  moc_add_id_dialog.cpp
+  moc_add_zones_dialog.cpp
+  moc_artnetcontroller.cpp
+  moc_artnetplugin.cpp
+  moc_clockedit.cpp
+  moc_configureartnet.cpp
+  moc_delete_projection_zone_dialog.cpp
+  moc_delete_zone_id_dialog.cpp
+  moc_dmax_out_artnet_dialog.cpp
+  moc_dmax_output_dialog.cpp
+  moc_dmx_setup.cpp
+  moc_ed_laser_output.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_ed_laser_output.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_ed_laser_output.cpp)
+  moc_hardware.cpp
+  moc_laser_device_manager.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_device_manager.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_hardware.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_hardware.cpp)
+  moc_laser_setting.cpp
+  moc_main_panel.cpp
+  moc_mainwindow1.cpp
+  moc_midi_device_settings.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_mainwindow1.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_mainwindow1.cpp)
+  moc_midi_moniter.cpp
+  moc_mygraphicsview.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_setting.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_laser_setting.cpp)
+  moc_osc_settings.cpp
+  moc_output_universe_dialog.cpp
+  moc_picture_trace.cpp
+  moc_project_panel.cpp
+  moc_projection_zones.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_projection_zones.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_picture_trace.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_picture_trace.cpp)
+  moc_publicize.cpp
+  moc_qcustomplot.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_publicize.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_publicize.cpp)
+  moc_scene_tool_box.cpp
+  moc_setup_administrator_mode.cpp
+  moc_setup_user_mode.cpp
+  moc_stage.cpp
+  moc_test_patterns.cpp
+  moc_toggle_button.cpp
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_stage.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_test_patterns.cpp)
+f:\untitled-master\laser_control\laser_device_manager.h : warning C4828: 文件包含在偏移 0x8c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 Debug\moc_test_patterns.cpp)
+  TCPServer.vcxproj -> F:\untitled-master\laser_control\debug\TCPServer.exe
