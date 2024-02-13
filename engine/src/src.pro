@@ -15,6 +15,8 @@ CONFIG += c++11
 
 include(./core/core.pri)
 include(./models/models.pri)
+include(./control/control.pri)
+
 
 
 
